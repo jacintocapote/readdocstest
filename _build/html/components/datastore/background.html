@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Background and Periodic Imports &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="DKAN Datastore" href="index.html"/>
+        <link rel="next" title="Geocoding" href="geocoder.html"/>
+        <link rel="prev" title="Fast Import Option" href="fast-import.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Major Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../dataset/index.html">Datasets</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Datastore</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usage.html">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#datastore-api">Datastore API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fast-import.html">Fast Import Option</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Background and Periodic Imports</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#changing-default-datastore-import-behavior">Changing Default Datastore Import Behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-upon-form-submission">Import upon form submission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-in-the-background">Import in the background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-periodically">Import periodically</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="geocoder.html">Geocoding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Major Components</a> &raquo;</li>
+      
+          <li><a href="index.html">DKAN Datastore</a> &raquo;</li>
+      
+    <li>Background and Periodic Imports</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/components/datastore/background.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="background-and-periodic-imports">
+<span id="background-and-periodic-imports"></span><h1>Background and Periodic Imports<a class="headerlink" href="#background-and-periodic-imports" title="Permalink to this headline">¶</a></h1>
+<p>By default Resource files are added to the DKAN Datastore manually. This can be changed to:</p>
+<ul class="simple">
+<li>Import upon form submission</li>
+<li>Import in the background</li>
+<li>Import periodically</li>
+</ul>
+<div class="section" id="changing-default-datastore-import-behavior">
+<span id="changing-default-datastore-import-behavior"></span><h2>Changing Default Datastore Import Behavior<a class="headerlink" href="#changing-default-datastore-import-behavior" title="Permalink to this headline">¶</a></h2>
+<p>Default behavior for linked and uploaded files is controlled through the <a class="reference external" href="http://dgo.to/feeds">Feeds module</a>. To access the Feeds administrative interface, enabled the <strong>Feeds Admin UI</strong> module which is included but not enabled by default in DKAN. Once turned on you can access the Feeds UI at /admin/structure/feeds. The are two Feeds Importers by default: <img alt="feeds ui" src="http://docs.getdkan.com/sites/default/files/Screen%20Shot%202014-07-31%20at%202.56.30%20PM.png" /></p>
+</div>
+<div class="section" id="import-upon-form-submission">
+<span id="import-upon-form-submission"></span><h2>Import upon form submission<a class="headerlink" href="#import-upon-form-submission" title="Permalink to this headline">¶</a></h2>
+<p>To import a Resource file upon saving the resource, click <strong>Import on Form Submission</strong> in the settings section for each importer: <img alt="import on submission" src="http://docs.getdkan.com/sites/default/files/Screen%20Shot%202014-07-31%20at%202.58.34%20PM.png" /></p>
+<p>This is not recommended for large imports as a batch screen will be triggered that will not stop until the entire file is imported.</p>
+</div>
+<div class="section" id="import-in-the-background">
+<span id="import-in-the-background"></span><h2>Import in the background<a class="headerlink" href="#import-in-the-background" title="Permalink to this headline">¶</a></h2>
+<p>This setting means that once an import has started, it will be processed in 50 row increments in the background. Processing will occur during cron. The queue of imports is managed by the <a class="reference external" href="http://dgo.to/job_scheduler">Job Schedule</a> module. Each cron run will <a class="reference external" href="http://cgit.drupalcode.org/job_scheduler/tree/job_scheduler.module?id=7.x-2.0-alpha3#n54">process a maximum of 200 jobs in a maximum of 30 seconds</a>. Note that an import won&#8217;t be started by saving the Resource form. This will only be triggered by clicking &#8220;Import&#8221; on the &#8220;Manage Datastore&#8221; page or if triggered programatically. This setting can be used in addition to &#8220;Import on for submission&#8221; to start imports that will be imported in the background.</p>
+</div>
+<div class="section" id="import-periodically">
+<span id="import-periodically"></span><h2>Import periodically<a class="headerlink" href="#import-periodically" title="Permalink to this headline">¶</a></h2>
+<p>This setting imports items on a periodic basis. This makes the most sense if you have a file you are linking to that you want to periodically re-import. This setting is also reliant on cron running properly.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="geocoder.html" class="btn btn-neutral float-right" title="Geocoding" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fast-import.html" class="btn btn-neutral" title="Fast Import Option" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

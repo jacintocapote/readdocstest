@@ -1,0 +1,1024 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Changelog &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="Releases" href="index.html"/>
+        <link rel="next" title="Roadmap" href="roadmap.html"/>
+        <link rel="prev" title="DKAN 1.8 Release Notes" href="notes/1.8.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Releases</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="notes/index.html">Release Notes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-13">7.x-1.13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-13-2017-01-04">7.x-1.12.13 2017-01-04</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-12-2016-12-15">7.x-1.12.12 2016-12-15</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-11-2016-10-20">7.x-1.12.11 2016-10-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-10-2016-09-07">7.x-1.12.10 2016-09-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-9-2016-08-31">7.x-1-12.9 2016-08-31</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-8-2016-08-19">7.x-1.12.8 2016-08-19</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-7-2016-08-09">7.x-1-12.7 2016-08-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-6-2016-07-26">7.x-1.12.6 2016-07-26</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-5-2016-07-13">7.x-1.12.5 2016-07-13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-4-2016-07-12">7.x-1.12.4 2016-07-12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-3-2016-06-30">7.x-1.12.3 2016-06-30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-2-2016-06-09">7.x-1.12.2 2016-06-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-1-2016-06-07">7.x-1.12.1 2016-06-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-2016-04-20">7.x-1.12 2016-04-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-12-2015-04-01">7.x-1.12 2015-04-01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-11-2016-02-02">7.x-1.11 2016-02-02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-11-2016-02-01">7.x-1.11 2016-02-01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-10-2015-11-10">7.x-1.10 2015-11-10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-9-2015-09-17">7.x-1.9 2015-09-17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-8-2015-04-02">7.x-1.8  2015-04-02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-7-2015-02-20">7.x-1.7  2015-02-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-6">7.x-1.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-5-2014-10-15">7.x-1.5 2014-10-15</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-4-2014-10-10">7.x-1.4  2014-10-10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-3">7.x-1.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-2">7.x-1.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-1-2013-06-27">7.x-1.1 2013-06-27</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-0">7.x-1.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-1-0-beta">7.x-1.0-beta</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Releases</a> &raquo;</li>
+      
+    <li>Changelog</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/releases/changelog.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>7.x-1.13.x</dt>
+<dd><ul class="first last simple">
+<li>#1751 Add POD validation link to command center menu for site manager access.</li>
+<li>#1762 Re-number update hooks that were mixed up during release integration.</li>
+<li>#1709 Changed function dkan sitewide conversion homepage to fix problem with link entity attribute. This attribute need to be a boolean.</li>
+<li>#1742 Fix home page HTML &lt;head&gt;&lt;title&gt; so that it&#8217;s just the site name (not the node or panel title)</li>
+<li>#1747 Update DKAN API link to use the RTD documentation page.</li>
+<li>#1730 Fix logic error for front page in theme causing error messages on homepage</li>
+<li>#1728 Added a tag &#64;defaultHomepage to a topic test which relies on homepage content.</li>
+<li>#5807 Fix panelizer permissions to hide &#8216;Customize Display&#8217; button</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="x-1-13">
+<h2>7.x-1.13<a class="headerlink" href="#x-1-13" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>#1719 Added site details to settings nuboot_radix to allow change site name, slogan, e-amail address for site manager.</li>
+<li>#1717 Upgrading Drupal to 7.54</li>
+<li>#1705 Added css for chart visualizaitons, fixes issue in IE.</li>
+<li>#1695 Upgrade better_exposed_filters to v3.4.</li>
+<li>#1702 Update branding.</li>
+<li>#1369 Added ReadTheDocs integrations and docs folder for centralized documentation</li>
+<li>#1701 Renamed test files.</li>
+<li>#1691 #1682 Update resource tests to work with client site variations.</li>
+<li>#1694 Moved functions from FeatureContext to DKANExtension.</li>
+<li>#1687 Added a function in dkan_sitewide to check if a specific page is the front page.</li>
+<li>#1693 Improve module and user cleanup inside dkan workflow context after run tests</li>
+<li>#1669 Update leaflet library to v1.0.2 and leaflet markercluster to v1.0.0. Unift leaflet libraries (was using a separate version for recline module)</li>
+<li>#1684 Security update for autocomplete_deluxe</li>
+<li>#1670 Upgraded to new 1.0 release of Visualization Entity module</li>
+<li>#1663 Add install hook to DKAN Workflow to force a Features revert of dkan_sitewide_menu, to make sure Workflow links added correctly</li>
+<li>#1348 Remove Panels IPE from dataset and search pages; in DKAN, we only want to show IPE for panelizer layouts, not templates or other &#8220;sitewide&#8221; pages.</li>
+<li>#1046 Update user profile page search to be consistant with the rest of the site and moves user info to sidebar block.</li>
+<li>#1096 Fixes typo in &#8220;add data story&#8221; link in command center menu</li>
+<li>#1069 Add topic icons to the drop down menu</li>
+<li>#1085 Renamed the default HTML text format to &#8216;Markdown HTML&#8217;</li>
+<li>#1440 Improved markdown text editor toolbar</li>
+<li>#1110 URLs on dataset&#8217;s additional info are now properly displayed as links.</li>
+<li>#1130 Removed warnings about undefined permissions when visualization_entity_choropleth_bundle module is enabled.</li>
+<li>#1130 Removed warnings about undefined permissions when visualization_entity_geojson_bundle module is enabled.</li>
+<li>#1130 Removed specific visualization entity charts permissions from dkan_extension.</li>
+<li>#1130 Added test feature to validate that users with Editor, Content Creator and Site Manager roles are not able to access to admin pages.</li>
+<li>#1259 Default content was improved and now it&#8217;s generated based on fixtures.</li>
+<li>#1152 Removed omega theme.</li>
+<li>#1152 Removed delta module.</li>
+<li>#1152 Moved Nuboot Radix theme into core build.</li>
+<li>#1152 Change admin theme setting to use default theme rather than nuboot radix</li>
+<li>#1221 Page content type added to panelizer and now defined in features, with in-place editor enabled for page content.</li>
+<li>#1222 Page link added to the command center menu.</li>
+<li>#1301 Added Open Data Federal Extras module into DKAN Core.</li>
+<li>#1297 Fix for relative paths to ensure links still work when a site is installed into a subdirectory.</li>
+<li>#1358 Removed field mapping warnings during import of default content.</li>
+<li>#1376 Removed conditional_fields from dkan_topics.</li>
+<li>#1387 Upgrade Features to 7.x-2.9</li>
+<li>#1387 Make date facet use &#8220;day&#8221; granularity.</li>
+<li>#1387 Remove ARC2 library.</li>
+<li>#1439 Disable pathauto for content created using dkan_fixtures.</li>
+<li>#1403 Removed warning message when try edit resource without dataset.</li>
+<li>#1468 Added PHP Unit tests configurations to make them run on DKAN.</li>
+<li>#1463 Added hook_uninstall to federal extra module for remove fields after uninstall module.</li>
+<li>#1459 Removed redundant definition for CKAN package_list endpoint from open_data_schema_map_dkan, allowing that feature to be in default state after install.</li>
+<li>#1456 Update ctools to version 1.10, which fixes some PHP7 incompatibilities</li>
+<li>#1440 Added links to ODSM page and DCAT validation under Site Configuration in the command center menu</li>
+<li>#1367 Update open data schema module to render a valid output passing validation (dcat and rdf).</li>
+<li>Added upgrade hook to clean DB after removal of &#8216;conditional_fields&#8217;, &#8216;entity_rdf&#8217;, &#8216;rdfui&#8217; and &#8216;rdfx&#8217;.</li>
+<li>#1527 Added upgrade hook to remove deprecated test and theme directories.</li>
+<li>#1537 Fixed popular tags view.</li>
+<li>#1685 Moved front page search block from dkan_sitewide_demo_front to dkan_sitewide.</li>
+<li>#1562 Fixed link to group page on group node teaser when site has clean urls disabled.</li>
+<li>#1534 Added update hook to disable dkan_default_content on upgrades.</li>
+<li>#1565 Updated visualization_entity.</li>
+<li>#1556 Added fix to display the &#8216;Request membership&#8217; link only to users that are logged in.</li>
+<li>#1582 Remove content padding on data extent and social blocks.</li>
+<li>#1606 Added DKAN Extension.</li>
+<li>#1508 Upgrade workbench_moderation to v3.0.</li>
+<li>#1595 Upgrade entity to 1.8</li>
+<li>#1598 Upgrade manualcrop to 1.6</li>
+<li>#1598 Upgrade markdown to 1.5</li>
+<li>#1598 Upgrade panels to 3.8</li>
+<li>#1592 Upgrade ctools to 1.12</li>
+<li>#1592 Upgrade entityreference to 1.2</li>
+<li>#1592 Upgrade libraries to 2.3</li>
+<li>#1592 Upgrade services to 3.17</li>
+<li>#1592 Upgrade simple_gmap to 1.3</li>
+<li>#1592 Upgrade tablefield to 2.5</li>
+<li>#1592 Upgrade entityreference_filter to 1.7</li>
+<li>#1622 Upgrade fieldable_panels_panes to 1.11</li>
+<li>#1596 Upgrade radix to 3.5</li>
+<li>#1598 Upgrade search_api to 1.20</li>
+<li>#1603 Upgrade media to 2.0-beta13</li>
+<li>#1603 Upgrade panopoly_widgets to 1.41</li>
+<li>#1603 Upgrade panopoly_images to 1.41</li>
+<li>#1604 Upgrade file_entity to 2.0-beta3</li>
+<li>#1605 Upgrade link_iframe_formatter to 1.1</li>
+<li>#1654 Assign workflow supervisor role to site manager users when dkan workflow is enabled.</li>
+<li>#1645 Switch to forked version of the spectrum library to address accessibility issues.</li>
+<li>#1642 Removed eva module.</li>
+<li>Fixed CSV column validation on visualization entity.</li>
+<li>Fixed retrieve of version information on chroma.js.</li>
+<li>#1678 Add patch to fix panopoly_widgets overrides OOB.</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>DKAN Datastore:</dt>
+<dd><ul class="first last simple">
+<li>#1387 Added DKAN Datastore module into DKAN Core.</li>
+<li>#1599 Greatly expand the datastore API to support aggregation functions, better joins, multiple queries. See dkan_datastore_api&#8217;s README file.</li>
+<li>#1599 Fixed bugs when running the datastore via cron.</li>
+</ul>
+</dd>
+<dt>DKAN Harvest:</dt>
+<dd><ul class="first last simple">
+<li>#1676 Harvested content is published even if dkan_workflow is enabled.</li>
+<li>#1287 Added DKAN Harvest module into DKAN Core.</li>
+<li>Added UI to add harvest sources</li>
+<li>Added UI to manage harvest sources and datasets</li>
+<li>#1446 Fix dkan harvest feature overridden after install.</li>
+<li>#1440 Add link for site managers to create harvest source in command center menu.</li>
+<li>#1472 Added Batch API on &#8216;Harvest now&#8217; action.</li>
+<li>#1482 Added Batch API on the &#8216;Preview&#8217; page.</li>
+<li>#1531 Added &#8216;Add Source&#8217; shortcut on Harvest Dashboard pages.</li>
+<li>#1531 Fixed breadcrumb on harvest sources pages: Preview, Manage Datasets, Events, Errors.</li>
+<li>#1434 Fixed harvesting of resources with remote files with redirects.</li>
+<li>#1588 Fix &#8220;Manage Datastore&#8221; tab leaking to the harvest source node.</li>
+<li>#1588 Add icons for harvest source tabs.</li>
+<li>#1634 Fixed the dataset count displayed on the harvest preview message.</li>
+<li>#1640 Added support for &#8211;limit, &#8211;instruments, &#8211;skiphash and &#8211;idlist options on drush commands.</li>
+<li>#1658 Fix 508 compliance errors on admin and node view pages.</li>
+<li>#1650 Removed links to Harvest Source nodes from main menu.</li>
+<li>#1672 Prevent harvest source machine name from containing forward slash character.</li>
+<li>Improved PHP Unit tests.</li>
+<li>#1468 Add support &#8220;Compound&#8221; fields on Filters/Overrides/Excludes/Default in DKAN Harvest.</li>
+<li>#1488 Replace field notes by field body in harvest source content type.</li>
+</ul>
+</dd>
+<dt>DKAN Migrate Base:</dt>
+<dd><ul class="first last simple">
+<li>#1387 Added DKAN Migrate Base module into DKAN Core.</li>
+<li>#1462 Removed row from migration map table when a dataset is deleted.</li>
+</ul>
+</dd>
+<dt>DKAN Workflow:</dt>
+<dd><ul class="first last simple">
+<li>Add patch for workbench_moderation to avoid php shutdown function errors.</li>
+<li>#1690 Added patch for workbench_moderation: Invalid argument supplied for foreach() 2360973.</li>
+<li>#1712 Added a filter in the workflow.feature to avoid issues for the amount of already existing nodes.</li>
+<li>#1707 Isolate dkan workflow tests related to emails.#1069</li>
+<li>#1715 Moved the update of the roleassign_roles variable from dkan_workflow_permissions to dkan_workflow.</li>
+<li>#1677 Fixed panels-related bug where, if a dataset had both a &#8220;published&#8221; and &#8220;draft&#8221; version, the published would show in the draft tab.</li>
+<li>#1438 Updated DKAN workflow vbo customizations to not affect other vbo forms.</li>
+<li>#1481 Updated workbench_email from 3.9 to 3.11</li>
+<li>#1667 Fixed admin menu source when dkan_workflow is enabled.</li>
+<li>#1663 Moved workbench links from dkan_sitewide_menu to dkan_workflow.</li>
+</ul>
+</dd>
+<dt>DKAN Dataset:</dt>
+<dd><ul class="first last simple">
+<li>#1696 Disable/uninstall dkan_dataset_api if enabled because it is deprecated in favor open_data_schema_map.</li>
+<li>Leaflet draw widget usability improvements</li>
+<li>#1636 Fix validation on resource forms when multiple resource type fields are populated</li>
+<li>#1626 Fix 508 compliance issues for leafleat draw widget</li>
+<li>#1387 Added DKAN Dataset module into DKAN Core.</li>
+<li>#1589 Fix geofield map button toggle function.</li>
+<li>#1345 Added default image for groups.</li>
+<li>#1377 Add preview support for resources of many more formats, outside of recline.js. Support added for JSON, geojson, XML, ArcGIS REST, WMS, images, PDF, ZIP</li>
+<li>#1377 Fix bugs in resource mimetypes and previews.</li>
+<li>Add more frequency update options to the dataset creation form <a class="reference external" href="https://project-open-data.cio.gov/iso8601_guidance/#accrualperiodicity">https://project-open-data.cio.gov/iso8601_guidance/#accrualperiodicity</a></li>
+<li>#1301 Groups field on Dataset form was modified to be a single select with all group options and it was moved from the tabs section to the main section of the form.</li>
+<li>#1301 Groups field was hidden on the resource form since groups are assigned automatically based on the parent datasets.</li>
+<li>#1301 Moved and renamed the following fields from ODFE to DKAN Core: field_is_part_of, field_data_dictionary_type, field_landing_page, field_pod_theme, field_conforms_to, field_rights, field_language.</li>
+<li>#1301 Added hook updates to handle the renaming of the old ODFE fields removing the &#8216;odfe&#8217; namespacing.</li>
+<li>#1301 Added hook update to migrate the content from field_odfe_category to field_pod_theme on Datasets.</li>
+<li>#1301 Added new option on DKAN Dataset Forms to enable POD based validation on Dataset form.</li>
+<li>#1301 Added new option on DKAN Dataset Forms to enable Groups field validation on Dataset form.</li>
+<li>#1280 Fixes to groups UX: Group body field now labeled &#8220;Description,&#8221; longer group descriptions do not get cut off after 200 characters on group page, and extraneous &#8220;about&#8221; tab on Group node edit form removed</li>
+<li>Add new &#8220;modified date&#8221; field, hidden in form, to datasets. This is for dkan_harvest compatibility; saves sources dates into a separate field so they aren&#8217;t affected by node changes. ODSM mappings also updated.</li>
+<li>Fix keywords/tags creating broken links when containing spaces, and add missing keywords to default content.</li>
+<li>#1477 Fix ODSM permissions for non-admin roles.</li>
+<li>#1532 Fixed text on &#8216;Download All&#8217; button to not display HTML.</li>
+<li>#1570 Removed &#8216;Back to dataset&#8217; button on standalone resources.</li>
+<li>Better support of downloading remote files from the resource view page &#8220;Download&#8221; button.</li>
+<li>#1553 Removed warning when a resource is created without title.</li>
+<li>#1591 Add limit to proxy resources.</li>
+<li>#1576 Improved download of remote files.</li>
+<li>#1670 Fix 508 compliance issues for visualization_entity_charts.</li>
+<li>#1669 Fix 508 compliance issues for leaflet draw widget.</li>
+<li>#1434 Add patch to remote_stream_wrapper to fix memory exhausted errors.</li>
+<li>#1652 Renamed &#8216;filefield_remotefile&#8217; as &#8216;filefield_dkan_remotefile&#8217;.</li>
+<li>#1671 Add patch to field_group to avoid DOM-based cross-site scripting vulnerabilities.</li>
+</ul>
+</dd>
+<dt>DKAN Topics:</dt>
+<dd><ul class="first last simple">
+<li>#1159 Added a test for creating a topic term.</li>
+<li>#1486 Make the icon field required if the icon type is set to &#8216;font&#8217;.</li>
+<li>#1656 Fix topics icon selector functionality.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-12-13-2017-01-04">
+<h2>7.x-1.12.13 2017-01-04<a class="headerlink" href="#x-1-12-13-2017-01-04" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix broken recline (resource CSV) preview embeds caused by how recline module loads bootstrap</li>
+<li>Fix publisher token in open_data_schema_map_dkan - was showing only URL rather than publisher name</li>
+<li>Add patch to remote_stream_wrapper to avoid memory exhausted on big files.</li>
+</ul>
+</div>
+<div class="section" id="x-1-12-12-2016-12-15">
+<h2>7.x-1.12.12 2016-12-15<a class="headerlink" href="#x-1-12-12-2016-12-15" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Start caching recline &#8220;embed&#8221; pages (previews rendered with no headers/sidebars for iframe) (recline module)</li>
+<li>Upgrade Drupal core to 7.52</li>
+<li>Update ctools to 1.11</li>
+<li>Fix link to group page on group node teaser when site has clean urls disabled</li>
+<li>Fix &#8220;format&#8221; facet collapsed even when selected on the search page.</li>
+<li>Fix resources not synced with datasets when upgrade from 1.11</li>
+<li>Update media to 2.0-beta13</li>
+<li>Fix hidden body field on page content type</li>
+<li>Improve access check/security on datastore pages - unauthorized users could perform certain datastore functions</li>
+<li>Use dashes in links to tags to avoid &#8220;page not found&#8221; errors</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>DKAN Datastore:</dt>
+<dd><ul class="first last simple">
+<li>Add limit to proxy resources.</li>
+<li>Better support of downloading remote files from the resource view page
+&#8220;Download&#8221; button.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-12-11-2016-10-20">
+<h2>7.x-1.12.11 2016-10-20<a class="headerlink" href="#x-1-12-11-2016-10-20" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed a bug in Recline regarding file objects and node forms that caused errors when using the &#8220;view changes&#8221; button on Dataset or Resource edit form</li>
+<li>Center group images in &#8220;Groups&#8221; page and group node page sidebar</li>
+<li>Add &#8220;2x&#8221; &#8220;3x&#8221; etc to datset teasers when more than one resource of a particular format present.</li>
+<li>Update the default jquery library setting from 1.7 to 1.10</li>
+<li>Fix topics menu and facet links if special characters are used in topic terms.</li>
+<li>Fixed dataset form redirect when validation fails, was sending user to node/add/dataset rather than node/%/edit</li>
+<li>Patch fontyourface to remove &lt;div&gt; from the &#8220;standard text&#8221; selector, to prevent unpredictable results from this option</li>
+<li>Fixed issue in open_data_schema_map with &#8220;Data Dictionary&#8221; field not displaying URL in data.json file</li>
+</ul>
+</div>
+<div class="section" id="x-1-12-10-2016-09-07">
+<h2>7.x-1.12.10 2016-09-07<a class="headerlink" href="#x-1-12-10-2016-09-07" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Fix JS error on IE browsers preventing previews from appearing</li>
+<li>Provide upgrade paths for older sites upgrading to newer BU editor config</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-9-2016-08-31">
+<h2>7.x-1-12.9 2016-08-31<a class="headerlink" href="#x-1-12-9-2016-08-31" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Fix data dictionary field to use html input format and improvements to the field&#8217;s display and help text.</li>
+<li>Update dkan_workflow content type legend to include all content types with correct icons.</li>
+<li>Fix to new bug introduced in recline module in 1.12.7; previews would not display if file smaller than max preview size, even if loading from datastore.</li>
+<li>Fix a problem with paths for image icons for topics. Uploaded image icons will now display correctly in the Topics menu.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-8-2016-08-19">
+<h2>7.x-1.12.8 2016-08-19<a class="headerlink" href="#x-1-12-8-2016-08-19" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Patch panelizer module to correct bug introduced in previous release. See release notes for details.</li>
+<li>Add validation to Group form to prevent duplicate groups from being created</li>
+<li>Update and patch panels and panelizer to fix critical security issue. See release notes.</li>
+<li>Patch panelizer module to correct bug introduced in previous release. See release notes.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-7-2016-08-09">
+<h2>7.x-1-12.7 2016-08-09<a class="headerlink" href="#x-1-12-7-2016-08-09" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Update contrib modules uuid, services, manualcrop, markdown, panelizer, panopoly_widgets, panopoly_images</li>
+<li>Fix bug that produced a &#8220;Cannot use a scalar value&#8221; error when trying to add a content pane to a data story node in panels.</li>
+<li>Change theming on resource to remove iframe to &#8220;API or link URL&#8221; if remote file field also populated</li>
+<li>Update options in Dataset &#8220;frequency&#8221; field to reflect standards for DCAT and Project Open Data</li>
+<li>Provide &#8220;data proxy&#8221; to serve remote CSVs through local domain and resolve cross-origin issues with previews n these resources</li>
+<li>Some changes to the Resource node form to improve UX of links and file attachments, especially by replacing the label &#8220;Link to an API&#8221; to &#8220;API or Website URL&#8221;</li>
+<li>Fix bug on relative paths for links in theme template files.</li>
+<li>Fix minor typo in DKAN topics menu link</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-6-2016-07-26">
+<h2>7.x-1.12.6 2016-07-26<a class="headerlink" href="#x-1-12-6-2016-07-26" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Sanitize theme output for facets to avoid any security issue from search input</li>
+<li>Fix a potential XSS vulnerability in search facets by adding some validation hooks for facet input</li>
+<li>Theme updates back ported from dev branch, including topics icons in topics drop-down menu</li>
+<li>Add RoleAssign module, update DKAN Permissions to give site managers permission to assign roles.</li>
+<li>Make links and emails in metadata pages clickable</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-5-2016-07-13">
+<h2>7.x-1.12.5 2016-07-13<a class="headerlink" href="#x-1-12-5-2016-07-13" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Update restws to 7.x-2.6 (critical security update)</li>
+<li>Update to latest version of recline.js to fix map tiles (Mapquest discontinued open access)</li>
+<li>Upgrade Drupal core to 7.50</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-4-2016-07-12">
+<h2>7.x-1.12.4 2016-07-12<a class="headerlink" href="#x-1-12-4-2016-07-12" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Update permissions in DKAN Permissions module to allow anonymous users to access RDF endpoints for individual datasets.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-3-2016-06-30">
+<h2>7.x-1.12.3 2016-06-30<a class="headerlink" href="#x-1-12-3-2016-06-30" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Open Data Schema Map update: improves performance of package_show endpoint</li>
+<li>Point to new release of visualization entity, which cleans up some make files and brings visualization_entity_charts into the same project repository.</li>
+<li>Fix editor permissions to allow access to visualizations list from admin menu</li>
+<li>Upgrade Views to 7.14</li>
+<li>Upgrade Drupal core to 7.44</li>
+<li>Add &lt;br&gt;&lt;h2&gt;&lt;h3&gt;&lt;center&gt;&lt;iframe&gt; to allowed html tags</li>
+<li>Renamed the default HTML text format to &#8216;Markdown HTML&#8217;</li>
+<li>Improved markdown text editor toolbar</li>
+<li>Stories main menu link removed from stories view</li>
+<li>Groups main menu link removed from page manager groups page config</li>
+<li>Main menu links added on install function rather than through features</li>
+<li>Add body field to data_dashboard content types</li>
+<li>Front page page manager config moved to the dkan_sitewide_demo_front feature</li>
+<li>Front page group views moved to the dkan_dataset_groups feature</li>
+<li>Add dkan_ipe feature to simplify the in-place editor interface, includes addition of the panels_curator module</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-2-2016-06-09">
+<h2>7.x-1.12.2 2016-06-09<a class="headerlink" href="#x-1-12-2-2016-06-09" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Fix problems in visualization entity charts creation due to version of CSV.js referenced in recline.make</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-1-2016-06-07">
+<h2>7.x-1.12.1 2016-06-07<a class="headerlink" href="#x-1-12-1-2016-06-07" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>New version of Visualization Entity Charts fixes a number of UI bugs and restores support for Google Sheets and Data Proxy</li>
+<li>Fix XSS vulnerability by adding sanitization for titles on workbench view</li>
+<li>Upgrade of: Colorizer, Admin Menu Source, Honey Pot, Panopoly Widgets, Panopoly Images, Pathauto, Rules, Restws, Manual Crop, Image Cache Actions, Features, Search API, Organic Groups, Chosen, Date, Entity, Facet API, Facet API Bonus, Facet API Pretty Paths, UUID, Views, Select or other, Remote Stream Wrapper, Link, Libraries, Beauty Tips, Gravatar, OG Extras, Services and Workbench Email.</li>
+<li>Upgrade of Panopoly Widgets, Panopoly Images and Fieldable Panels Panes.</li>
+<li>Patch colorfield module to avoid incorrect status error. See <a class="reference external" href="https://www.drupal.org/node/2696505">https://www.drupal.org/node/2696505</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-2016-04-20">
+<h2>7.x-1.12 2016-04-20<a class="headerlink" href="#x-1-12-2016-04-20" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Fixed regex used to rewrite font file paths on Dkan Topics, which was breaking filepaths in data.json</li>
+<li>Rename dkan_featured_topics to dkan_topics before release</li>
+<li>Add &#8220;data dashboard&#8221; creation link to user admin menu (in dkan_sitewide_menu)</li>
+<li>Patch DKAN core file module to fix managed file problem <a class="reference external" href="https://www.drupal.org/node/1903010#comment-10118508">https://www.drupal.org/node/1903010#comment-10118508</a></li>
+<li>Standardize facet titles between user, search and group pages</li>
+<li>Add dkan_featured_topics module and relevant updates to dkan_dataset and nuboot_radix</li>
+<li>Upgrade Drupal core to 7.43</li>
+<li>Enable pretty paths for search page</li>
+<li>Change search page path from /dataset to /search and redirect /dataset to /search for backward compatibility</li>
+<li>Add big file upload support through file_resup module</li>
+<li>Add support to import big files using mysql statement load data infile</li>
+<li>Added Dkan Workflow module</li>
+<li>Upgrade Fieldable Panels Panes to 1.8</li>
+<li>Added hook_update to remove &#8216;Add Dataset&#8217; and &#8216;Datasets&#8217; links from main menu. The &#8216;Datasets&#8217; link is now added by the dkan_sitewide_search_db feature.</li>
+<li>Removed &#8216;taxonomy_menu_vocab_parent_dkan_topics&#8217; variable from info file to get the &#8216;DKAN Featured Topics&#8217; feature back into &#8216;Default&#8217; state.</li>
+<li>Upgrade of Panopoly Widgets, Panopoly Images and Fieldable Panels Panes.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-12-2015-04-01">
+<h2>7.x-1.12 2015-04-01<a class="headerlink" href="#x-1-12-2015-04-01" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>DKAN_Datastore:</dt>
+<dd><ul class="first last simple">
+<li>Add update function enable field_hidden module</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-11-2016-02-02">
+<h2>7.x-1.11 2016-02-02<a class="headerlink" href="#x-1-11-2016-02-02" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>DKAN Dataset:</dt>
+<dd><ul class="first last simple">
+<li>Fix some bugs breaking the resource links on dataset pages</li>
+<li>Re-arranged group links on group landing pages; membership links now in sidebar rather than tabs</li>
+<li>For long fields in the &#8220;additional info&#8221; custom metadata table on dataset pages, limit the row height for fields displaying extremely long text values</li>
+<li>Add a list of related visualizations (if using the [Visualization Entity](<a class="reference external" href="https://github.com/NuCivic/visualization_entity">https://github.com/NuCivic/visualization_entity</a>) module) to resource pages</li>
+<li>Move group-level permission export into new dkan_dataset_groups_perms module</li>
+<li>Fixed counting of datasets, broken when a dataset belongs to more than one group</li>
+<li>Hide &#8220;add resource&#8221; button on datasets from users who do not have permission to do so</li>
+<li>Numerous small improvements and bug fixes</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-11-2016-02-01">
+<h2>7.x-1.11 2016-02-01<a class="headerlink" href="#x-1-11-2016-02-01" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Re-designed dataset/search page. &#8220;Datasets&#8221; link on default menu bar now goes to a page that lets you browse and search all site content, not just datasets, but does filter by dataset. Search box will search all content by default. See note below.</li>
+<li>Add new dkan_permissions module, refactoring default roles and permissions and using new export method. See note below.</li>
+<li>Moved group permissions from old dkan_sitewide_roles_perms into new dkan_dataset_groups_perms</li>
+<li>Patch fontyourface module to make font changes happen instantly</li>
+<li>Fix adminrole implementation to avoid warning on install</li>
+<li>Fix (again) a bug that would make colorizer styles disappear after running &#8220;poor man&#8217;s cron&#8221;</li>
+<li>Add to resource node page a list of visualizations built with that resource</li>
+<li>Number of contrib module updates</li>
+<li>Change the view of groups to show 12 instead of 10 nodes per page, to fit with the layout of three per line</li>
+<li>Patch the FacetAPI module to avoid a cross-site scripting vulnerability</li>
+<li>Add integration with ProboCI (<a class="reference external" href="http://probo.ci/">http://probo.ci/</a>) for QA builds</li>
+<li>Fix a bug that showed an extra pager on the group page</li>
+<li>Major refactor of Behat tests, including introduction of new [DKAN extension](<a class="reference external" href="https://github.com/NuCivic/dkanextension">https://github.com/NuCivic/dkanextension</a>).</li>
+<li>Improve layout/ordering of blocks in the sidebar for dataset pages</li>
+<li>Improvement in the UX of user pictures, including Gravatar integration</li>
+<li>Numerous other small improvements and bugfixes</li>
+</ul>
+</div></blockquote>
+<p><strong>Notice: Avoiding PHP errors after upgrade</strong></p>
+<p>In some cases, changes to the codebase may cause PHP errors when the Drupal bootstrap process looks for a file that no longer exists. As always, backing up your db before upgrading is recommended. In addition, if you get to a state in which Drupal will not bootstrap successfully due to an issue with views_autocomplete_filters, try some combination of:</p>
+<p>$ drush sql-query &#8216;DELETE FROM registry WHERE filename LIKE &#8220;%views_autocomplete_filters_handler_filter_string.inc%&#8221;&#8217;;
+$ drush cc all
+$ drush rr</p>
+<p><strong>Search page redesign</strong></p>
+<p>This release of DKAN includes a redesigned search page, which is also the page used to browse datasets. This redesign required some changes to the included search indexes. Use the following drush commands to rebuild your search indexes, or go to admin/config/search/search_api/index/datasets and disable, re-enable and re-index the _datasets_ search index.</p>
+<p>$ drush search-api-disable datasets -y
+$ drush search-api-enable datasets -y
+$ drush sapi-r -y
+$ drush sapi-i -y</p>
+<p><strong>Permissions/roles upgrade</strong></p>
+<p>As mentioned above, this release includes a new module called DKAN Permissions (dkan_permissions), which is meant to replace the old DKAN Sitewide Roles and Permissions (dkan_sitewide_roles_perms). New installs of DKAN will enable this module and ignore the old one, while existing sites will see no change (but are recommended to upgrade).  See more information in the module&#8217;s README file.</p>
+<p>The command line method, including deleting the now-deprecated &#8220;storyteller&#8221; role, would look like this:</p>
+<p>$ drush dis dkan_sitewide_roles_perms -y
+$ drush rdel &#8216;storyteller&#8217;
+$ drush en dkan_permissions -y
+$ drush fra -y
+$ drush fr dkan_permissions -y</p>
+<p>Group-level permissions have been moved to DKAN Dataset Groups Permissions. To start using them, enable the new module, and revert it using Features. Do this via the UI or on the command line with Drush:</p>
+<p>$ drush en dkan_dataset_groups_perms -y
+$ drush fr dkan_dataset_groups_perms -y</p>
+<p>DKAN Dataset:
+- See the DKAN Dataset release notes for 7.x-1.11 for notes specific to the DKAN Dataset module.</p>
+</div>
+<div class="section" id="x-1-10-2015-11-10">
+<h2>7.x-1.10 2015-11-10<a class="headerlink" href="#x-1-10-2015-11-10" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>DKAN Distribution</dt>
+<dd><ul class="first last simple">
+<li>A number of improvements to our test infrastructure</li>
+<li>Improved user experience for user photos and Gravatar image fallback</li>
+<li>Improvements to views on group pages</li>
+<li>Enabled and improved UX of tools for adding existing visualizations directly into panels layouts</li>
+<li>Fixed an extremely annoying bug in the Colorizer module that blew away colorizer CSS every time Drupal cron ran (sites using external/system cron were unaffected)</li>
+<li>Added better HTTPS by loading certain external images over HTTPS</li>
+<li>Upgraded to Drupal version 7.x-1.41</li>
+<li>Added a CONTRIBUTING.md file to provide community contribution guidelines for DKAN project.</li>
+</ul>
+</dd>
+<dt>DKAN Dataset Module</dt>
+<dd><ul class="first last simple">
+<li>NOTE: 7.x-1.10 Was re-released on 2015-11-18 to address bugs in the teaser preview links.</li>
+<li>Various improvements to dataset teaser displays.</li>
+<li>Support for external previews (opening catalogued resources instantly in third-party visualization services, * including ArcGIS and CartoDB)</li>
+<li>Support for Flaticon at module level, so vector icons work on any theme</li>
+<li>Minor improvements and bugfixes</li>
+</ul>
+</dd>
+<dt>DKAN Datastore</dt>
+<dd><ul class="first last simple">
+<li>Upgrade Feeds module to latest dev version</li>
+</ul>
+</dd>
+<dt>NuBoot Radix Theme</dt>
+<dd><ul class="first last simple">
+<li>Style improvements for &#8220;open with&#8221; button</li>
+<li>Fix default logo path when svg not available</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-9-2015-09-17">
+<h2>7.x-1.9 2015-09-17<a class="headerlink" href="#x-1-9-2015-09-17" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added &#8220;Data Dashboards&#8221; and &#8220;Data Stories&#8221; content types with customizable layouts</li>
+<li>Added Panopoly Widgets for use in Dashboards, Stories, the front page and panel pages</li>
+<li>Added new custom DKAN widgets for use on panel pages</li>
+<li>The Visualization Entity module, along with the additional Charts bundle, are now included in DKAN core</li>
+<li>Added a &#8220;command center&#8221; to the user&#8217;s own profile page to more easily find common functions</li>
+<li>&#64;font-your-face module added w/configuration for easier font admin</li>
+<li>Multiple security updates and other contrib module and theme updates.</li>
+<li>Drupal now on version 7.39.</li>
+<li>Many bug fixes and code cleanups</li>
+<li>See release notes for nuboot_radix theme and individual DKAN modules for additional release notes</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>DKAN Datastore:</dt>
+<dd><ul class="first last simple">
+<li>Better UX/behavior for the &#8220;add to datastore&#8221; button: <a class="reference external" href="https://github.com/NuCivic/dkan_datastore/pull/39">https://github.com/NuCivic/dkan_datastore/pull/39</a></li>
+<li>Small bugfixes and improvements</li>
+</ul>
+</dd>
+<dt>DKAN Dataset:</dt>
+<dd><ul class="first last simple">
+<li>Fixed issues around the group/publisher field in search indexes and facets</li>
+<li>When multiple resources are available for a dataset, new option to download all as zip file</li>
+<li>Improvements for resource display in dataset pages and teasers</li>
+<li>New hooks to allow additional license options <a class="reference external" href="https://github.com/NuCivic/dkan/issues/447">https://github.com/NuCivic/dkan/issues/447</a></li>
+<li>Numerous small improvements and bugfixes</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Search API Database upgrade issue</strong></p>
+<p>This release updates the Search API DB module, which, if you are using the database backend, may break
+your search indexes, resulting in either a) nothing, or b) all nodes regardless of type on your search/datasets
+pages.</p>
+<p>To fix, follow these steps after updating your database:</p>
+<ol class="arabic simple">
+<li>Go to /admin/config/search/search_api/index/datasets/edit to edit the database node index</li>
+<li>Set the Server to &#8220;&lt; No Server &gt;&#8221; and Save. Your index will now show as &#8220;disabled.&#8221;</li>
+<li>Edit it again (by clicking &#8220;Edit&#8221; next to &#8220;Database Node Index&#8221;) and set the Server back to &#8220;Database Server&#8221; and Save.</li>
+<li>Click the &#8220;enable&#8221; link while viewing the resulting page, or edit the index again and check the &#8220;Enabled&#8221; box.</li>
+<li>Once the index is enabled, you should see &#8220;0/[total] Indexed&#8221; on the index page. Click &#8220;Index Now&#8221; at the bottom of the page to re-index all your datasets.</li>
+<li>Repeat for any other indexes you have running on a database server.</li>
+</ol>
+<p>This issue has been identified and documented for other Drupal distributions using Search API. See release notes for
+the Panopoly (<a class="reference external" href="https://www.drupal.org/node/2425263">https://www.drupal.org/node/2425263</a>) and OpenAtrium (<a class="reference external" href="https://www.drupal.org/node/2443025">https://www.drupal.org/node/2443025</a>)
+distros on Drupal.org.</p>
+</div>
+<div class="section" id="x-1-8-2015-04-02">
+<h2>7.x-1.8  2015-04-02<a class="headerlink" href="#x-1-8-2015-04-02" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Drupal core update to 7.36</li>
+<li>Some tweaks to display properly drupal admin pages using nuboot_radix</li>
+<li>Removed unnecessary drupal warning messages (colorizer, updates, etc)</li>
+<li>Tweaks to behat tests</li>
+<li>Security updates for contrib modules</li>
+<li>DKAN_Datastore: Adding CRUD functions to Datastore.inc class</li>
+<li>DKAN_Datastore: Adding drush interface to CRUD functions in order to create instances from the cli</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>DKAN Dataset:</dt>
+<dd><ul class="first last simple">
+<li>Several recline.js tweaks</li>
+<li>Updated open_data_schema_map to include module that allows to hook your own custom output formatters (xml example included)</li>
+<li>Security updates for contrib modules</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-7-2015-02-20">
+<h2>7.x-1.7  2015-02-20<a class="headerlink" href="#x-1-7-2015-02-20" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Adds Panels to DKAN for Drag and Drop layouts: <a class="reference external" href="http://docs.getdkan.com/dkan-documentation/dkan-users-guide/customize-dkan-pages-layouts-and-components-using-panels">http://docs.getdkan.com/dkan-documentation/dkan-users-guide/customize-dkan-pages-layouts-and-components-using-panels</a></li>
+<li>Adds Open Data Schema to DKAN <a class="reference external" href="https://github.com/NuCivic/open_data_schema_map#open-data-schema-map">https://github.com/NuCivic/open_data_schema_map#open-data-schema-map</a></li>
+<li>Adds &#8216;saved states&#8217; to Recline data preview</li>
+<li>DKAN_Datastore: Remove schema patch</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>DKAN Dataset:</dt>
+<dd><ul class="first last simple">
+<li>Adds Project Open Data v1.1 schema through open_data_schema_map update</li>
+<li>Adds dkan data.json v1.1 complaint implementation through open_data_schema_map_dkan update</li>
+<li>Adds Panels implementation for dkan_dataset_groups: <a class="reference external" href="http://docs.getdkan.com/dkan-documentation/dkan-users-guide/customize-dkan-pages-layouts-and-components-using-panels">http://docs.getdkan.com/dkan-documentation/dkan-users-guide/customize-dkan-pages-layouts-and-components-using-panels</a></li>
+<li>Updates to dkan_dataset stylesheet to make them radix compatible</li>
+<li>Security updates for several modules</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-6">
+<h2>7.x-1.6<a class="headerlink" href="#x-1-6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>core update to 7.34</li>
+<li>fix issues with javascript in behat tests</li>
+<li>freezing behat drupal extension to 1.0.2</li>
+<li>dkan_sitewide modules now report to github</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>DKAN_Datastore:</dt>
+<dd><ul class="first last simple">
+<li>Fix services module reference at dkan_datastore.make file</li>
+</ul>
+</dd>
+<dt>DKAN Dataset:</dt>
+<dd><ul class="first last simple">
+<li>Creating taxonomies during setup test</li>
+<li>Updating ref_field patch</li>
+<li>Replacing dkan_dataset_api with open_data_schema_map</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-5-2014-10-15">
+<h2>7.x-1.5 2014-10-15<a class="headerlink" href="#x-1-5-2014-10-15" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Drupal core security update. Upgrades to 7.32</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-4-2014-10-10">
+<h2>7.x-1.4  2014-10-10<a class="headerlink" href="#x-1-4-2014-10-10" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Replaced tid hardcoding during profile install with proper taxonomy_vocabulary_machine_name_load</li>
+<li>Removed duplicates in dkan.make already present in dkan_dataset.make</li>
+<li>Footer branding updated</li>
+<li>Editable dkan blocks</li>
+<li>Sort on search</li>
+<li>New rebuild script to keep dkan updated on custom installs</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>DKAN_Datastore:</dt>
+<dd><ul class="first last simple">
+<li>Many warnings fixed with proper isset calls</li>
+<li>Added dkan_datastore_api_count implementation</li>
+<li>Optimisations on GET parameters processing</li>
+</ul>
+</dd>
+<dt>DKAN Dataset:</dt>
+<dd><ul class="first last simple">
+<li>Many warnings fixed with proper isset calls</li>
+<li>Changes in make file (fixed versions on some components)</li>
+<li>Additional Info block on dataset page</li>
+<li>Added docx as allowed format for field_upload</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-3">
+<h2>7.x-1.3<a class="headerlink" href="#x-1-3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Issue #192 drupal security update</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-2">
+<h2>7.x-1.2<a class="headerlink" href="#x-1-2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Issue #184 drupal security update</li>
+<li>Updating makefile back to 7.x-1.x state</li>
+<li><ul class="first">
+<li>1.1 Release commit + changing git urls with https urls in order to travis to not fail during make</li>
+</ul>
+</li>
+<li>Changing git protocol to https for dkan_dataset, dkan_datastore and nuboot in order for travis build to success</li>
+<li>Issue #166 updating nuboot for iframe link theme</li>
+<li>Update dataset.inc fixed #150</li>
+<li>Update README.md</li>
+<li>Updating nuams references to NuCivic</li>
+<li>Updating nuams references to NuCivic</li>
+<li>Updating nuams references to Nucivic</li>
+<li>Updating nuams references to NuCivic</li>
+<li>Updating nuams references to NuCivic</li>
+<li>Updating drupal-org.make to point to Nucivic</li>
+<li>Updating drupal-org-dev.make to point to NuCivic</li>
+<li>Moving to using URLs for make file instead of copying locally</li>
+<li>Fixes issue #112: &#8220;downloald&#8221; typo in drupal-org.make</li>
+<li>Changed &#8216;The goal of the project combine...&#8217; to &#8216;The goal of the project is to combine...&#8217;</li>
+<li>Update .travis.yml</li>
+<li>Adding information about google group</li>
+<li>Adding key to drupal core to play nice with buildmanager</li>
+<li>adding multi channel notifications for dkan</li>
+<li>adding slack integration for travis</li>
+<li>Update to make files</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-1-2013-06-27">
+<h2>7.x-1.1 2013-06-27<a class="headerlink" href="#x-1-1-2013-06-27" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Moved dkan development to Nucivic&#8217;s github: <a class="reference external" href="https://github.com/NuCivic/dkan">https://github.com/NuCivic/dkan</a></li>
+<li>Grabbing dkan_dataset.make and dkan_datastore.make fiels from github cdn</li>
+<li>Several bugs fixed.</li>
+<li>Moving to using URLs for make file instead of copying locally #160</li>
+<li>Issue nuams/dkan#112: &#8220;downloald&#8221; typo in drupal-org.make #159</li>
+<li>Fixing #151: Admin role defaults to &#8220;Editor&#8221; #158</li>
+<li>Fix typo on About page #156</li>
+<li>Using hook_post_features_revert() for setting user_admin_role. #145</li>
+<li>Issue nuams/dkan#138 update recline in dkan_dataset.make to fix negative lat/lon #135</li>
+<li>Update to make files #131</li>
+<li>POD changes #128</li>
+<li>Issue #108 Add default email address for sample content #126</li>
+<li>Fix license block #123</li>
+<li>Issue #111 Fix facetapi_pretty_paths makefile definition #97</li>
+<li>Update drupal-org.make #84</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>DKAN_Datastore:</dt>
+<dd><ul class="first last simple">
+<li>Moved dkan_datastore development to NuCivic:
+<a class="reference external" href="https://github.com/NuCivic/dkan_datastore">https://github.com/NuCivic/dkan_datastore</a></li>
+<li>DKAN_Datastore: Several bugs fixed.</li>
+</ul>
+</dd>
+<dt>DKAN Dataset:</dt>
+<dd><ul class="first last simple">
+<li>Change references to NuCivic organization on github</li>
+<li>Several bug fixes</li>
+<li>Some changes for Project Open Data compliance, including data.json self-reference</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="x-1-0">
+<h2>7.x-1.0<a class="headerlink" href="#x-1-0" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Moved dkan development to github: <a class="reference external" href="https://github.com/nuams/dkan">https://github.com/nuams/dkan</a></li>
+<li>Moved dkan_dataset development to github: <a class="reference external" href="https://github.com/nuams/dkan_dataset">https://github.com/nuams/dkan_dataset</a></li>
+<li>Moved dkan_datastore development to github: <a class="reference external" href="https://github.com/nuams/dkan_datastore">https://github.com/nuams/dkan_datastore</a></li>
+<li>Added BDD test suite for dkan: <a class="reference external" href="https://github.com/nuams/dkan/tree/7.x-1.x/test">https://github.com/nuams/dkan/tree/7.x-1.x/test</a></li>
+<li>Added WebTestCase test suite for dkan_dataset: <a class="reference external" href="https://github.com/nuams/dkan_dataset/tree/7.x-1.x/tests">https://github.com/nuams/dkan_dataset/tree/7.x-1.x/tests</a></li>
+<li>Added WebTestCase test suite for dkan_dataset_api: <a class="reference external" href="https://github.com/nuams/dkan_dataset/tree/7.x-1.x/modules/dkan_dataset_api/tests">https://github.com/nuams/dkan_dataset/tree/7.x-1.x/modules/dkan_dataset_api/tests</a></li>
+<li>Added WebTestCase test suite for dkan_datastore and dkan_datastore_api: <a class="reference external" href="https://github.com/nuams/dkan_datastore/tree/7.x-1.x/tests">https://github.com/nuams/dkan_datastore/tree/7.x-1.x/tests</a></li>
+<li>Travis + Github integration for all test suites on every commit</li>
+<li>Moved issues for all three modules exclusively to dkan&#8217;s github issues: <a class="reference external" href="https://github.com/nuams/dkan/issues/">https://github.com/nuams/dkan/issues/</a></li>
+<li>Completed CKAN API Read Compliance with the following API methods: package_list, package_show, site_read, package_revision_list, group_list, resource_show, group_package_show and revision_list</li>
+<li>Added nuboot theme (<a class="reference external" href="http://drupal.org/project/nuboot">http://drupal.org/project/nuboot</a>) as default dkan theme</li>
+<li>Completed 508 compliance on dkan default theme</li>
+<li>Several bugs fixed.</li>
+<li>DKAN_Datastore: Moved dkan_datastore development to github:</li>
+</ul>
+<blockquote>
+<div><a class="reference external" href="https://github.com/nuams/dkan_datastore">https://github.com/nuams/dkan_datastore</a></div></blockquote>
+<ul class="simple">
+<li>DKAN_Datastore: Added WebTestCase test suite for dkan_datastore and dkan_datastore_api:
+<a class="reference external" href="https://github.com/nuams/dkan_datastore/tree/7.x-1.x/tests">https://github.com/nuams/dkan_datastore/tree/7.x-1.x/tests</a></li>
+<li>DKAN_Datastore: Travis + Github integration for all test suites on every commit</li>
+<li>DKAN_Datastore: Several bugs fixed.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-1-0-beta">
+<h2>7.x-1.0-beta<a class="headerlink" href="#x-1-0-beta" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>First tagged release. Further tags will include a changelog.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="roadmap.html" class="btn btn-neutral float-right" title="Roadmap" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="notes/1.8.html" class="btn btn-neutral" title="DKAN 1.8 Release Notes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

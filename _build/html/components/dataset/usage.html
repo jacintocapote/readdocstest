@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usage &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="DKAN Dataset Module and Sub-Modules" href="index.html"/>
+        <link rel="next" title="Advanced Metadata Features" href="datasetfeatures.html"/>
+        <link rel="prev" title="DKAN Dataset Module and Sub-Modules" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Major Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Datasets</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-datasets-and-resources">Creating Datasets and Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datasetfeatures.html">Advanced Metadata Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="previews.html">Dataset Preview Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="groups.html">Groups in DKAN</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../datastore/index.html">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Major Components</a> &raquo;</li>
+      
+          <li><a href="index.html">DKAN Dataset Module and Sub-Modules</a> &raquo;</li>
+      
+    <li>Usage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/components/dataset/usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creating-datasets-and-resources">
+<h2>Creating Datasets and Resources<a class="headerlink" href="#creating-datasets-and-resources" title="Permalink to this headline">¶</a></h2>
+<p>DKAN’s data publishing model is based on the concept of <a class="reference internal" href="../../introduction/catalog-basics.html#datasets"><span class="std std-ref">datasets</span></a> and <a class="reference internal" href="../../introduction/catalog-basics.html#resources"><span class="std std-ref">resources</span></a>.  A dataset is a container for one or more resources; a resource is the actual “data” being published, such as a CSV table, a GeoJSON data file, or a TIFF aerial image.</p>
+<p>The dataset and resource content types in DKAN are provided by the <a class="reference external" href="https://github.com/NuCivic/dkan/tree/7.x-1.x/modules/dkan/dkan_dataset">DKAN Dataset module</a>.</p>
+<p>In our example, we’ll be adding a dataset with Wisconsin polling places to a DKAN site. The data may look familiar; it&#8217;s one of the sample datasets provided with DKAN upon installation.</p>
+<div class="section" id="step-1-create-the-dataset">
+<h3>Step 1: Create the Dataset<a class="headerlink" href="#step-1-create-the-dataset" title="Permalink to this headline">¶</a></h3>
+<p>By default, only authenticated (“logged-in”) users can add new Datasets and Resources to a DKAN website.The default DKAN user permissions allows Site managers, Editors, and Content Creators access to the administration menu. From here a user may navigate to the Content » Add Content » Dataset link to access the “Create Dataset” form.</p>
+<p>The Dataset is the container for the actual data resource files and contains basic information about the data, such as title, description, category tags, and license.  Once we’ve entered information about the data, we can click the “Next: Add data” button to begin adding data.</p>
+</div>
+<div class="section" id="step-2-add-one-or-more-resources-to-the-dataset">
+<h3>Step 2: Add one or more Resources to the Dataset<a class="headerlink" href="#step-2-add-one-or-more-resources-to-the-dataset" title="Permalink to this headline">¶</a></h3>
+<p>After creating a dataset, we’re prompted to add one or more data resources to it.  There are three types of Resources that can be added to a Dataset, depending on the type and location of the Resource:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Link to a file:</th><td class="field-body">this option allows publishers to create a link to a data file published on another Internet website.  Although the file itself will remain on the other site, the data within the file can be imported into your DKAN site’s Datastore for preview and analysis by your users.  See The DKAN Datastore for more information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Link to an API:</th><td class="field-body">some data resources aren’t standalone files but queryable online databases; the interface to these databases is known as an API.  Adding links to these types of online database interfaces to your DKAN data catalog can be very useful for developers interested in working with your data.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Upload a file:</th><td class="field-body">this option allows publishers to upload data files to the DKAN site.  As in the “link to a file” option, the data within the file will be imported into your DKAN site’s Datastore for preview and analysis by your users.  See The DKAN Datastore for more information.</td>
+</tr>
+</tbody>
+</table>
+<p>To continue with our Wisconsin Polling Places example, we’ll add one resource file to the Dataset we created in Step 1.  Our resource file is a CSV, that is, comma-separated values format; this is a popular file format for exchanging tabular data.  Let’s explore the example resource shown here and the various fields within:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Resource / Choose File:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">upload a file from your local hard drive.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Resource / Recline Views:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first">DKAN’s “Data Preview” feature allows visitors to preview published data in three views:</p>
+<ul class="simple">
+<li><strong>Map</strong> - data with latitude and longitude columns or GeoJSON files can be previewed in a map interface</li>
+<li><strong>Graph</strong> - tabular (spreadsheet) data can be graphed by users, letting them create their own meaningful visualizations</li>
+<li><strong>Grid</strong> - by default, tabular data is presented in a spreadsheet view, with filter, sort, and search capabilities</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Title:</th><td class="field-body"><p class="first">this is the title of the individual data file, not the parent dataset container.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Description:</th><td class="field-body"><p class="first">a rich-text editor field is provided so publishers can offer detailed and useful descriptions</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Format:</th><td class="field-body"><p class="first">entering the file format here will allow users the ability to search for data by specific format</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Dataset:</th><td class="field-body"><p class="first last">this is the parent dataset container; this field should already be populated if you’re adding a Resource subsequent to adding a Dataset</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>At the bottom of the <em>Add Resource</em> page, we can choose:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Save:</th><td class="field-body">Save progress on this resource and immediately return to it for further editing</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Save and add another:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Save this resource and add another resource to the same dataset</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Next: Additional Info:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Save this resource and move to the third stage in adding a complete dataset, entering optional metadata about the dataset</td>
+</tr>
+</tbody>
+</table>
+<p>In our example, we’re only adding a single resource, so we’ll click “Next: Additional Info” to move onto Step 3. If we had more than one resource to add to this dataset, we would choose the “Save and add another” option. Simply clicking &#8220;Save&#8221; would end the Dataset creation process and save the dataset, for now, with no additional metadata.</p>
+</div>
+<div class="section" id="step-3-adding-metadata-to-a-dataset">
+<h3>Step 3: Adding Metadata to a Dataset<a class="headerlink" href="#step-3-adding-metadata-to-a-dataset" title="Permalink to this headline">¶</a></h3>
+<p>We now come to a third form which allows us to add additional metadata to the dataset. All these fields are optional, but provide valuable information about your dataset to both human visitors to the website and machines discovering your dataset through one of <a class="reference internal" href="../../apis/index.html"><span class="doc">DKAN&#8217;s public APIs</span></a>.</p>
+<p>Let&#8217;s take a closer look at some of the metadata fields available on this form:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">The Dataset&#8217;s author, in plain text.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Spatial / Geographical Coverage Area:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Lets us define what region the data applies to. In this case, the US State of Wisconsin. You can use the map widget to draw an outline around the state borders, or, click the &#8220;Add data manually&#8221; button if you already have a <a class="reference external" href="http://geojson.org/">GeoJSON</a> string you can paste in.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Spatial / Geographical Coverage Location:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The region the data applies to, written in plain text. This can be used instead of or in addition to the <strong>Coverage Area</strong> field.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Frequency:</th><td class="field-body">How often is this dataset updated? We might expect our list of polling places to be updated every year, so we could select &#8220;annually.&#8221; However, often we don&#8217;t expect the data to be updated (even in this case, perhaps we plan to post the next version of the data as a _separate_ dataset), in which case we can leave this blank.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Temporal Coverage:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Like Geographic Coverage, this field lets us give some context to the data, but now for the relevant time period. Here we could enter the year or years for which our polling places data is accurate.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Granularity:</th><td class="field-body">This is a somewhat open-ended metadata field that lets you describe the granularity or accuracy of your data. For instance: &#8220;Year&#8221;. Note, this field is depreciated in DCAT and Project Open Data, and may be removed from DKAN.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Data Dictionary:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Another open-ended field, this is a space for almost any kind of explanation for understanding the terminology/units/column names/etc. in our dataset. Ideally, this will be a simple URL to a Data Dictionary resource elsewhere on the web.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Additional Info:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Lets us arbitrarily define other metadata fields. See <a class="reference internal" href="datasetfeatures.html#custom-metadata"><span class="std std-ref">Additional Info field</span></a> for more information.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Resources:</th><td class="field-body">This field is a reference to the resources you have already added.</td>
+</tr>
+</tbody>
+</table>
+<p>After you click &#8220;Save&#8221;, the metadata we enter will appear on the page for this Dataset:</p>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-or-removing-allowed-resource-file-types">
+<h3>Adding or Removing Allowed Resource File Types<a class="headerlink" href="#adding-or-removing-allowed-resource-file-types" title="Permalink to this headline">¶</a></h3>
+<p>Any type of file can be uploaded to Resources (though only CSV files can be imported to the <a class="reference internal" href="../datastore/index.html"><span class="doc">Datastore</span></a>.</p>
+<p>File types are controlled at &#8220;/admin/structure/types/manage/resource/fields/field_upload&#8221;</p>
+<p>To add or remove file types navigate as an &#8216;administrator&#8217; and enter extensions into the &#8220;Allowed file extensions&#8221; field.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="datasetfeatures.html" class="btn btn-neutral float-right" title="Advanced Metadata Features" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="DKAN Dataset Module and Sub-Modules" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

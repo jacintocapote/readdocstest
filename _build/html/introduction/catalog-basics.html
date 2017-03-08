@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Catalog Basics &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="DKAN Overview" href="index.html"/>
+        <link rel="next" title="Comparing DKAN and CKAN" href="dkan-ckan.html"/>
+        <link rel="prev" title="About this documentation" href="about.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">DKAN Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="about.html">About this documentation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Catalog Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#catalog">Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dataset">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resource">Resource</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datasets-and-resources-within-dkan-and-ckan">Datasets and Resources within DKAN and CKAN</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dkan-ckan.html">Comparing DKAN and CKAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-dkan.html">Get DKAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintaining.html">Updating and Maintaining DKAN</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">DKAN Overview</a> &raquo;</li>
+      
+    <li>Catalog Basics</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/introduction/catalog-basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="catalog-basics">
+<h1>Catalog Basics<a class="headerlink" href="#catalog-basics" title="Permalink to this headline">¶</a></h1>
+<p>Open data catalogs - or portals - are simple in purpose but may appear complicated at first glance. A homepage will often feature a slideshow, list of blog posts, or a visualization using data from the underlying catalog; these homepage assets can easily obscure the underlying structure of the data.</p>
+<p>Understanding the structure of an open data catalog can help users, developers, and stakeholders make the best use of open data tools.</p>
+<div class="section" id="catalog">
+<h2>Catalog<a class="headerlink" href="#catalog" title="Permalink to this headline">¶</a></h2>
+<p>The catalog is a wrapper containing information, sorted into datasets. A catalog should provide the answers to basic questions such as: &#8220;Who is providing this data?&#8221; and &#8220;Under what conditions?&#8221;</p>
+<p><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/">DCAT</a> - an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web -  recommends providing the following fields: catalog record, dataset, description, homepage, language, license, publisher, release date, rights, spatial, themes, title and update date.</p>
+</div>
+<div class="section" id="dataset">
+<span id="datasets"></span><h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p>A dataset contains individual resources as well as metadata. Metadata is the &#8220;Who, What, When, Where, Why&#8221; of each dataset. There are a number of specifications for dataset metadata and DKAN currently complies with the DCAT and <a class="reference external" href="https://project-open-data.cio.gov/">Project Open Data</a> schemas.</p>
+<p>It is possible to add new fields to DKAN to conform to additional specifications or custom requirements.</p>
+</div>
+<div class="section" id="resource">
+<span id="resources"></span><h2>Resource<a class="headerlink" href="#resource" title="Permalink to this headline">¶</a></h2>
+<p>Resources are the actual files, APIs or links that are being shared. Resource types include csv, html, xls, json, xlsx, doc, docx, rdf, txt, jpg, png, gif, tiff, pdf, odf, ods, odt, tsv, geojson and xml files. If the resource is an API, it can be used as a live source of information for building a site or application.</p>
+</div>
+<div class="section" id="datasets-and-resources-within-dkan-and-ckan">
+<h2>Datasets and Resources within DKAN and CKAN<a class="headerlink" href="#datasets-and-resources-within-dkan-and-ckan" title="Permalink to this headline">¶</a></h2>
+<p>The following images display how datasets and resources are structured within DKAN and CKAN. Screenshots are from <a class="reference external" href="http://data.gov">Data.gov</a> which is powered by CKAN. DKAN follows CKAN conventions where possible.</p>
+<div class="figure">
+<img alt="../_images/DatasetResourceDiagram2.png" src="../_images/DatasetResourceDiagram2.png" />
+</div>
+<div class="figure">
+<img alt="../_images/datasets-resources.png" src="../_images/datasets-resources.png" />
+</div>
+<div class="figure">
+<img alt="Metadata" src="../_images/metadata.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dkan-ckan.html" class="btn btn-neutral float-right" title="Comparing DKAN and CKAN" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="about.html" class="btn btn-neutral" title="About this documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

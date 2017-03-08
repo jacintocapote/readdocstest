@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Visualization Entity &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>The Visualization Entity</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/scratch/viz-entity.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-visualization-entity">
+<span id="the-visualization-entity"></span><h1>The Visualization Entity<a class="headerlink" href="#the-visualization-entity" title="Permalink to this headline">¶</a></h1>
+<p>You may also refer to the <a class="reference external" href="http://visualization-entity.readthedocs.io/en/latest/">Visualization Entity specific ReadTheDocs site.</a></p>
+<p>The <a href="https://github.com/NuCivic/visualization_entity">Visualization Entity</a> module provides a suite of options for creating visualizations in DKAN that used natively or embedded in other sites.</p>
+<p>This module is under development. Documentation will be updated as the module is updated.</p>
+<div class="section" id="the-visualization-entity-module-provides-the-following-types-of-visualizations">
+<span id="the-visualization-entity-module-provides-the-following-types-of-visualizations"></span><h2>The Visualization Entity module provides the following types of visualizations:<a class="headerlink" href="#the-visualization-entity-module-provides-the-following-types-of-visualizations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Charts and Graphs</li>
+<li><a class="reference external" href="https://github.com/NuCivic/visualization_entity_charts">More information</a> (Under development)</li>
+<li>Choropleth maps</li>
+<li><a class="reference external" href="http://visualization-entity.readthedocs.org/en/latest/create-a-choropleth-visualization/">More information</a></li>
+<li>I-Frame embedded content (Coming soon)</li>
+<li>GeoJSON based maps (Coming soon)</li>
+<li><a class="reference external" href="http://visualization-entity.readthedocs.org/en/latest/create-a-geojson-visualization/">More information</a></li>
+</ul>
+</div>
+<div class="section" id="how-to-create-a-chart">
+<span id="how-to-create-a-chart"></span><h2>How to create a chart:<a class="headerlink" href="#how-to-create-a-chart" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>Use the administration menu at the top to navigate to <em>Structure » Entity types » Visualization » Chart » Add Chart</em></li>
+</ol>
+<p>![Navigating to Structure -&gt; Entity Types -&gt; Visualizations -&gt; Charts][Navigating to Structure -&gt; Entity Types -&gt; Visualizations -&gt; Charts]</p>
+<ol class="simple">
+<li>Enter values for the title and description tags.</li>
+<li>There are three options for uploading a file to use with Charts:</li>
+</ol>
+<p><em>OPTION 1:</em> Using the Upload box, you can upload a file from your hard drive. Remember to click the Upload button after selecting the file.</p>
+<p>![Uploading a file to Charts][Uploading a file to Charts]</p>
+<p><em>OPTION 2:</em> Begin typing the name of the resource the chart should be based on in the ‘Existing resource’ autocomplete field. Select the resource you want to use from the list. The ‘Source’ field at the bottom of the page should populate with a link to the file associated with the resource.</p>
+<p>![Resource name autocomplete][Resource name autocomplete]</p>
+<p><em>OPTION 3:</em> Paste a link to the file in the box titled Source and choose the file type.</p>
+<p>![Choosing the file source][Choosing the file source]</p>
+<ol class="simple">
+<li>Click the ‘Next’ button. If the file or URL loaded properly, you will be able to fill out two fields beneath the title &#8220;Define Variables.&#8221;</li>
+</ol>
+<p>The first one, <strong>Series</strong>, determines the <strong>Y axis</strong>, and the second field, <strong>X-Field</strong>, determines the X axis. In these fields, you may choose the columns that you are going to display. Only the Series field can contain multiple values.</p>
+<p>If the column names are not displayed properly, check again that your source URL was correct.</p>
+<ol class="simple">
+<li>Click the Next button.</li>
+<li>Select the type of chart you want to create and click Next once more. At this point, you will see a preview of your chart.</li>
+</ol>
+<p>![Selecting your chart type][Selecting your chart type]</p>
+<ol class="simple">
+<li>If the data is loading but the chart is not displaying it properly, you can modify it by using the options provided in the right column.</li>
+</ol>
+<p><strong>X Format</strong> allows you to provide X and Y axis labels, rotate X axis labels so that they fit (45 degrees, -45 degrees, 90 degrees, etc.), change chart colors from default, and modify chart and label margins.</p>
+<p>After editing and customizing the chart, click <strong>Finish.</strong></p>
+</div>
+<div class="section" id="how-to-create-a-map">
+<span id="how-to-create-a-map"></span><h2>How to create a map:<a class="headerlink" href="#how-to-create-a-map" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>Navigate to the dataset that will be used for the map.</li>
+<li>Click <strong>Explore Data</strong>.</li>
+<li>Right-click (ctrl-click on Mac) the <strong>Download</strong> button to copy the URL of the resource file.</li>
+<li>Now use the administration menu at the top to navigate to <em>Structure » Entity types » Visualization » Map » Add Map</em></li>
+<li>Enter values for the title, description, categories and tags fields.</li>
+<li>At the bottom of the form, paste the resource link into the Load Data &#8220;Source&#8221; field.</li>
+<li>Click Next.</li>
+<li>If the URL was loaded properly you will be able to select the columns where your geographic data is. It might be in two columns (Latitude and Longitude fields), or in a single field (Geo Point field). If the column names are not displayed properly, check again that your source URL was correct.</li>
+<li>Click the ‘Finish’ button</li>
+</ol>
+<p><strong>Enable Clustering (Optional):</strong> Plotting thousands of markers on a map can quickly lead to a degraded user experience. Too many markers on the map can cause both visual overload and sluggish interaction with the map. To overcome poor performance, you can simplify the information displayed on the map by enabling the clustering feature. You can also choose to display the title or not by checking/unchecking the Show Title checkbox.</p>
+<p>##How to create a table:</p>
+<p>Tables allow you to display a preview of the data as it would be seen when opening it in Microsoft Excel or a similar program.</p>
+<ol class="simple">
+<li>Use the administration menu at the top to navigate to <em>Structure » Entity types » Visualization » Table » Add Table</em></li>
+<li>Enter values for the title, description, categories and tags fields.</li>
+<li>Start typing the name of the data resource you would like to use for your table into the ‘Resource’ field, a list will appear based on your entry, select the resource from the list.</li>
+<li>Check the ‘Resize columns to fit data’ checkbox</li>
+<li>Click Save.</li>
+</ol>
+<!-- Images -->
+[Navigating to Structure -> Entity Types -> Visualizations -> Charts]: http://docs.getdkan.com/sites/default/files/Screen%20Shot%202016-01-21%20at%204.50.31%20PM.png
+[Alt]: http://docs.getdkan.com/sites/default/files/Screen%20Shot%202016-01-21%20at%204.50.31%20PM.png
+[Uploading a file to Charts]: http://docs.getdkan.com/sites/default/files/Screen%20Shot%202016-01-21%20at%205.07.22%20PM_0.png
+[Resource name autocomplete]: http://docs.getdkan.com/sites/default/files/Screen%20Shot%202016-01-21%20at%205.37.49%20PM.png
+[Choosing the file source]: http://docs.getdkan.com/sites/default/files/Screen%20Shot%202016-01-21%20at%205.38.39%20PM.png
+[Selecting your chart type]: http://docs.getdkan.com/sites/default/files/Screen%20Shot%202016-01-21%20at%205.53.59%20PM.png</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

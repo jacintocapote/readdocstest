@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DKAN Datastore &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>DKAN Datastore</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/components/datastore.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dkan-datastore">
+<h1>DKAN Datastore<a class="headerlink" href="#dkan-datastore" title="Permalink to this headline">¶</a></h1>
+<p>DKAN features a Datastore for uploaded files.</p>
+<p>Any type of file can be uploaded to DKAN through the &#8220;Add Resources&#8221; form or through the API. CSV and XML files, however, can also parsed and inserted into unique tables in the DKAN database.</p>
+<div class="section" id="drupal-architecture">
+<h2>Drupal Architecture<a class="headerlink" href="#drupal-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The DKAN Datastore&#8217;s importer is a wrapper around the <a class="reference external" href="https://www.drupal.org/project/feeds">Feeds</a> module. The custom <a class="reference external" href="https://github.com/NuCivic/feeds_flatstore_processor">Feeds Flatstore Processor</a> and <a class="reference external" href="https://www.drupal.org/project/feeds_field_fetcher">Feeds Field Fetcher</a> plugins were created  the file uploaded to the resource form a feed item.</p>
+<p>The <a class="reference external" href="https://www.drupal.org/project/data">Data</a> module is used to manage datastore tables&#8217; schema.</p>
+<p>The Datastore API uses the <a class="reference external" href="https://www.drupal.org/project/services">Services</a> module to provide an endpoint, although nearly all the underlying functionality is overridden and provided directly by the <a class="reference external" href="https://www.drupal.org/project/services">DKAN Datastore API</a> module.</p>
+</div>
+<div class="section" id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<p>DKAN provides UI for managing the Datastore. Management activities include:</p>
+<ul class="simple">
+<li>Importing items</li>
+<li>Deleting items</li>
+<li>Editing the schema (see below)</li>
+<li>Edit Views integration</li>
+</ul>
+<p>Drush commands are also included, described below.</p>
+<p>If you have successfully created a dataset with resources, you now have data in DKAN which you can display and store in several ways. However, DKAN is still reading this data directly from the file or API you added as a resource.</p>
+<p>To get the fullest functionality possible out of your datasets, including a public API that can be used to develop 3rd party applications, you must complete the final step of adding your resources to DKAN&#8217;s own datastore. (At the moment, a DKAN datastore is simply a table in the main database.)</p>
+<p>If you are exploring a resource that is not yet in the datastore, you will see a message advising you of this. Click the &#8220;Manage Datastore&#8221; button at the top of the screen. On the &#8220;Manage Datastore&#8221; page, use the &#8220;Import&#8221; button at the bottom of the page to import the data from your file or API into DKAN&#8217;s local datastore.</p>
+<p>Notification to import resource to datastore:</p>
+<p>![Manage Datastore: Notification](<a class="reference external" href="http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.09%20PM.png">http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.09%20PM.png</a>)</p>
+<p>Importing the resource:</p>
+<blockquote>
+<div>![Manage Datastore: Import](<a class="reference external" href="http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.26%20PM.png">http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.26%20PM.png</a>)</div></blockquote>
+<p>Notification of a successful import:</p>
+<p>![Manage Datastore: Success](<a class="reference external" href="http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.53%20PM.png">http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.53%20PM.png</a>)</p>
+<p>Your data is now ready to use via the API! Click the &#8220;Data API&#8221; button at the top of the resource screen for specific instructions. DKAN datastores can also be created and updated from files using the following Drush commands:</p>
+<p>To create a datastore from a local file: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dsc</span> <span class="pre">[path-to-local-file]</span></code></p>
+<p>To update a datastore from a local file: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dsu</span> <span class="pre">[datastore-id]</span> <span class="pre">[path-to-local-file]</span></code></p>
+<p>To delete a datastore file (imported items will be deleted as well): <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dsfd</span> <span class="pre">(datastore-id)</span></code> To get the URL of the datastore file: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dsfuri</span> <span class="pre">[datastore-id]</span></code></p>
+<div class="section" id="processing-options">
+<h3>Processing Options<a class="headerlink" href="#processing-options" title="Permalink to this headline">¶</a></h3>
+<p>Files are parsed and inserted in batches. The user has the option of parsing them upon form submission. If the user chooses to parse the file manually they are able to see the progress of the processing through a batch operations screen similar to the one below.</p>
+<p>![Drupal batch operation](<a class="reference external" href="http://drupal.org/files/images/computed_field_tools_drupal7_batch.png">http://drupal.org/files/images/computed_field_tools_drupal7_batch.png</a>)</p>
+<p>Files that are not processed manually are processed in pieces during cron.</p>
+<div class="section" id="geocoder">
+<h4>Geocoder<a class="headerlink" href="#geocoder" title="Permalink to this headline">¶</a></h4>
+<p>DKAN&#8217;s native Datastore can use the Drupal <a class="reference external" href="https://www.drupal.org/project/geocoder">Geocoder</a> module to add latitude/longitude coordinates to resources that have plain-text address information. This means that datasets containing plain-text addresses can be viewed on a map using the <a href="#id2"><span class="problematic" id="id3">`Data Preview`_</span></a> or more easily used to build map-based data visualizations.</p>
+</div>
+</div>
+</div>
+<div class="section" id="using-the-fast-import-option">
+<h2>Using the Fast Import Option<a class="headerlink" href="#using-the-fast-import-option" title="Permalink to this headline">¶</a></h2>
+<p>DKAN Datastore&#8217;s &#8220;fast import&#8221; allows for importing huge CSV files into the datastore at a fraction of the time it would take using the regular import.</p>
+<p>When a CSV is imported using the regular import, this is what it happens under the hood:</p>
+<ol class="arabic simple">
+<li>PHP interpreter reads the file line-by-line from the disk</li>
+<li>Each time a line is parsed it sends a query to the database</li>
+<li>The database receives the query and parses it</li>
+<li>The database creates a query execution plan</li>
+<li>The database excecutes the plan (i.e., inserts a new row)</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Steps 3, 4 and 5 are executed for <em>each row</em> in the CSV.</p>
+</div>
+<p>The Datastore Fast Import was designed to remove as many steps as possible from the previous list. It performs the following steps:</p>
+<ol class="arabic simple">
+<li>PHP interpreter sends a LOAD DATA query to the database</li>
+</ol>
+<p>2. The database receive the query and parses it
+4. The database reads and imports the whole file in a table</p>
+<p>Only one query is executed, so the amount of time required to import a big dataset is drastically reduced. On a several-hundred-megabyte file, this could mean the difference between an import time of hours and about one minute.</p>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>A MySQL / MariaDB database</li>
+<li>MySQL database should support <cite>PDO::MYSQL_ATTR_LOCAL_INFILE</cite> and <cite>PDO::MYSQL_ATTR_USE_BUFFERED_QUERY</cite> flags.</li>
+<li>Cronjob or similar to execute periodic imports.</li>
+<li>Drush</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Because of the above requirements, which may not be available on all hosting environments, this module is <em>disabled</em> by default in DKAN.</p>
+</div>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Inside your settings.php add a <cite>pdo</cite> element to your database configuration. For example:</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="nv">$databases</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+  <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;drupal&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;drupal&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;123&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;172.17.0.11&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;driver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;pdo&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+     <span class="nx">PDO</span><span class="o">::</span><span class="na">MYSQL_ATTR_LOCAL_INFILE</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="nx">PDO</span><span class="o">::</span><span class="na">MYSQL_ATTR_USE_BUFFERED_QUERY</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Go to <strong>/admin/modules</strong>, turn on DKAN Datastore Fast Import and press <strong>Save configuration</strong>. Alternatively you can use drush to enable this module: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">en</span> <span class="pre">dkan_datastore_fast_import</span></code>.</li>
+<li>Make sure this message <strong>did not</strong> show up at the top of the page:</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Required PDO flags <span class="k">for</span> dkan_datastore_fast_import were not found. This module requires PDO::MYSQL_ATTR_LOCAL_INFILE and PDO::MYSQL_ATTR_USE_BUFFERED_QUERY
+</pre></div>
+</div>
+<ul class="simple">
+<li>Set up this command to run periodically using a cronjob or similar: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">queue-run</span> <span class="pre">dkan_datastore_queue</span></code></li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p>To configure how Fast Import behaves go to <strong>admin/dkan/datastore</strong>.</p>
+<p>There are 3 basic configurations that controls the <strong>Use fast import</strong> checkbox in the <strong>Manage Datastore</strong> page:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Use regular import as default:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><strong>Use Fast Import</strong> checkbox is uncheked by default on the resource&#8217;s datastore import form so files are imported using the normal dkan datastore import. However you can still enable fast import for any resource by clicking that checkbox.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Use fast import as default:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><strong>Use Fast Import</strong> checkbox is cheked by default so files are imported using DKAN Fast Import. Like the previous setting, you can uncheck <strong>Use Fast Import</strong> on the resource-specific datastore import form to use the normal import instead.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Use fast import for files with a weight over:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">From this setting you obtain a refined control about when <strong>Use Fast Import</strong> should be checked. This option reveals an additional setting: <strong>&#8220;File size threshold.&#8221;</strong> &#8220;Use Fast Import&#8221; will be checked on the datastore import form for all the files over this size threshold. A size expressed as a number of bytes with optional SI or IEC binary unit prefix (e.g. 2, 3K, 5MB, 10G, 6GiB, 8 bytes, 9mbytes)</td>
+</tr>
+</tbody>
+</table>
+<p>Either of the two &#8220;Use fast import&#8221; options will also reveal the following additional settings:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Load Data Statement:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Some hostings doesn&#8217;t support <code class="docutils literal"><span class="pre">LOAD</span> <span class="pre">DATA</span> <span class="pre">LOCAL</span> <span class="pre">INFILE</span></code>. If that&#8217;s your case you can switch to <code class="docutils literal"><span class="pre">LOAD</span> <span class="pre">DATA</span> <span class="pre">INFILE</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Queue Filesize Threshold:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">If a file is small enough, you can avoid waiting until the drush queue runs by configuring this threshold. Files with a size under this value won&#8217;t be queued and will rather imported during the request. The time to perform the import should fit into the php request timeout, or your import could be aborted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>To import a resource using Fast Import:</p>
+<ul class="simple">
+<li>Create a resource using a CSV file (<strong>node/add/resource</strong>) or edit an existing one.</li>
+<li>Click on <strong>Manage Datastore</strong></li>
+<li>Make sure <strong>No imported items.</strong> legend shows up.</li>
+<li>Check <strong>Use Fast Import</strong> checkbox</li>
+<li>Press <strong>import</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="datastore-api">
+<h2>Datastore API<a class="headerlink" href="#datastore-api" title="Permalink to this headline">¶</a></h2>
+<p>Once processed, Datastore information is available via the Datastore API. For more information, see the <a class="reference external" href="../apis/datastore-api.rst">Datastore API page</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

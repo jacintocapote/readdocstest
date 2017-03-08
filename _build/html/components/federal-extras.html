@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Federal Extras &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="Major Components" href="index.html"/>
+        <link rel="next" title="Search" href="search.html"/>
+        <link rel="prev" title="Fixtures and Default Content" href="fixtures.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Major Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dataset/index.html">Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastore/index.html">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Federal Extras</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#additional-fields">Additional Fields</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#updating-the-program-code-list">Updating the Program Code list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-bureau-code-list">The Bureau Code List</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme.html">Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Major Components</a> &raquo;</li>
+      
+    <li>Federal Extras</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/components/federal-extras.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="federal-extras">
+<span id="federal-extras"></span><h1>Federal Extras<a class="headerlink" href="#federal-extras" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://github.com/NuCivic/dkan/tree/7.x-1.x/modules/dkan/open_data_federal_extras">Open Data Federal Extras Module</a> module extends DKAN Dataset to include selected Project Open Data and other federal requirements. See the <a class="reference external" href="https://project-open-data.cio.gov/v1.1/schema/">Project Open Data Schema</a> for more information (this module essentially adds the fields marked &#8220;USG&#8221;). It includes a list of U.S. federal bureau and program codes, with a script to keep program codes up-to-date.</p>
+<div class="section" id="additional-fields">
+<span id="additional-fields"></span><h2>Additional Fields<a class="headerlink" href="#additional-fields" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Bureau Code</li>
+<li>Program Code</li>
+<li>Data Quality</li>
+<li>primary IT Investment UII</li>
+<li>System of Records</li>
+</ul>
+<p>Enabling the module will add these fields to your Dataset content type. Note that <em>disabling</em> the module will <em>not</em> remove them. To remove the fields completely (which will permanently delete all data in those fields), <em>uninstall</em> the module from the module administration screen or via <code class="docutils literal"><span class="pre">drush</span> <span class="pre">pm-uninstall</span></code>.</p>
+<div class="section" id="updating-the-program-code-list">
+<span id="updating-the-program-code-list"></span><h3>Updating the Program Code list<a class="headerlink" href="#updating-the-program-code-list" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li>Go to http://project-open-data.github.io/schema/#programCode</li>
+<li>Download &#8220;Federal Program Inventory&#8221;</li>
+<li>Export in csv to <code class="docutils literal"><span class="pre">fed_program_code_list</span></code></li>
+<li>cd &#8216;fed_program_code_list&#8217;</li>
+<li>Make sure filenames at beginning of <code class="docutils literal"><span class="pre">list_to_array.php</span></code> are correct.</li>
+<li>Run <code class="docutils literal"><span class="pre">php</span> <span class="pre">-r</span> <span class="pre">&quot;</span> <span class="pre">require</span> <span class="pre">'list_to_array.php';</span> <span class="pre">opfe_list_to_array_process();</span></code></li>
+</ol>
+</div>
+<div class="section" id="the-bureau-code-list">
+<span id="the-bureau-code-list"></span><h3>The Bureau Code List<a class="headerlink" href="#the-bureau-code-list" title="Permalink to this headline">¶</a></h3>
+<p>The Bureau Code list is built from a CSV downloaded from <a class="reference external" href="https://github.com/seanherron/OMB-Agency-Bureau-and-Treasury-Codes">seanherron/OMB-Agency-Bureau-and-Treasury-Codes</a>. This repository has not been updated recently and new sources for this data are currently being considered.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="search.html" class="btn btn-neutral float-right" title="Search" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fixtures.html" class="btn btn-neutral" title="Fixtures and Default Content" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

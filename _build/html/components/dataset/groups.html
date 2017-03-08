@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Groups in DKAN &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="DKAN Dataset Module and Sub-Modules" href="index.html"/>
+        <link rel="next" title="DKAN Datastore" href="../datastore/index.html"/>
+        <link rel="prev" title="Dataset Preview Features" href="previews.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Major Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Datasets</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datasetfeatures.html">Advanced Metadata Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="previews.html">Dataset Preview Features</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Groups in DKAN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-groups">How to use Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#managing-groups-and-members">Managing Groups and Members</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#more-on-group-membership">More on Group Membership</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../datastore/index.html">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Major Components</a> &raquo;</li>
+      
+          <li><a href="index.html">DKAN Dataset Module and Sub-Modules</a> &raquo;</li>
+      
+    <li>Groups in DKAN</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/components/dataset/groups.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="groups-in-dkan">
+<h1>Groups in DKAN<a class="headerlink" href="#groups-in-dkan" title="Permalink to this headline">¶</a></h1>
+<p><strong>Groups</strong> allow you to group together datasets under an organization (i.e. Parks and Recreation Department, Department of Education) or category (e.g. Transport Data, Health Data) in order to make it easier for users to browse datasets by theme.</p>
+<p>As a best practice, datasets and resources that are added to a Group should share a common publisher.</p>
+<p>Essentially, Groups are both a way to collect common Datasets and enable an additional workflow on DKAN. On the outward-facing side, site visitors are able to browse and search Datasets published by a specific Group, which is the common publisher of a number of Datasets.</p>
+<p>Behind the scenes, Groups add an additional set of roles and permissions that ensure quality and security when publishing data. Group roles and permissions ensure that Content Creators can add new data but only to their assigned Group. This is especially important for large sites that may have several working groups publishing data to the site. By adding users to the Group’s membership roster, you can create and manage a community based around the data within the group.</p>
+<div class="section" id="how-to-use-groups">
+<h2>How to use Groups<a class="headerlink" href="#how-to-use-groups" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-a-new-group">
+<h3>Adding a new Group<a class="headerlink" href="#adding-a-new-group" title="Permalink to this headline">¶</a></h3>
+<p>When adding a new Group, the form has fields for basic information about the Group itself that should tell site visitors what to expect from the Datasets in the Group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Title:</th><td class="field-body">Name your Group to reflect the agency or whoever the common data publisher is for the datasets that will belong to the Group.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Image:</th><td class="field-body">The image here acts like the logo for your Group. It appears on the overview Groups page as well as the individual page of the Group itself. It&#8217;s best to choose a square image to fit the dimensions of the thumbnail. Whether you choose an image, a logo, or an icon you can use any image that meets the size and file type requirements. As a Site Manager, you may want to add generic icons to the Groups you add if a current logo is unavailable.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">This text is the full description for your Group similar to an &#8220;About&#8221; page. The description includes details about the agency, its goals, and information about the data it publishes. While you want to include all the relevant information of the Group, the best descriptions are 1-2 paragraphs long and include a link to the agency&#8217;s main web page for more details.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Summary text:</th><td class="field-body">You can use the Summary to create unique text for your Group. This text appears as a snippet under the Group image on the Group overview page. If left blank the first portion of the body text will be used (about 100 words). Including a summary can be useful in adding more key search terms or using a different tone to intrigue site visitors to learn more.</td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img alt="../../_images/group.png" src="../../_images/group.png" />
+</div>
+</div>
+</div>
+<div class="section" id="managing-groups-and-members">
+<h2>Managing Groups and Members<a class="headerlink" href="#managing-groups-and-members" title="Permalink to this headline">¶</a></h2>
+<p>Once you&#8217;ve added a new Group, you can assign Datasets (and their Resources) to that Group. You can also manage the members of a Group, adding new members and giving certain members different roles. Members of a Group are bound by the permissions of their role and restricted to the content in their Group. As a Site Manager you have access to all Groups and are not limited by the permissions of the Group.</p>
+<div class="section" id="roles-and-permissions">
+<span id="group-roles-permissions"></span><h3>Roles and Permissions<a class="headerlink" href="#roles-and-permissions" title="Permalink to this headline">¶</a></h3>
+<p>With large sites there is often a need to have special permissions for a group of users to handle a specific set of content. Think of a large agency or department with sub-departments or programs that produce content. On the one hand these users shouldn’t have the ability to manage or edit content for the entire site or other Groups. On the other hand it would be impractical for Editors or Site Managers to handle content for a large number of users. To keep content organized and in the hands of its owners without introducing the risk of inadvertent (and sometimes irreversible) actions, Group-level permissions give users the ability to do things they couldn’t necessarily do on the site outside of the Group.</p>
+<p>Within Groups there are different levels of access a user can have, which determines another level of permissions. Any user who belongs to a group falls into one of two types: Member or Administrator. Users not in the group are considered Nonmembers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Non-Member:</th><td class="field-body"><p class="first">A Non-Member is any user on the site who does not belong to the Group. This role can request membership in the Group and view Group members and content.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Member:</th><td class="field-body"><p class="first">A Member is a basic user within the Group who is mostly adding and editing their own content for the Group. As Datasets are added they can be assigned to a Group. Members of a Group can add Datasets to their Group and edit those Datasets from the Group page. Content within a Group can only be edited by members of that Group, so it’s important to only associate Datasets with Groups that the user belongs to.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Administrator:</th><td class="field-body"><p class="first">An Administrator of a Group plays a similar role to that of an Editor but for their particular Group rather than for the entire site. Conversely, Editors outside of a Group are not able to manage content published within a Group.</p>
+<p class="last">Administrators of Groups are able to add and remove Group members and manage (create/edit/delete) all content within the Group. It’s good practice to have only 1 or 2 users in this role for any given Group.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="adding-users">
+<h3>Adding users<a class="headerlink" href="#adding-users" title="Permalink to this headline">¶</a></h3>
+<p>Adding users to a Group is a straightforward process. Click on the &#8220;Group&#8221; tab on the group page and click &#8220;Add people&#8221;. Begin typing the username of an existing user into the &#8220;User name&#8221; field and select from the list of autocomplete options. A user must already have an account to be added to a Group, so if a person needs to be added you should first create an account for them with the appropriate role. By default a user will only have a Member role in the Group. To give the user an Administrator role and permissions, check the administrator member box.</p>
+<p>Users may also request membership in a Group. If you or the Group Administrator directly add a user to the Group, then you don’t need to add any text in the Request message box. If the user requested membership, then their request message will appear here as part of the member profile (only visible to the Site Manager and Administrator).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">People:</th><td class="field-body"><p class="first">Site Managers and Administrators of Groups can edit the Group details as well as the members and their roles. On the People page under the Group tab, you can access the overview of Group members, edit or delete individual member profiles, and take bulk actions on a group of members.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Remove a user from the Group:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first">If a user is removed from the Group, they can no longer access Datasets added to that Group to edit them. All non-members can see Datasets that belong to a Group, but non-members can’t edit those Datasets.</p>
+<p>You can remove a single user from the Group with the remove link in the far-right column next to the user’s profile details to access and change the details of their profile. Alternatively, you can remove a group of users from the Group with a bulk action by checking off multiple users and selecting the Remove from group option from the drop-down menu in the Operations box.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Block a user from the Group:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">You can keep a user from joining a Group by blocking that user. If a user is blocked they won’t see the option to request subscription for the Group. In order to keep a user blocked, that user must technically be a member of the Group, so it’s different from removing a user entirely.</p>
+<p>You can block a single user from the Group with the edit link in the far-right column next to the user’s profile details to access and change the details of their profile. Alternatively, you can block a group of users from the Group with a bulk action by checking off multiple users and selecting the Modify membership status option from the drop-down menu in the Operations box.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Change the member’s Group role:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first">In general, you shouldn’t need to change a user’s role often. Most users will be added as members and stay members. For any Group it’s best to limit Administrator roles to just one or two people.</p>
+<p class="last">If you need to change a user’s role you can use the edit link in the far-right column next to the user’s profile details to access and change the details of their profile. Alternatively, you can change a Group member’s role for a group of users in the Group with a bulk action by checking off multiple users and selecting the Modify OG member roles option from the drop-down menu in the Operations box.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img alt="../../_images/group-members.png" src="../../_images/group-members.png" />
+</div>
+</div>
+</div>
+<div class="section" id="more-on-group-membership">
+<h2>More on Group Membership<a class="headerlink" href="#more-on-group-membership" title="Permalink to this headline">¶</a></h2>
+<p>In DKAN, “subscribing” to a Group is synonymous with becoming a member of the Group. Nonmembers can submit a membership request to the Group Administrator to become a Group member. Members have privileges to access and edit Datasets associated to the Group, so membership requires moderation. As a Site Manager, you can join any Group without moderation. Any other role must first submit a request to subscribe and then be approved by the Group Administrator.</p>
+<p>Active members, both Members and Administrators, can leave the Group by clicking the <em>Unsubscribe From Group</em> link on the Group home page. Once members are removed or leave the Group they no longer have access to the Datasets associated with the Group.</p>
+<p>As users author Datasets, it’s important that they associate Datasets only with Groups that they belong to. Once a Dataset is associated with a Group, that Dataset can only be edited by a person in the Group, either the Administrator or a member who authored the Dataset. So if a nonmember authors a Dataset and then associates it to a Group, the author won’t be able to access and edit that Dataset any longer. The Group Administrator can either remove the Dataset from the Group or add the nonmember to the Group as a Member.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../datastore/index.html" class="btn btn-neutral float-right" title="DKAN Datastore" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="previews.html" class="btn btn-neutral" title="Dataset Preview Features" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

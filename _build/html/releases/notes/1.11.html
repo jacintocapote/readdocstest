@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DKAN 1.11 Release Notes &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="Release Notes" href="index.html"/>
+        <link rel="next" title="DKAN 1.10 Release Notes" href="1.10.html"/>
+        <link rel="prev" title="DKAN 1.12 Release Notes" href="1.12.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Releases</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Release Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1.13.html">1.13 (Future release)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.13.html">1.12.13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.12.html">1.12.12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.11.html">1.12.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.10.html">1.12.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.9.html">1.12.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.8.html">1.12.8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.7.html">1.12.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.6.html">1.12.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.5.html">1.12.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.4.html">1.12.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.3.html">1.12.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.2.html">1.12.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.1.html">1.12.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.html">1.12</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.11</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#new-features-and-enhancements">New Features and Enhancements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#minor-upgrades-and-improvements">Minor Upgrades and Improvements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#special-notes">Special Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="1.10.html">1.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.9.html">1.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.8.html">1.8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Releases</a> &raquo;</li>
+      
+          <li><a href="index.html">Release Notes</a> &raquo;</li>
+      
+    <li>DKAN 1.11 Release Notes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/releases/notes/1.11.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dkan-1-11-release-notes">
+<span id="dkan-1-11-release-notes"></span><h1>DKAN 1.11 Release Notes<a class="headerlink" href="#dkan-1-11-release-notes" title="Permalink to this headline">¶</a></h1>
+<p>Check out what’s new in the latest version of <strong>DKAN 7.x-1.11</strong>! Have questions or thoughts? Let us know on our public <a class="reference external" href="https://github.com/NuCivic/dkan">DKAN Repo</a> with issues or chat with us in our <a class="reference external" href="https://gitter.im/NuCivic/dkan?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge">Gitter room</a>.</p>
+<div class="section" id="new-features-and-enhancements">
+<span id="new-features-and-enhancements"></span><h2>New Features and Enhancements<a class="headerlink" href="#new-features-and-enhancements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="new-roles-and-permissions-module">
+<span id="new-roles-and-permissions-module"></span><h3>New roles and permissions module<a class="headerlink" href="#new-roles-and-permissions-module" title="Permalink to this headline">¶</a></h3>
+<p>We made a new module (“DKAN Permissions”) to replace the previous “Sitewide Roles and Permissions” module. The previous feature largely left it to the administrator to determine user roles and what each role could do. While administrators will still have the ability to customize user roles and permissions, we wanted to make it easier to use DKAN right after installation. We have a detailed post about the standard roles in this new feature, <a class="reference external" href="http://www.nucivic.com/dkan-roles-and-permissions-just-got-easier-in-the-latest-release/">DKAN roles and permissions made simple</a>. Read up on how this standard DKAN feature makes user management easier out-of-the-box.</p>
+</div>
+<div class="section" id="group-roles-and-permissions-in-a-new-module">
+<span id="group-roles-and-permissions-in-a-new-module"></span><h3>Group roles and permissions in a new module<a class="headerlink" href="#group-roles-and-permissions-in-a-new-module" title="Permalink to this headline">¶</a></h3>
+<p>The old “Sitewide Roles and Permissions” module also included group roles and permissions. As the new “DKAN Permissions” replaces the old module, groups were also updated. The capabilities of groups, the roles and permissions within, and how groups interact with the rest of a DKAN site have been moved to a new module, “DKAN Dataset Group Perms”. You can read more detailed user-documentation about Group roles and permissions as part of <a class="reference external" href="http://www.nucivic.com/dkan-roles-and-permissions-just-got-easier-in-the-latest-release/">DKAN roles and permissions made simple</a>.</p>
+</div>
+<div class="section" id="re-designed-dataset-search-page">
+<span id="re-designed-dataset-search-page"></span><h3>Re-designed dataset/search page<a class="headerlink" href="#re-designed-dataset-search-page" title="Permalink to this headline">¶</a></h3>
+<p>In this version of DKAN, we improved the layout and visual appearance of the datasets page to make it easier for site visitors to browse, search and find content. In previous versions, the search box on the homepage was the only way for site visitors to search all content types. The re-designed datasets page directs site visitors to a page with results pre-selected to filter the datasets content type. Site visitors have the option to add and remove filters on the datasets page in order to browse all content types as well use the search bar at the top of the page to find specific content.</p>
+</div>
+<div class="section" id="related-visualizations-on-resource-page-enhancement">
+<span id="related-visualizations-on-resource-page-enhancement"></span><h3>Related visualizations on resource page enhancement<a class="headerlink" href="#related-visualizations-on-resource-page-enhancement" title="Permalink to this headline">¶</a></h3>
+<p>The visualization entity on DKAN makes it easy for content contributors, editors, and site managers to create charts, graphs and maps based on resources in their DKAN data catalog. With the resource-visualizations enhancement, site visitors will see all the visualizations made with a resource as related content at the bottom of the specific resource page.</p>
+</div>
+</div>
+<div class="section" id="minor-upgrades-and-improvements">
+<span id="minor-upgrades-and-improvements"></span><h2>Minor Upgrades and Improvements<a class="headerlink" href="#minor-upgrades-and-improvements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="user-experience-improvements">
+<span id="user-experience-improvements"></span><h3>User experience improvements<a class="headerlink" href="#user-experience-improvements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Dataset page layout:</strong> The dataset page now has a cleaner layout and overall better visual design that is a more intuitive user experience. We also added icons for content types that are standard across the site, so that site visitors can quickly recognize what type of content they are clicking on.</li>
+<li><strong>User profile image UX:</strong> In this release we removed the confusion in the user experience of changing a user’s profile image including the existing Gravatar integration.</li>
+<li><strong>Groups view:</strong> We changed the default number of groups displayed on a page from 10 to 12. This keeps the layout of groups evenly separated in neat rows of 3.</li>
+</ul>
+</div>
+<div class="section" id="patches-and-bug-fixes">
+<span id="patches-and-bug-fixes"></span><h3>Patches and Bug Fixes<a class="headerlink" href="#patches-and-bug-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Colorizer feature bug fix</strong>: fix to the colorizer feature on DKAN so that style changes don’t disappear after running the Poormanscron Drupal module.</li>
+<li><strong>Group node page bug fix:</strong> a quick fix to remove an extra page on the Groups page.</li>
+<li><strong>Warning message bug fix:</strong> a quick fix to remove redundant error messages for admins upon installing DKAN.</li>
+<li><strong>Fontyourface module patch:</strong> makes it easier to see fonts changes on your DKAN site by updating as soon as changes saved.</li>
+<li><strong>FacetAPI module patch:</strong> patched a potential security breach that appeared through cross-site scripting.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="special-notes">
+<span id="special-notes"></span><h2>Special Notes<a class="headerlink" href="#special-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="permissions-roles-upgrade">
+<span id="permissions-roles-upgrade"></span><h3>Permissions/roles upgrade<a class="headerlink" href="#permissions-roles-upgrade" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned above, this release includes a new module called DKAN Permissions (dkan_permissions), which is meant to replace the old DKAN Sitewide Roles and Permissions (dkan_sitewide_roles_perms). New installs of DKAN will enable this module and ignore the old one, while existing sites will see no change (but are recommended to upgrade).  See more information in the module&#8217;s <a class="reference external" href="https://github.com/NuCivic/dkan/blob/7.x-1.x/modules/dkan/dkan_permissions/README.md">README file</a>.</p>
+<p>The command line method, including deleting the now-deprecated &#8220;storyteller&#8221; role, would look like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ drush dis dkan_sitewide_roles_perms -y
+$ drush rdel &#39;storyteller&#39; 
+$ drush en dkan_permissions -y
+$ drush fra -y
+$ drush fr dkan_permissions -y
+</pre></div>
+</div>
+<p>Group-level permissions have been moved to DKAN Dataset Groups Permissions. To start using them, enable the new module, and revert it using Features. Do this via the UI or on the command line with Drush:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ drush en dkan_dataset_groups_perms -y
+$ drush fr dkan_dataset_groups_perms -y
+</pre></div>
+</div>
+</div>
+<div class="section" id="avoiding-php-errors-after-upgrade">
+<span id="avoiding-php-errors-after-upgrade"></span><h3>Avoiding PHP errors after upgrade<a class="headerlink" href="#avoiding-php-errors-after-upgrade" title="Permalink to this headline">¶</a></h3>
+<p>In some cases, changes to the codebase may cause PHP errors when the Drupal bootstrap process looks for a file that no longer exists. As always, backing up your db before upgrading is recommended. In addition, if you get to a state in which Drupal will not bootstrap successfully due to an issue with views_autocomplete_filters, try some combination of:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ drush sql-query &#39;DELETE FROM registry WHERE filename LIKE &quot;%views_autocomplete_filters_handler_filter_string.inc%&quot;&#39;;
+$ drush cc all
+$ drush rr
+</pre></div>
+</div>
+</div>
+<div class="section" id="search-page-redesign">
+<span id="search-page-redesign"></span><h3>Search page redesign<a class="headerlink" href="#search-page-redesign" title="Permalink to this headline">¶</a></h3>
+<p>This release of DKAN includes a redesigned search page, which is also the page used to browse datasets. This redesign required some changes to the included search indexes. Use the following drush commands to rebuild your search indexes, or go to admin/config/search/search_api/index/datasets and disable, re-enable and re-index the <em>datasets</em> search index.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ drush search-api-disable datasets -y 
+$ drush search-api-enable datasets -y
+$ drush sapi-r -y
+$ drush sapi-i -y
+</pre></div>
+</div>
+</div>
+<div class="section" id="dkan-dataset">
+<span id="dkan-dataset"></span><h3>DKAN Dataset<a class="headerlink" href="#dkan-dataset" title="Permalink to this headline">¶</a></h3>
+<p>See the DKAN Dataset <a class="reference external" href="https://github.com/NuCivic/dkan_dataset/releases/tag/7.x-1.11">release notes for 7.x-1.11</a> for notes specific to the DKAN Dataset module.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="1.10.html" class="btn btn-neutral float-right" title="DKAN 1.10 Release Notes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1.12.html" class="btn btn-neutral" title="DKAN 1.12 Release Notes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

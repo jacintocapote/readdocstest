@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="DKAN Overview" href="index.html"/>
+        <link rel="next" title="Updating and Maintaining DKAN" href="maintaining.html"/>
+        <link rel="prev" title="Get DKAN" href="get-dkan.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">DKAN Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="about.html">About this documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catalog-basics.html">Catalog Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dkan-ckan.html">Comparing DKAN and CKAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-dkan.html">Get DKAN</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operating-environment">Operating Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hardware">Hardware</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#pre-installation">Pre Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-fully-made-version">Using fully made version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-your-own">Build your own</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#with-drush">With drush</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#with-the-web-installer">With the web installer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-for-development">Install for development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#grab-development-version">Grab Development version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-dkan">Build dkan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maintaining.html">Updating and Maintaining DKAN</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">DKAN Overview</a> &raquo;</li>
+      
+    <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/introduction/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>This document contains instructions for installing the DKAN open data
+publishing software on your webserver. If you’re not comfortable
+installing and maintaining server software, you may wish to Deploy a
+Ready-to-Run DKAN Instance instead.</p>
+<p>Please note that we are in the process of revamping our installation and
+upgrade guide. The instructions here will work, but please bear with us
+as we develop better documentation and processes.</p>
+<p>Before getting started, it&#8217;s recommended that you familiarize yourself
+with:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.drush.org/en/master/">Drush, the command line tool</a></li>
+<li><a class="reference external" href="https://www.drupal.org/documentation/install">Drupal&#8217;s installation
+process</a></li>
+<li><a class="reference external" href="https://www.drupal.org/upgrade">Drupal&#8217;s upgrade process</a></li>
+<li><a class="reference external" href="https://www.drupal.org/node/1089736#distributions-vs-installation-profiles">Drupal profiles and
+distributions</a></li>
+</ul>
+<p>What you will find in the main <a class="reference external" href="https://github.com/NuCivic/dkan">DKAN
+Repository</a> is a Drupal
+<em>installation profile</em>. To set up a working website using DKAN, you will
+need to acquire or build a full DKAN distribution of Drupal.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><a class="reference external" href="http://dkan-starter.readthedocs.io">DKAN Starter</a> is project
+containing a prebuilt version of DKAN and the tools <a class="reference external" href="https://www.granicus.com/">Granicus</a> uses for our own implementations and
+deployments. Learn more advanced workflows in that project&#8217;s
+<a class="reference external" href="https://dkan-starter.readthedocs.io">documentation</a>.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="operating-environment">
+<h3>Operating Environment<a class="headerlink" href="#operating-environment" title="Permalink to this headline">¶</a></h3>
+<p>DKAN is based on Drupal software and &#8211; generally &#8211; runs anywhere
+Drupal is supported. This document assumes installation on a Linux-based
+Apache webserver using MySQL as a back-end database (aka LAMP server).
+For other environments, please see our Alternative Environment Support.</p>
+<ul class="simple">
+<li>MySQL: minimum version 5.0.15+ with PDO</li>
+<li>before installation, please create one MySQL database and associated
+user.</li>
+<li>PHP: minimum version 5.3.x</li>
+<li>Apache: minimum version 2.x</li>
+<li>Git</li>
+</ul>
+</div>
+<div class="section" id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
+<p>DKAN has been successfully tested in limited-resource environments, such
+as Amazon’s “micro” AWS instance, for development.</p>
+<ul class="simple">
+<li>Minimum RAM: 1GB for development, 2GB or more recommended for
+production.</li>
+<li>Minimum Disk: 64M for base installation, recommended 1GB or more for
+production.</li>
+</ul>
+<p>DKAN is based on Drupal and follows the same basic installation
+procedure as any Drupal distribution. More information about various
+requirements can be located in the <a class="reference external" href="https://www.drupal.org/documentation/install">Drupal Installation
+Guide</a>.</p>
+</div>
+</div>
+<div class="section" id="pre-installation">
+<h2>Pre Installation<a class="headerlink" href="#pre-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-fully-made-version">
+<h3>Using fully made version<a class="headerlink" href="#using-fully-made-version" title="Permalink to this headline">¶</a></h3>
+<p>At the moment, our supported fully-made DKAN codebase is the <a class="reference external" href="https://github.com/NuCivic/dkan-drops-7">DKAN
+DROPS-7</a> repository, which
+is optimized to run on the Pantheon platform. You can build a DKAN site
+with a single click on Pantheon
+<a class="reference external" href="https://dashboard.getpantheon.com/products/dkan/spinup">here</a>. (We
+also offer <a class="reference external" href="http://docs.getdkan.com/dkan-documentation/get-dkan/dkan-acquia">one-click installation on
+Acquia</a>)</p>
+<p>Download and unzip <a class="reference external" href="https://github.com/NuCivic/dkan-drops-7/archive/master.zip">the latest version of the &#8220;DKAN DROPS&#8221;
+codebase</a>
+on your server webroot.</p>
+<p>if you want to do this with git instead:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone --branch master https://github.com/nuams/dkan-drops-7.git dkan
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-your-own">
+<h3>Build your own<a class="headerlink" href="#build-your-own" title="Permalink to this headline">¶</a></h3>
+<p>This &#8220;builds&#8221; a full DKAN website codebase from the bleeding-edge
+development version of DKAN, by downloading Drupal and all the
+additional modules that DKAN needs to run. You may want to use this
+method to get recent changes that have not yet been included in an
+official release, or to use a branch or forked version of the DKAN
+profile.</p>
+<p>Note that <code class="docutils literal"><span class="pre">rsync</span></code> is used to copy the DKAN profile inside the Drupal
+<code class="docutils literal"><span class="pre">/profiles</span></code> folder. You may wish to modify this process to fit your
+own development practices.</p>
+<p>Requires drush version 8.x.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone --branch 7.x-1.x https://github.com/NuCivic/dkan.git
+$ cd dkan
+$ drush make --prepare-install drupal-org-core.make webroot --yes
+$ rsync -av . webroot/profiles/dkan --exclude webroot
+$ drush -y make --no-core --contrib-destination=./ drupal-org.make webroot/profiles/dkan --no-recursion
+$ cd webroot
+</pre></div>
+</div>
+<p>You can also build from a specific release of DKAN by checkout out the
+correct tag after cloning. For instance:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone --branch 7.x-1.x https://github.com/NuCivic/dkan.git
+$ git checkout tags/7.x-1.11
+...
+</pre></div>
+</div>
+<p>The automated software builder will download and configure the latest
+version of DKAN and prepare it for installation. When complete, proceed
+to “Installing the DKAN Software” section below.</p>
+<p>Note before proceeding: Recline previews require <a class="reference external" href="https://www.drupal.org/getting-started/clean-urls#enabling-7">clean
+URLs</a></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve downloaded the DKAN software, it’s time to install it. If
+you’ve previously installed Drupal, this process will be very similar.</p>
+<div class="section" id="with-drush">
+<h3>With drush<a class="headerlink" href="#with-drush" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ drush site-install dkan --db-url=&quot;mysql://DBUSER:DBPASS@localhost/DBNAME&quot;
+</pre></div>
+</div>
+<p>You can add the <code class="docutils literal"><span class="pre">--verbose</span></code> switch if you want to see every step. The
+installation should end with <code class="docutils literal"><span class="pre">drush</span></code> creating an admin account with a
+random password, which will be output in a message to the terminal.</p>
+</div>
+<div class="section" id="with-the-web-installer">
+<h3>With the web installer<a class="headerlink" href="#with-the-web-installer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Open a web browser and visit <strong>http://YOURDKANSITE/install.php</strong>:</li>
+</ul>
+<div class="figure" id="id2">
+<img alt="Installation Screen" src="../_images/install-language.png" />
+<p class="caption"><span class="caption-text">Installation Screen</span></p>
+</div>
+<ul class="simple">
+<li>The first installation screen is a language selection menu. Although
+DKAN does provide limited multi-language support, installation must
+currently be performed in English. Continue.</li>
+<li>At this point, your server resources and capabilities are checked to
+ensure they meet DKAN installation requirements. All errors must be
+corrected before installation can proceed. Instructions for
+correcting each error condition are provided.</li>
+</ul>
+<div class="figure" id="id3">
+<img alt="Installation Screen - database config" src="../_images/install-database.png" />
+<p class="caption"><span class="caption-text">Installation Screen</span></p>
+</div>
+<ul class="simple">
+<li>Once your server meets all installation requirements, you’ll be
+presented with the database configuration screen. Enter your MySQL
+database name, database username, and database password, then click
+“Save to Continue” to proceed.</li>
+</ul>
+<div class="figure" id="id4">
+<img alt="Progress Bar" src="../_images/install-progress.png" />
+<p class="caption"><span class="caption-text">Progress Bar</span></p>
+</div>
+<ul class="simple">
+<li>The installation will proceed, displaying a progress bar on the
+screen. Depending on your server resources, this may take several
+minutes.</li>
+</ul>
+<div class="figure" id="id5">
+<img alt="Configuration Screen" src="../_images/install-config-screen.png" />
+<p class="caption"><span class="caption-text">Configuration</span></p>
+</div>
+<ul class="simple">
+<li>When installation is complete, the site configuration screen will be
+displayed. Follow the prompts to set your administrative username,
+email address, site name, time zone, and other default settings as
+shown. If the final configuration completes without error, you’ll see
+a short congratulatory message and you’ll be prompted to access your
+new site.</li>
+<li>Proceed to “<a class="reference external" href="http://docs.getdkan.com/v1/data">DKAN - Data
+Management</a>” or “<a class="reference external" href="http://docs.getdkan.com/v1/users">DKAN - User
+Management</a> ” next to continue
+setting up your new DKAN server.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="install-for-development">
+<h2>Install for development<a class="headerlink" href="#install-for-development" title="Permalink to this headline">¶</a></h2>
+<p>This method is particularly useful for people who want to work on the
+DKAN project itself, as it preserves Git versioning information in every
+profile, theme and module directory. The core developers use this method
+when developing and testing DKAN.</p>
+<div class="section" id="grab-development-version">
+<h3>Grab Development version<a class="headerlink" href="#grab-development-version" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone --branch 7.x-1.x https://github.com/nuams/dkan.git
+$ cd dkan
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-dkan">
+<h3>Build dkan<a class="headerlink" href="#build-dkan" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ drush make --prepare-install drupal-org-core.make webroot --yes
+$ rsync -av . webroot/profiles/dkan --exclude webroot
+$ drush -y make --no-core --working-copy --contrib-destination=./ drupal-org.make webroot/profiles/dkan --no-recursion --concurrency=3
+$ cd webroot
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="maintaining.html" class="btn btn-neutral float-right" title="Updating and Maintaining DKAN" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="get-dkan.html" class="btn btn-neutral" title="Get DKAN" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

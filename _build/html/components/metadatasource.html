@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Metadata Source Module &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Metadata Source Module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/components/metadatasource.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="metadata-source-module">
+<span id="metadata-source-module"></span><h1>Metadata Source Module<a class="headerlink" href="#metadata-source-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<span id="summary"></span><h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This documentation is for a module that is not part of the DKAN distribution but can be added to an existing DKAN site. This module, along with further documentation, is here: https://github.com/NuCivic/dkan_dataset_metadata_source#dkan-metadata-source</p>
+</div>
+<div class="section" id="dkan-metadata-source">
+<span id="dkan-metadata-source"></span><h2>DKAN Metadata Source<a class="headerlink" href="#dkan-metadata-source" title="Permalink to this headline">¶</a></h2>
+<p>Metadata is the “Who, What, When, Where, Why” of each dataset and its associated resources. When data contributors make sure to provide appropriate and thorough information for each dataset, users will have an easier time understanding the source and purpose of each dataset, and they can more easily plug it into their application of choice.</p>
+<p><strong>How is metadata standardized?</strong></p>
+<p>The International Organization for Standardization (ISO) is an global standard-setting body composed of representatives from various national standards organizations, and has determined a wide array of specific protocols for various types of data. Other standards setting organizations include the U.S. Federal Geographic Data Committee (FGDC) and the European INSPIRE Metadata Directive.</p>
+<p><strong>What is geospatial metadata?</strong></p>
+<p>Geospatial metadata pertaining to geographic digital resources such as Geographic Information System (GIS) files, geospatial databases, and earth imagery must involve core library catalog elements including, but not limited to, Title, Abstract, and Publication Data; geographic elements such as Geographic Extent and Projection Information; and database elements such as Attribute Label Definitions and Attribute Domain Values. (Source: U.S. FGDC)</p>
+<p>Federal agencies in the U.S. are encouraged to follow ISO standards when working with or uploading geospatial data. For more information, see <a class="reference external" href="http://www.fgdc.gov/metadata/geospatial-metadata-standards">the U.S. FGDC’s geospatial metadata documentation</a>.</p>
+<p>The majority of geospatial data tools such as ESRI ArcGIS and GeoNetwork allow users to export metadata content to a stand-alone XML file that is formatted correctly for each standard or profile, and can be validated using the appropriate XML schema. The exported XML file can also then be published to a metadata catalog such as geodata.gov.</p>
+<p><strong>How can I ensure that my datasets and resources are associated with their proper metadata under these standards?</strong></p>
+<p>When working with metadata created outside of DKAN, it would be tedious to import it with a 1 to 1 field ratio in DKAN Dataset given that you’d have to take the time to manually add each additional field for your standard of choice.</p>
+<p>For example, the ISO 19115 metadata specification has dozens of fields that go above and beyond the Project Open Data fields included in DKAN.</p>
+<p>Fortunately, the DKAN metadata source module was built to solve this dilemma.
+<strong>Installation</strong></p>
+<p>Install like any other Drupal module. Once enabled you will have the new content type and taxonomy term.</p>
+<p><strong>Metadata Sources and Types</strong></p>
+<p>The DKAN metadata source module creates a Metadata Source content type and a Metadata Type taxonomy term.</p>
+<p><strong>Creating a Metadata Type</strong></p>
+<p>The Metadata Type is a taxonomy term used for linking multiple metadata sources with the same specification. To add or remove Metadata Types visit l/admin/structure/taxonomy/extended_metadata_schema.</p>
+<p>Click Add term to create a new type or Edit on an existing type to update or modify it.</p>
+<p><strong>Creating a Metadata Source</strong></p>
+<p>The Metadata Source content type allows DKAN datasets and resources to be associated with metadata that has either been directly uploaded or linked from an outside source.</p>
+<p><strong>Creating a Metadata Source</strong></p>
+<p>To create a new Metadata Type visit node/add/metadata:</p>
+<p><img alt="Metadata Source uploading screen" src="https://cloud.githubusercontent.com/assets/512243/9552367/0927b9d2-4d7d-11e5-85e6-137751a336b1.png" /></p>
+<p><strong>Link on Dataset</strong></p>
+<p>Once a Metadata Type has been created the Metadata Source will be displayed on the linked Dataset:</p>
+<p>![Metadata Source has been uploaded][Metadata Source has been uploaded]</p>
+<p>Clicking ‘View’ will allow you to check out a preview of the metadata content; clicking the ‘Download’ button will allow you to download it directly.</p>
+<!-- Images -->
+[Metadata Source has been uploaded]: https://cloud.githubusercontent.com/assets/512243/9552388/3d15af2e-4d7d-11e5-9d51-2304bf03c59f.png</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

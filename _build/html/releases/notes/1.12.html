@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DKAN 1.12 Release Notes &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="Release Notes" href="index.html"/>
+        <link rel="next" title="DKAN 1.11 Release Notes" href="1.11.html"/>
+        <link rel="prev" title="DKAN 1.12.1 Release Notes" href="1.12.1.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Releases</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Release Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1.13.html">1.13 (Future release)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.13.html">1.12.13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.12.html">1.12.12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.11.html">1.12.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.10.html">1.12.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.9.html">1.12.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.8.html">1.12.8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.7.html">1.12.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.6.html">1.12.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.5.html">1.12.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.4.html">1.12.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.3.html">1.12.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.2.html">1.12.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.1.html">1.12.1</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.12</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#new-features-and-enhancements">New Features and Enhancements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#minor-upgrades-and-improvements">Minor Upgrades and Improvements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-experience-improvements">User experience improvements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#patches-and-bug-fixes">Patches and Bug Fixes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upgrade-notes">Upgrade Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="1.11.html">1.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.10.html">1.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.9.html">1.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.8.html">1.8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Releases</a> &raquo;</li>
+      
+          <li><a href="index.html">Release Notes</a> &raquo;</li>
+      
+    <li>DKAN 1.12 Release Notes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/releases/notes/1.12.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dkan-1-12-release-notes">
+<span id="dkan-1-12-release-notes"></span><h1>DKAN 1.12 Release Notes<a class="headerlink" href="#dkan-1-12-release-notes" title="Permalink to this headline">¶</a></h1>
+<p>Check out what’s new in the latest version of <strong>DKAN 7.x-1.12</strong>! Have questions or thoughts? Let us know on our public <a class="reference external" href="https://github.com/NuCivic/dkan">DKAN Repo</a> with issues or chat with us in our <a class="reference external" href="https://gitter.im/NuCivic/dkan?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge">Gitter room</a>.</p>
+<div class="section" id="new-features-and-enhancements">
+<span id="new-features-and-enhancements"></span><h2>New Features and Enhancements<a class="headerlink" href="#new-features-and-enhancements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="new-dkan-workflow-module">
+<span id="new-dkan-workflow-module"></span><h3>New DKAN Workflow Module<a class="headerlink" href="#new-dkan-workflow-module" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/NuCivic/dkan_workflow">DKAN Workflow</a> is a new module that ships with DKAN but is not enabled by default. Once the module is enabled, DKAN Workflow creates an editorial publishing workflow on DKAN for moderating content. Within this module is a secondary set of permissions and roles layered on <a class="reference external" href="http://www.nucivic.com/dkan-roles-and-permissions-just-got-easier-in-the-latest-release/">core DKAN roles and permissions</a>. This module can be very useful to establish more controls among large teams managing content.</p>
+<p><a class="reference external" href="http://docs.getdkan.com/dkan-documentation/dkan-features/dkan-workflow">Read more about Workflow in the main DKAN Documentation</a>.</p>
+<p>Check out the blog post: <a class="reference external" href="http://www.nucivic.com/new-feature-alert-dkan-workflow/">http://www.nucivic.com/new-feature-alert-dkan-workflow/</a></p>
+</div>
+<div class="section" id="large-file-support-and-fast-import">
+<span id="large-file-support-and-fast-import"></span><h3>Large File Support and Fast Import<a class="headerlink" href="#large-file-support-and-fast-import" title="Permalink to this headline">¶</a></h3>
+<p>Through the file_resup module we&#8217;ve added the ability to support large file uploads on DKAN. There are no limits technically imposed by the software, but file sizes limited up to few gigabytes will produce the best results. For large files, we also added a mySQL statement to quickly import the files into the <a class="reference external" href="https://github.com/NuCivic/dkan_datastore">DKAN datastore</a>. We&#8217;re calling this <a class="reference external" href="https://github.com/NuCivic/dkan_datastore/tree/7.x-1.x/modules/dkan_datastore_fast_import">DKAN Data Datastore Fast Import</a> module and it appears as such in the module configuration on DKAN. The module is disabled by default, and must be enabled and then configured to be utilized in DKAN. OOB DKAN defaults to using the Drupal file importer that also processes the data (better for smaller files). In configuration, the mySQL statement may replace the Drupal file importer or appear as an additional option for importing a file into the DKAN Datastore. Rather than processing the data, the mySQL statement favors a faster load time by importing directly to a mySQL database.</p>
+<p>Large file support also makes for a more robust <a class="reference external" href="https://github.com/NuCivic/dkan_datastore/tree/7.x-1.x/modules/dkan_datastore_api">DKAN Datastore API</a>. Files imported into the DKAN Datastore are included in the public DKAN Datastore API.</p>
+<p>Read more details about the DKAN Datastore and the Datastore API on our <a class="reference external" href="http://www.nucivic.com/dkan-datastore-enhancement-bigger-files-painless-import/">blog post</a>.</p>
+</div>
+<div class="section" id="topics">
+<span id="topics"></span><h3>Topics<a class="headerlink" href="#topics" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/NuCivic/dkan/tree/7.x-1.x/modules/dkan/dkan_topics">DKAN Topics</a> is a new module added into DKAN core with the 7.x-1.12 release. Topics are preset by an administrator that reflect the areas of interest to the target audience. Topics are configured by default to appear as a panel on the homepage of a DKAN site.</p>
+<p>In DKAN, Topics are a taxonomy with a vocabulary (also set by the admin) and can be associated to datasets by lower-access users as they contribute data to DKAN. Additionally admins can set which icons may or may not be used within a font set for Topics by other users. OOB DKAN includes a font set of over 100 icons to choose from, and new font sets can easily be added. Alternatively, images may be uploaded for Topics icons.</p>
+<p>Read more details about Topics on our <a class="reference external" href="http://www.nucivic.com/dkan-topics-feature-focus-data-and-reflect-citizen-interests/">blog post</a>.</p>
+</div>
+</div>
+<div class="section" id="minor-upgrades-and-improvements">
+<span id="minor-upgrades-and-improvements"></span><h2>Minor Upgrades and Improvements<a class="headerlink" href="#minor-upgrades-and-improvements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Changed UI of DKAN Charts to include &#8220;Tick Values&#8221; &#8220;Step&#8221; and &#8220;Goal&#8221; line in chart. This gives users added functionality in what they can do with Charts. The UI is also more organized to tell users how the options affect which parts of the Charts.</li>
+<li>Upgrade <a class="reference external" href="https://www.drupal.org/drupal-7.43-release-notes">Drupal core to 7.43</a> to fix security vulnerabilities.</li>
+<li><a class="reference external" href="https://www.drupal.org/node/2705637">Security update for Features</a></li>
+<li><a class="reference external" href="https://www.drupal.org/node/2679589">Security update for Fieldable Panels Panes</a></li>
+<li>Move permissions dependency of from features_roles_permissions to <a class="reference external" href="https://github.com/NuCivic/dkan/tree/7.x-1.x/modules/dkan/dkan_permissions">dkan_permissions module</a>.</li>
+<li>Remove export of administrator permissions when new modules are enabled, so that <a class="reference external" href="https://github.com/NuCivic/dkan/tree/7.x-1.x/modules/dkan/dkan_permissions">dkan_permissions</a> does not appear as overridden. With the admin_role module, admin roles automatically receive permissions for modules as they are enabled. By removing the export of administrator permissions, overrides will only appear when true changes to the dkan_permissions module have been made.</li>
+</ul>
+</div>
+<div class="section" id="user-experience-improvements">
+<span id="user-experience-improvements"></span><h2>User experience improvements<a class="headerlink" href="#user-experience-improvements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Enable <a class="reference external" href="https://www.drupal.org/project/facetapi_pretty_paths">Pretty Paths Facet API</a> to make URL paths on DKAN pages human-readable and SEO optimized. This module is combined with the <a class="reference external" href="https://www.drupal.org/project/search_api">Drupal Search API</a> module.</li>
+<li>With the new <a class="reference external" href="https://github.com/NuCivic/dkan/releases/tag/7.x-1.11">search page redesign</a> in DKAN 7.x-1.11, this release includes optimized search functionality. Previously only datasets were displayed in search results; in version 1.12 all content appears in search results. The /search path will lead to the main search page and the /dataset page will redirect to the /search?type=dataset for backward compatibility, pre-filtered for dataset content search results.</li>
+<li>The <a class="reference external" href="https://github.com/NuCivic/dkan_sitewide_profile_page/blob/master/README.md">dkan_sitewide_profile_page</a> module was removed and new code added to existing modules (detailed documentation as code comments). With the removal of this module, the DKAN command center no longer exists and profiles of any user role appear the same.</li>
+<li>A &#8220;Data dashboard&#8221; creation link was added on user admin menu.</li>
+<li>Facet titles between user, search and group pages were standarized.</li>
+</ul>
+</div>
+<div class="section" id="patches-and-bug-fixes">
+<span id="patches-and-bug-fixes"></span><h2>Patches and Bug Fixes<a class="headerlink" href="#patches-and-bug-fixes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added permission to allow anonymous users to see any piece of content created with the <a class="reference external" href="https://github.com/NuCivic/visualization_entity">visualization entity</a> module such <a class="reference external" href="https://github.com/NuCivic/visualization_entity_charts">charts</a> and <a class="reference external" href="https://github.com/NuCivic/visualization_entity_maps">maps</a>.</li>
+<li>Created patch to solve bug that kept fonts enabled after being turned off.</li>
+<li>Fixed regex used to rewrite font file paths on Dkan Topics, which was breaking filepaths in data.json.</li>
+</ul>
+</div>
+<div class="section" id="upgrade-notes">
+<span id="upgrade-notes"></span><h2>Upgrade Notes<a class="headerlink" href="#upgrade-notes" title="Permalink to this headline">¶</a></h2>
+<p>If you upgrade an existing site to 7.x-1.12 and enable DKAN Topics, you may encounter issues with your search index. For troubleshooting tips, see the <a class="reference external" href="https://github.com/NuCivic/dkan/blob/7.x-1.x/modules/dkan/dkan_topics/README.md">DKAN Topics Readme</a>.</p>
+<div class="section" id="upgrade-instructions">
+<span id="upgrade-instructions"></span><h3>Upgrade instructions<a class="headerlink" href="#upgrade-instructions" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span> <span class="pre">-y</span></code></li>
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">en</span> <span class="pre">dkan_featured_topics</span> <span class="pre">-y</span></code></li>
+<li>Enable &#8216;field_topics&#8217; on dataset index (admin/config/search/search_api/index/datasets/fields)</li>
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">fr</span> <span class="pre">dkan_sitewide_search_db</span> <span class="pre">-y</span></code></li>
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">sapi-c</span> <span class="pre">datasets</span></code></li>
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">sapi-r</span> <span class="pre">datasets</span></code></li>
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">sapi-i</span> <span class="pre">datasets</span></code></li>
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">fra</span> <span class="pre">-y</span></code></li>
+<li>Remove the &#8216;Add Dataset&#8217; link from main menu</li>
+<li>Remove the &#8216;Datasets&#8217; link from main menu that point to the old /dataset url for search</li>
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">rr</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="1.11.html" class="btn btn-neutral float-right" title="DKAN 1.11 Release Notes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1.12.1.html" class="btn btn-neutral" title="DKAN 1.12.1 Release Notes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

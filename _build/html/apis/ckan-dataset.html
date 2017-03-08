@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CKAN Dataset API &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="API Guide" href="index.html"/>
+        <link rel="next" title="Open Data APIs" href="open-data.html"/>
+        <link rel="prev" title="Datastore API" href="datastore-api.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rest-api.html">Dataset REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastore-api.html">Datastore API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CKAN Dataset API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-apis">Supported APIs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#site-read">site_read</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#revision-list">revision_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package-list">package_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#current-package-list-with-resources">current_package_list_with_resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package-show">package_show</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resource-show">resource_show</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#group-package-show">group_package_show</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package-revision-list">package_revision_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#group-list">group_list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="open-data.html">Open Data APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">API Guide</a> &raquo;</li>
+      
+    <li>CKAN Dataset API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/apis/ckan-dataset.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ckan-dataset-api">
+<span id="ckan-dataset-api"></span><h1>CKAN Dataset API<a class="headerlink" href="#ckan-dataset-api" title="Permalink to this headline">¶</a></h1>
+<p>DKAN provides a number of public, read-only APIs that are designed to provide catalog and dataset information as well as updates that allow observers to track and pull in changes.  These public APIs are specifically designed to allow CKAN sites to harvest from DKAN based off of the APIs used for the <a class="reference external" href="https://github.com/ckan/ckanext-harvest/tree/master/ckanext/harvest/harvesters">CKAN Harvester</a>.</p>
+<p>All the APIs listed on this page are provided via the <a class="reference external" href="https://github.com/NuCivic/open_data_schema_map">Open Data Schema Map</a> module.</p>
+<div class="section" id="supported-apis">
+<span id="supported-apis"></span><h2>Supported APIs<a class="headerlink" href="#supported-apis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="site-read">
+<span id="site-read"></span><h3>site_read<a class="headerlink" href="#site-read" title="Permalink to this headline">¶</a></h3>
+<p>See: <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.site_read">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.site_read</a></p>
+<p>Demo: <a class="reference external" href="http://demo.getdkan.com/api/3/action/site_read">http://demo.getdkan.com/api/3/action/site_read</a></p>
+</div>
+<div class="section" id="revision-list">
+<span id="revision-list"></span><h3>revision_list<a class="headerlink" href="#revision-list" title="Permalink to this headline">¶</a></h3>
+<p>See: <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.revision_list">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.revision_list</a></p>
+<p>Demo: <a class="reference external" href="http://demo.getdkan.com/api/3/action/revision_list">http://demo.getdkan.com/api/3/action/revision_list</a></p>
+</div>
+<div class="section" id="package-list">
+<span id="package-list"></span><h3>package_list<a class="headerlink" href="#package-list" title="Permalink to this headline">¶</a></h3>
+<p>See: <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_list">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_list</a></p>
+<p>Demo: <a class="reference external" href="http://demo.getdkan.com/api/3/action/package_list">http://demo.getdkan.com/api/3/action/package_list</a></p>
+</div>
+<div class="section" id="current-package-list-with-resources">
+<span id="current-package-list-with-resources"></span><h3>current_package_list_with_resources<a class="headerlink" href="#current-package-list-with-resources" title="Permalink to this headline">¶</a></h3>
+<p>See: <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_list">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_list</a></p>
+<p>Demo: <a class="reference external" href="http://demo.getdkan.com/api/3/action/current_package_list_with_resources">http://demo.getdkan.com/api/3/action/current_package_list_with_resources</a></p>
+</div>
+<div class="section" id="package-show">
+<span id="package-show"></span><h3>package_show<a class="headerlink" href="#package-show" title="Permalink to this headline">¶</a></h3>
+<p>See: <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show</a></p>
+<p>Demo: <a class="reference external" href="http://demo.getdkan.com/api/3/action/package_show?id=5dc1cfcf-8028-476c-a020-f58ec6dd621c">http://demo.getdkan.com/api/3/action/package_show?id=5dc1cfcf-8028-476c-a020-f58ec6dd621c</a></p>
+</div>
+<div class="section" id="resource-show">
+<span id="resource-show"></span><h3>resource_show<a class="headerlink" href="#resource-show" title="Permalink to this headline">¶</a></h3>
+<p>See: <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show</a></p>
+</div>
+<div class="section" id="group-package-show">
+<span id="group-package-show"></span><h3>group_package_show<a class="headerlink" href="#group-package-show" title="Permalink to this headline">¶</a></h3>
+<p>See: <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show</a></p>
+</div>
+<div class="section" id="package-revision-list">
+<span id="package-revision-list"></span><h3>package_revision_list<a class="headerlink" href="#package-revision-list" title="Permalink to this headline">¶</a></h3>
+<p>See: <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show</a></p>
+</div>
+<div class="section" id="group-list">
+<span id="group-list"></span><h3>group_list<a class="headerlink" href="#group-list" title="Permalink to this headline">¶</a></h3>
+<p>See:&nbsp; <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show">http://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_show</a></p>
+<p>Demo: <a class="reference external" href="http://demo.getdkan.com/api/3/action/group_list?order_by=name&amp;all_fields=TRUE">http://demo.getdkan.com/api/3/action/group_list?order_by=name&amp;all_fields=TRUE</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="open-data.html" class="btn btn-neutral float-right" title="Open Data APIs" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="datastore-api.html" class="btn btn-neutral" title="Datastore API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Usage &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="DKAN Datastore" href="index.html"/>
+        <link rel="next" title="Fast Import Option" href="fast-import.html"/>
+        <link rel="prev" title="DKAN Datastore" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Major Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../dataset/index.html">Datasets</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Datastore</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Basic Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#processing-options">Processing Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datastore-api">Datastore API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fast-import.html">Fast Import Option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="background.html">Background and Periodic Imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geocoder.html">Geocoding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Major Components</a> &raquo;</li>
+      
+          <li><a href="index.html">DKAN Datastore</a> &raquo;</li>
+      
+    <li>Basic Usage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/components/datastore/usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-usage">
+<h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<p>DKAN provides UI for managing the Datastore. Management activities include:</p>
+<ul class="simple">
+<li>Importing items</li>
+<li>Deleting items</li>
+<li>Editing the schema (see below)</li>
+<li>Edit Views integration</li>
+</ul>
+<p>Drush commands are also included, described below.</p>
+<p>If you have successfully created a dataset with resources, you now have data in DKAN which you can display and store in several ways. However, DKAN is still reading this data directly from the file or API you added as a resource.</p>
+<p>To get the fullest functionality possible out of your datasets, including a public API that can be used to develop 3rd party applications, you must complete the final step of adding your resources to DKAN&#8217;s own datastore. (At the moment, a DKAN datastore is simply a table in the main database.)</p>
+<p>If you are exploring a resource that is not yet in the datastore, you will see a message advising you of this. Click the &#8220;Manage Datastore&#8221; button at the top of the screen. On the &#8220;Manage Datastore&#8221; page, use the &#8220;Import&#8221; button at the bottom of the page to import the data from your file or API into DKAN&#8217;s local datastore.</p>
+<p>Notification to import resource to datastore:</p>
+<p>![Manage Datastore: Notification](<a class="reference external" href="http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.09%20PM.png">http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.09%20PM.png</a>)</p>
+<p>Importing the resource:</p>
+<blockquote>
+<div>![Manage Datastore: Import](<a class="reference external" href="http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.26%20PM.png">http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.26%20PM.png</a>)</div></blockquote>
+<p>Notification of a successful import:</p>
+<p>![Manage Datastore: Success](<a class="reference external" href="http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.53%20PM.png">http://docs.getdkan.com/sites/default/files/Screen%20Shot%202015-04-03%20at%206.19.53%20PM.png</a>)</p>
+<p>Your data is now ready to use via the API! Click the &#8220;Data API&#8221; button at the top of the resource screen for specific instructions. DKAN datastores can also be created and updated from files using the following Drush commands:</p>
+<p>To create a datastore from a local file: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dsc</span> <span class="pre">[path-to-local-file]</span></code></p>
+<p>To update a datastore from a local file: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dsu</span> <span class="pre">[datastore-id]</span> <span class="pre">[path-to-local-file]</span></code></p>
+<p>To delete a datastore file (imported items will be deleted as well): <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dsfd</span> <span class="pre">(datastore-id)</span></code> To get the URL of the datastore file: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dsfuri</span> <span class="pre">[datastore-id]</span></code></p>
+<div class="section" id="processing-options">
+<h2>Processing Options<a class="headerlink" href="#processing-options" title="Permalink to this headline">¶</a></h2>
+<p>Files are parsed and inserted in batches. The user has the option of parsing them upon form submission. If the user chooses to parse the file manually they are able to see the progress of the processing through a batch operations screen similar to the one below.</p>
+<p>![Drupal batch operation](<a class="reference external" href="http://drupal.org/files/images/computed_field_tools_drupal7_batch.png">http://drupal.org/files/images/computed_field_tools_drupal7_batch.png</a>)</p>
+<p>Files that are not processed manually are processed in pieces during cron.</p>
+</div>
+</div>
+<div class="section" id="datastore-api">
+<h1>Datastore API<a class="headerlink" href="#datastore-api" title="Permalink to this headline">¶</a></h1>
+<p>Once processed, Datastore information is available via the Datastore API. For more information, see the <a class="reference external" href="../apis/datastore-api.rst">Datastore API page</a>.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fast-import.html" class="btn btn-neutral float-right" title="Fast Import Option" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="DKAN Datastore" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

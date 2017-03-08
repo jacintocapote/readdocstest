@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DKAN 1.13.1 Release Notes &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>DKAN 1.13.1 Release Notes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/releases/notes/1.13.1.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dkan-1-13-1-release-notes">
+<span id="dkan-1-13-1-release-notes"></span><h1>DKAN 1.13.1 Release Notes<a class="headerlink" href="#dkan-1-13-1-release-notes" title="Permalink to this headline">¶</a></h1>
+<p>This is a &#8220;patch&#8221; release of DKAN, containing bug fixes and minor updates to DKAN 1.13, but adding no new functionality. It was released very shortly after 1.13 to address bugs that surfaced during deployments and upgrades. If you have not yet upgraded to 1.13, upgrade <em>directly</em> to this release and skip 1.13; if you have already upgraded, we recommend updating to 1.13.1 immediately.</p>
+<p><a class="reference external" href="https://github.com/NuCivic/dkan/releases/tag/7.x-1.13">See full 1.13 release notes here</a>.</p>
+<div class="section" id="improvements-in-this-release">
+<span id="improvements-in-this-release"></span><h2>Improvements in this release<a class="headerlink" href="#improvements-in-this-release" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix validation page permission check using wrong permission name <a class="reference external" href="https://github.com/NuCivic/open_data_schema_map/pull/86">odsm</a>.</li>
+<li>Fixed a bug in the <a class="reference external" href="https://github.com/NuCivic/dkan/blob/f6d58c0751e9fe16016cb289c17697f4d44d1059/modules/dkan/dkan_sitewide/dkan_sitewide.module#L297">home page conversion function</a></li>
+<li>Fixed the page title (<code class="docutils literal"><span class="pre">&lt;head&gt;&lt;title&gt;</span></code>) so that it&#8217;s just the site name (not the node or panel title)</li>
+<li>Updated the DKAN API link on dataset pages to use the new <a class="reference external" href="http://docs.getdkan.com/en/latest/apis/index.html">documentation site page</a>.</li>
+<li>Fixed error messages appearing on homepage after upgrade</li>
+<li>Fixed panelizer permissions to hide the &#8220;Customize Display&#8221; button for Site Managers.</li>
+<li>Additional minor bug fixes to code and tests</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

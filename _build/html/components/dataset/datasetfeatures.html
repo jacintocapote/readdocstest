@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Metadata Features &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="DKAN Dataset Module and Sub-Modules" href="index.html"/>
+        <link rel="next" title="Dataset Preview Features" href="previews.html"/>
+        <link rel="prev" title="Usage" href="usage.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Major Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Datasets</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Advanced Metadata Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#custom-metadata">Custom metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-extent">Data Extent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#revision-history">Revision History</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="previews.html">Dataset Preview Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="groups.html">Groups in DKAN</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../datastore/index.html">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Major Components</a> &raquo;</li>
+      
+          <li><a href="index.html">DKAN Dataset Module and Sub-Modules</a> &raquo;</li>
+      
+    <li>Advanced Metadata Features</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/components/dataset/datasetfeatures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-metadata-features">
+<h1>Advanced Metadata Features<a class="headerlink" href="#advanced-metadata-features" title="Permalink to this headline">¶</a></h1>
+<p>A Dataset is a container for storing files, APIs, or other resources  as well as the <a class="reference external" href="http://en.wikipedia.org/wiki/Metadata">metadata</a> about those resources.  The metadata in a DKAN Dataset is structured specifically for describing Open Data.</p>
+<p>The metadata in a DKAN Dataset is culled from the DCAT standard as well as Project Open Data. For more information on the default Dataset fields view the <a class="reference internal" href="../../apis/open-data.html#field-comparison"><span class="std std-ref">Open Data Field Comparison Tables</span></a>.</p>
+<p>The Dataset form allows users to create Datasets and add appropriate metadata:</p>
+<div class="figure">
+<img alt="../../_images/add-dataset-screen-1.png" src="../../_images/add-dataset-screen-1.png" />
+</div>
+<p>The DKAN Dataset API exposes Dataset metadata for individual datasets as well an entire catalog.</p>
+<div class="figure">
+<img alt="../../_images/data-json.png" src="../../_images/data-json.png" />
+</div>
+<div class="section" id="custom-metadata">
+<span id="id1"></span><h2>Custom metadata<a class="headerlink" href="#custom-metadata" title="Permalink to this headline">¶</a></h2>
+<p>It is easy to add new fields to DKAN which will show up on the Dataset form, make available as search facets, and be available to output in one of the Dataset APIs.</p>
+<p>If there is information that only pertains to one or more datasets then it is possible to use the &#8220;Additional Info&#8221; field. This allows content editors to add unique field / value entries that exist only on a single dataset:</p>
+<div class="figure">
+<img alt="https://cloud.githubusercontent.com/assets/512243/4188796/57b53a52-3776-11e4-97f6-61e18e3cd90d.png" src="https://cloud.githubusercontent.com/assets/512243/4188796/57b53a52-3776-11e4-97f6-61e18e3cd90d.png" />
+</div>
+<p>Globally-available custom fields can also be added through <a class="reference external" href="https://www.drupal.org/documentation/modules/field-ui">Drupal&#8217;s Fields UI</a> and added to public APIs using the <a class="reference internal" href="../open-data-schema.html"><span class="doc">Open Data Schema Mapper</span></a>.</p>
+</div>
+<div class="section" id="data-extent">
+<span id="id2"></span><h2>Data Extent<a class="headerlink" href="#data-extent" title="Permalink to this headline">¶</a></h2>
+<p>The &#8220;Data Extent&#8221; block is a visual representation of the &#8220;Spatial / Geographical Coverage Area&#8221;.</p>
+<div class="figure">
+<img alt="../../_images/data-extent-block.png" src="../../_images/data-extent-block.png" />
+</div>
+<p>The &#8220;Spatial / Geographical Coverage Area&#8221; field is a geojson representation of the area a Dataset covers. This can be a point, box, or other representation.</p>
+<p>DKAN provides a widget so that a spatial area can be drawn if desired:</p>
+<div class="figure">
+<img alt="../../_images/spacial-geographical.png" src="../../_images/spacial-geographical.png" />
+</div>
+</div>
+<div class="section" id="revision-history">
+<h2>Revision History<a class="headerlink" href="#revision-history" title="Permalink to this headline">¶</a></h2>
+<p>DKAN Datasets and Resources track revisions in order to log and display changes, using Drupal&#8217;s built-in revision system.</p>
+<div class="section" id="user-interface">
+<h3>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h3>
+<p>Revision log entries can be added through the user interface by clicking &#8220;Revision information&#8221; in the dataset or resource edit form and can be viewed by clicking &#8220;Revisions&#8221; on a Dataset or Resource page:</p>
+<div class="figure">
+<img alt="../../_images/revision.png" src="../../_images/revision.png" />
+</div>
+</div>
+<div class="section" id="loading-revision-information-programmatically">
+<h3>Loading Revision information Programmatically<a class="headerlink" href="#loading-revision-information-programmatically" title="Permalink to this headline">¶</a></h3>
+<p>Revision comments generated in code can be viewed by loading a Dataset or Resource and viewing the log: <cite>$node = node_load(&#8216;dataset node id&#8217;); echo $node-&gt;log</cite></p>
+</div>
+<div class="section" id="revision-list-api">
+<h3>Revision List API<a class="headerlink" href="#revision-list-api" title="Permalink to this headline">¶</a></h3>
+<p>A list of recent revisions are available through the revision_list API at &#8220;/api/3/action/revision_list&#8221;</p>
+</div>
+<div class="section" id="file-revisions">
+<h3>File Revisions<a class="headerlink" href="#file-revisions" title="Permalink to this headline">¶</a></h3>
+<p>Copies are kept of files from previous revisions that can be compared manually by a user. Diffs of individual files are not available by default, but could be implemented with some <a class="reference external" href="https://drupal.org/node/2101377">custom code using Apache Solr and the Diff module</a>, or a similar strategy.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="previews.html" class="btn btn-neutral float-right" title="Dataset Preview Features" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage.html" class="btn btn-neutral" title="Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

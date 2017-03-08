@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Catalog Features &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Catalog Features</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/introduction/catalog-features.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="catalog-features">
+<span id="catalog-features"></span><h1>Catalog Features<a class="headerlink" href="#catalog-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-open-data-compliance">
+<span id="project-open-data-compliance"></span><h2>Project Open Data Compliance<a class="headerlink" href="#project-open-data-compliance" title="Permalink to this headline">¶</a></h2>
+<p>DKAN provides a &#8220;data.json&#8221; index to satisfy the US federal government&#8217;s <a class="reference external" href="http://project-open-data.github.io/">Project Open Data</a> requirements. More information about the &#8220;slash data&#8221; or &#8220;data.json&#8221; requirements can be found in POD&#8217;s <a class="reference external" href="http://project-open-data.github.io/catalog">Open Data Catalog Requirements</a> and <a class="reference external" href="http://project-open-data.github.io/schema">Common Core Metadata Schema</a> pages.</p>
+<p>The exact mapping of data (specifically, Drupal data <a class="reference external" href="https://www.drupal.org/project/token">tokens</a>) from your DKAN site to the data.json index can be customized using the <a class="reference external" href="https://github.com/NuCivic/dkan/tree/rtd/docs/../../../../../../../../dkan-developers/adding-or-update-fields-api-output">Open Data Schema Mapper</a>.</p>
+</div>
+<div class="section" id="dcat-compliant-markup">
+<span id="dcat-compliant-markup"></span><h2>DCAT-Compliant Markup<a class="headerlink" href="#dcat-compliant-markup" title="Permalink to this headline">¶</a></h2>
+<p>Project Open Data&#8217;s <a class="reference external" href="http://project-open-data.github.io/schema">schema</a> is based on the <a class="reference external" href="http://www.w3.org/TR/vocab-dcat/">DCAT open data vocabulary</a>. DKAN also provides RDF endpoints and RDFa markup for all Datasets following the <a class="reference external" href="http://www.w3.org/TR/vocab-dcat/">DCAT specification</a>.</p>
+</div>
+<div class="section" id="public-catalog-listing-api-based-on-ckan">
+<span id="public-catalog-listing-api-based-on-ckan"></span><h2>Public Catalog Listing API, Based on CKAN<a class="headerlink" href="#public-catalog-listing-api-based-on-ckan" title="Permalink to this headline">¶</a></h2>
+<p>For exposing more and better-structured machine-readable metadata than Project Open Data&#8217;s data.json allows for, DKAN also ships with a public API based heavily on <a class="reference external" href="http://docs.ckan.org/en/latest/api/index.html">CKAN&#8217;s</a>. This includes APIs for viewing the contents of an entire catalog, as well as requesting the metadata for a single <a class="reference external" href="https://github.com/NuCivic/dkan/tree/rtd/docs/../../../../../../../../dkan-documentation/dkan-features/dataset-features">dataset</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

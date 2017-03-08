@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DKAN 1.9 Release Notes &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="Release Notes" href="index.html"/>
+        <link rel="next" title="DKAN 1.8 Release Notes" href="1.8.html"/>
+        <link rel="prev" title="DKAN 1.10 Release Notes" href="1.10.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Releases</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Release Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1.13.html">1.13 (Future release)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.13.html">1.12.13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.12.html">1.12.12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.11.html">1.12.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.10.html">1.12.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.9.html">1.12.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.8.html">1.12.8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.7.html">1.12.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.6.html">1.12.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.5.html">1.12.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.4.html">1.12.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.3.html">1.12.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.2.html">1.12.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.1.html">1.12.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.12.html">1.12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.11.html">1.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.10.html">1.10</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.9</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#new-features-and-enhancements">New Features and Enhancements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-api-database-upgrade-issue">Search API Database upgrade issue</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="1.8.html">1.8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Releases</a> &raquo;</li>
+      
+          <li><a href="index.html">Release Notes</a> &raquo;</li>
+      
+    <li>DKAN 1.9 Release Notes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/releases/notes/1.9.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dkan-1-9-release-notes">
+<span id="dkan-1-9-release-notes"></span><h1>DKAN 1.9 Release Notes<a class="headerlink" href="#dkan-1-9-release-notes" title="Permalink to this headline">¶</a></h1>
+<p>Check out what’s new in the latest version of <strong>DKAN 7.x-1.9</strong>! Have questions or thoughts? Let us know on our public <a class="reference external" href="https://github.com/NuCivic/dkan">DKAN Repo</a> with issues or chat with us in our <a class="reference external" href="https://gitter.im/NuCivic/dkan?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge">Gitter room</a>.</p>
+<div class="section" id="new-features-and-enhancements">
+<span id="new-features-and-enhancements"></span><h2>New Features and Enhancements<a class="headerlink" href="#new-features-and-enhancements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added &#8220;Data Dashboards&#8221; and &#8220;Data Stories&#8221; content types with customizable layouts</li>
+<li>Added Panopoly Widgets for use in Dashboards, Stories, the front page and panel pages</li>
+<li>Added new custom DKAN widgets for use on panel pages</li>
+<li>The Visualization Entity module, along with the additional Charts bundle, are now included in DKAN core</li>
+<li>Added a &#8220;command center&#8221; to the user&#8217;s own profile page to more easily find common functions</li>
+<li>&#64;font-your-face module added w/configuration for easier font admin</li>
+<li>Multiple security updates and other contrib module and theme updates.</li>
+<li>Drupal now on version 7.39.</li>
+<li>Many bug fixes and code cleanups</li>
+<li>See release notes for nuboot_radix theme and individual DKAN modules for additional release notes</li>
+</ul>
+</div>
+<div class="section" id="search-api-database-upgrade-issue">
+<span id="search-api-database-upgrade-issue"></span><h2>Search API Database upgrade issue<a class="headerlink" href="#search-api-database-upgrade-issue" title="Permalink to this headline">¶</a></h2>
+<p>This release updates the <a class="reference external" href="https://www.drupal.org/project/search_api_db">Search API DB</a> module, which, if you are using the database backend, may break your search indexes, resulting in either a) nothing, or b) all nodes regardless of type on your search/datasets
+pages.</p>
+<p>To fix, follow these steps after updating your database:</p>
+<ol class="simple">
+<li>Go to /admin/config/search/search_api/index/datasets/edit to edit the database node index</li>
+<li>Set the Server to &#8220;&lt; No Server &gt;&#8221; and Save. Your index will now show as &#8220;disabled.&#8221;</li>
+<li>Edit it again (by clicking &#8220;Edit&#8221; next to &#8220;Database Node Index&#8221;) and set the Server back to &#8220;Database Server&#8221; and Save.</li>
+<li>Click the &#8220;enable&#8221; link while viewing the resulting page, or edit the index again and check the &#8220;Enabled&#8221; box.</li>
+<li>Once the index is enabled, you should see &#8220;0/[total] Indexed&#8221; on the index page. Click &#8220;Index Now&#8221; at the bottom of the page to re-index all your datasets.</li>
+<li>Repeat for any other indexes you have running on a database server.</li>
+</ol>
+<p>This issue has been identified and documented for other Drupal distributions using Search API. See release notes for the <a class="reference external" href="https://www.drupal.org/node/2425263">Panopoly</a> and <a class="reference external" href="https://www.drupal.org/node/2443025">OpenAtrium</a> distros on Drupal.org.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="1.8.html" class="btn btn-neutral float-right" title="DKAN 1.8 Release Notes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1.10.html" class="btn btn-neutral" title="DKAN 1.10 Release Notes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

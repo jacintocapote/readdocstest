@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Datastore API &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="API Guide" href="index.html"/>
+        <link rel="next" title="CKAN Dataset API" href="ckan-dataset.html"/>
+        <link rel="prev" title="Dataset REST API" href="rest-api.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rest-api.html">Dataset REST API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Datastore API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#datastore-api-url">Datastore API URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#request-parameters">Request Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameter-format">Parameter Format</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#return-values">Return Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simple-query-example">Simple query example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-search">Text Search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joins">Joins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-queries">Multiple queries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ckan-dataset.html">CKAN Dataset API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-data.html">Open Data APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">API Guide</a> &raquo;</li>
+      
+    <li>Datastore API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/apis/datastore-api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="datastore-api">
+<h1>Datastore API<a class="headerlink" href="#datastore-api" title="Permalink to this headline">¶</a></h1>
+<p>DKAN offers a Datastore API as a custom endpoint for the Drupal Services module.</p>
+<p>This API is designed to be as compatible as possible with the <a class="reference external" href="http://ckan.readthedocs.org/en/latest/maintaining/datastore.html">CKAN Datastore API</a>.</p>
+<p>Requests can be sent over HTTP. Data can be returned as JSON, XML, or JSONP. The Datastore API supports both simple GET parameters and POST requests containing a JSON object specifying one or multiple queries.</p>
+<div class="section" id="datastore-api-url">
+<h2>Datastore API URL<a class="headerlink" href="#datastore-api-url" title="Permalink to this headline">¶</a></h2>
+<p>Datastores can be queried at:  <code class="docutils literal"><span class="pre">/api/action/datastore/search</span></code></p>
+<p>The default return format is XML. JSON can be retrieved with <code class="docutils literal"><span class="pre">.json</span></code> at the end:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">action</span><span class="o">/</span><span class="n">datastore</span><span class="o">/</span><span class="n">search</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>...as can JSONP or making XML more explicit:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">action</span><span class="o">/</span><span class="n">datastore</span><span class="o">/</span><span class="n">search</span><span class="o">.</span><span class="n">jsonp</span>
+<span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">action</span><span class="o">/</span><span class="n">datastore</span><span class="o">/</span><span class="n">search</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="request-parameters">
+<h2>Request Parameters<a class="headerlink" href="#request-parameters" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">resource_id:</th><td class="field-body">id (string) or ids (array) of the resource to be searched against.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">filters:</th><td class="field-body">array or string of matching conditions to select</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">q:</th><td class="field-body">full text query</td>
+</tr>
+<tr class="field-even field"><th class="field-name">offset:</th><td class="field-body">offset this number of rows</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">limit:</th><td class="field-body">maximum number of rows to return (default: 100)&lt;/li&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">fields:</th><td class="field-body">array or comma-separated string of fields to return (default: all fields in original order)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">sort:</th><td class="field-body">comma-separated field names with ordering</td>
+</tr>
+<tr class="field-even field"><th class="field-name">join:</th><td class="field-body">array of fields to join from multiple tables</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="parameter-format">
+<h3>Parameter Format<a class="headerlink" href="#parameter-format" title="Permalink to this headline">¶</a></h3>
+<p>While the above can be passed as simple GET parameters (i.e. <code class="docutils literal"><span class="pre">?offset=1&amp;limit=10</span></code>),  queries that join multiple tables require an extended syntax on some fields, following the pattern:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">param_name</span><span class="p">[</span><span class="n">resource_alias</span><span class="p">][</span><span class="n">field_name</span><span class="p">]</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">value1</span>
+</pre></div>
+</div>
+<p>Even in a join query, this syntax will not be necessary for all parameters. For example, if you need to limit the number of records then you need to use the limit parameter. However it doesn&#8217;t make sense to specify an alias or a field in such case, even if you are submitting a join query. See below for examples.</p>
+</div>
+</div>
+<div class="section" id="return-values">
+<h2>Return Values<a class="headerlink" href="#return-values" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">fields:</th><td class="field-body">list of fields/columns and metadata</td>
+</tr>
+<tr class="field-even field"><th class="field-name">offset:</th><td class="field-body">query offset value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">limit:</th><td class="field-body">query limit value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">count:</th><td class="field-body">number of total matching records</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">records:</th><td class="field-body">list of matching results</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following is a simple example with two resources that contain 4 records each.</p>
+<p><strong>Resource 1</strong> (UUID: <code class="docutils literal"><span class="pre">d2142282-9838-4cca-972f-f1741410417b</span></code>) <strong>:</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="34%" />
+<col width="11%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">country</th>
+<th class="head">population</th>
+<th class="head">id</th>
+<th class="head">timestamp</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>US</td>
+<td>315,209,000</td>
+<td>1</td>
+<td>1359062329</td>
+</tr>
+<tr class="row-odd"><td>CA</td>
+<td>35,002,447</td>
+<td>2</td>
+<td>1359062329</td>
+</tr>
+<tr class="row-even"><td>AR</td>
+<td>40,117,096</td>
+<td>3</td>
+<td>1359062329</td>
+</tr>
+<tr class="row-odd"><td>JP</td>
+<td>127,520,000</td>
+<td>4</td>
+<td>1359062329</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Resource 2</strong> (UUID: <code class="docutils literal"><span class="pre">d3c099c6-1340-4ee5-b030-8faf22b4b424</span></code>) <strong>:</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="31%" />
+<col width="11%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>country</td>
+<td>squarekm</td>
+<td>id</td>
+<td>timestamp</td>
+</tr>
+<tr class="row-even"><td>US</td>
+<td>9,629,091</td>
+<td>1</td>
+<td>1359062713</td>
+</tr>
+<tr class="row-odd"><td>CA</td>
+<td>9,984,670</td>
+<td>2</td>
+<td>1359062713</td>
+</tr>
+<tr class="row-even"><td>AR</td>
+<td>2,780,400</td>
+<td>3</td>
+<td>1359062713</td>
+</tr>
+<tr class="row-odd"><td>JP</td>
+<td>377,930</td>
+<td>4</td>
+<td>1359062713</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="simple-query-example">
+<h3>Simple query example<a class="headerlink" href="#simple-query-example" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/api/dataset/search?resource_id=d2142282-9838-4cca-972f-f1741410417b&amp;filters[country]=AR,US&amp;fields=country,population,timestamp&amp;sort[country]=asc
+</pre></div>
+</div>
+<p>Returns the country, population, and timestamp fields for US and AR from dataset 1 sorting by the country in ascending order.</p>
+</div>
+<div class="section" id="text-search">
+<h3>Text Search<a class="headerlink" href="#text-search" title="Permalink to this headline">¶</a></h3>
+<p>Paths with the &#8216;query&#8217; argument will search the listed fields within the dataset.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/api/dataset/search?resource_id=d2142282-9838-4cca-972f-f1741410417b&amp;fields=country,population&amp;query=US
+</pre></div>
+</div>
+<p>This will return the country and population from US.</p>
+</div>
+<div class="section" id="joins">
+<h3>Joins<a class="headerlink" href="#joins" title="Permalink to this headline">¶</a></h3>
+<p>If you wish to query multiple tables, indicate the table as an array key in the following fields:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/api/dataset/search?resource_id[pop]=d2142282-9838-4cca-972f-f1741410417b&amp;resource_id[size]=d3c099c6-1340-4ee5-b030-8faf22b4b424&amp;filters[pop][country]=US,AR&amp;join[pop]=country&amp;join[size]=country
+</pre></div>
+</div>
+<p>Returns the country, population, squarekm and id for US and AR from datasets 11 and 13.</p>
+</div>
+<div class="section" id="multiple-queries">
+<h3>Multiple queries<a class="headerlink" href="#multiple-queries" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes you may want to do mutiple queries in one request. This use-case has come up particularly when building <a class="reference external" href="https://github.com/NuCivic/react-dashboard">dashboard applications</a> off the Datastore API. You can post a json object to <code class="docutils literal"><span class="pre">/api/action/datastore/search.json</span></code> with all the queries to perform in a single request.</p>
+<div class="section" id="example-request">
+<h4>Example request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;my_query&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;resource_id&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;states&quot;</span><span class="p">:</span> <span class="s2">&quot;d2142282-9838-4cca-972f-f1741410417b&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;gold_prices&quot;</span><span class="p">:</span><span class="s2">&quot;d3c099c6-1340-4ee5-b030-8faf22b4b424&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">5</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;my_query1&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;resource_id&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;gold_prices&quot;</span><span class="p">:</span> <span class="s2">&quot;d3c099c6-1340-4ee5-b030-8faf22b4b424&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">5</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="response">
+<h4>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;my_query&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;help&quot;</span><span class="p">:</span> <span class="s2">&quot;Search a datastore table. :param resource_id: id or alias of the data that is going to be selected.&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;state_id&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;resource_id&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;states&quot;</span><span class="p">:</span> <span class="s2">&quot;d2142282-9838-4cca-972f-f1741410417b&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;gold_prices&quot;</span><span class="p">:</span> <span class="s2">&quot;d3c099c6-1340-4ee5-b030-8faf22b4b424&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&quot;records&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alabama&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;state_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;feeds*flatstore*entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1466096874&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;feeds*entity*id&quot;</span><span class="p">:</span> <span class="s2">&quot;13&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;my_query1&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;help&quot;</span><span class="p">:</span> <span class="s2">&quot;Search a datastore table. :param resource_id: id or alias of the data that is going to be selected.&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;datetime&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;price&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;state_id&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;resource_id&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;gold_prices&quot;</span><span class="p">:</span> <span class="s2">&quot;d3c099c6-1340-4ee5-b030-8faf22b4b424&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">748</span><span class="p">,</span>
+      <span class="nt">&quot;records&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;1950-01-01&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="s2">&quot;34.73&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;state_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;feeds*flatstore*entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1466036208&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;feeds*entity*id&quot;</span><span class="p">:</span> <span class="s2">&quot;12&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ckan-dataset.html" class="btn btn-neutral float-right" title="CKAN Dataset API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rest-api.html" class="btn btn-neutral" title="Dataset REST API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

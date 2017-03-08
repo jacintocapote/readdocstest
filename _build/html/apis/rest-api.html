@@ -1,0 +1,772 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dataset REST API &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="API Guide" href="index.html"/>
+        <link rel="next" title="Datastore API" href="datastore-api.html"/>
+        <link rel="prev" title="API Guide" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dataset REST API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#services-documentation">Services Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server-types">Server Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repsonse-formats">Repsonse Formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#request-parser-types">Request Parser Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authentication-modes">Authentication Modes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#session-authentication">Session Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#token-authentication">Token Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#authentication-permissions">Authentication Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#log-in-and-get-the-session-cookie">Log In and get the Session Cookie</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-the-csrf-token">Get the CSRF Token</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-resource">Create a Resource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attach-a-file-to-a-resource">Attach a file to a resource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-dataset">Create a Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-in-the-terminal">Testing in the terminal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#users">Users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#content-datasets-resource">Content (Datasets, resource)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datastore-api.html">Datastore API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ckan-dataset.html">CKAN Dataset API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-data.html">Open Data APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">API Guide</a> &raquo;</li>
+      
+    <li>Dataset REST API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/apis/rest-api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dataset-rest-api">
+<h1>Dataset REST API<a class="headerlink" href="#dataset-rest-api" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://github.com/NuCivic/dkan/tree/7.x-1.x/modules/dkan/dkan_dataset/modules/dkan_dataset_rest_api">DKAN Dataset REST API</a> uses the <a class="reference external" href="https://www.drupal.org/project/services">Services</a> module to create CRUD endpoint at <code class="docutils literal"><span class="pre">api/dataset/node</span></code>. By default, this endpoint provides full CRUD access to a website&#8217;s content nodes, and limited access to users (to allow authentication). The endpoint can be customized at <code class="docutils literal"><span class="pre">/admin/structure/services/list/dkan_dataset_api/resources</span></code>.</p>
+<div class="section" id="services-documentation">
+<h2>Services Documentation<a class="headerlink" href="#services-documentation" title="Permalink to this headline">¶</a></h2>
+<p>The DKAN Dataset API module is only a light wrapper around the <a class="reference external" href="https://www.drupal.org/project/services">Services module</a>, which has extensive documentation. Here are some entries of interest:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/node/783722">Testing Resources</a></li>
+<li><a class="reference external" href="https://www.drupal.org/node/1354202">Identifying field names</a></li>
+<li><a class="reference external" href="https://www.drupal.org/node/1827698">Using REST Server with 2-Legged OAuth Authentication (Example with Java Servlet)</a></li>
+<li><a class="reference external" href="http://tylerfrankenstein.com/code/drupal-services-csrf-token-firefox-poster">Services CSRF Token with FireFox Poster</a></li>
+</ul>
+<p>The Sessions module also <a class="reference external" href="http://drupal.stackexchange.com/questions/tagged/services">has a thriving community on the Drupal Stack Exchange</a>.</p>
+</div>
+<div class="section" id="server-types">
+<h2>Server Types<a class="headerlink" href="#server-types" title="Permalink to this headline">¶</a></h2>
+<p>DKAN Dataset REST API comes with a REST Server. Other server types are also incldued in the Services module but not turned on. Those include:</p>
+<ul class="simple">
+<li>OAUTH</li>
+<li>XML-RPC</li>
+</ul>
+</div>
+<div class="section" id="repsonse-formats">
+<h2>Repsonse Formats<a class="headerlink" href="#repsonse-formats" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>bencode</li>
+<li>json</li>
+<li>jsonp</li>
+<li>php</li>
+<li>xml</li>
+<li>yaml</li>
+</ul>
+</div>
+<div class="section" id="request-parser-types">
+<h2>Request Parser Types<a class="headerlink" href="#request-parser-types" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>application/json</li>
+<li>application/vnd.php.serialized</li>
+<li>application/x-www-form-urlencoded</li>
+<li>application/x-yaml</li>
+<li>application/xml</li>
+<li>multipart/form-data</li>
+<li>text/xml</li>
+</ul>
+</div>
+<div class="section" id="authentication-modes">
+<h2>Authentication Modes<a class="headerlink" href="#authentication-modes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="session-authentication">
+<h3>Session Authentication<a class="headerlink" href="#session-authentication" title="Permalink to this headline">¶</a></h3>
+<p>Session authentication is enabled by default. With session authentication an inital request is made to the user login to requet a session cookie. That session cookie is then stored locally and sent with a request in the X-CSRF-Token header to authenticate the request.</p>
+</div>
+<div class="section" id="token-authentication">
+<h3>Token Authentication<a class="headerlink" href="#token-authentication" title="Permalink to this headline">¶</a></h3>
+<p>Token authenticaion is not currently available out-of-the-box. However, it can be enabled by adding the <a class="reference external" href="https://www.drupal.org/project/services_token_access">Services Token Access</a> module to your site. This is less secure but is easier for community members to use, and may be added to the DKAN distribution in a future release.</p>
+</div>
+<div class="section" id="authentication-permissions">
+<h3>Authentication Permissions<a class="headerlink" href="#authentication-permissions" title="Permalink to this headline">¶</a></h3>
+<p>The permissions with which a user is granted depend on the user role. User roles and permissions are easily configured in the user administration screen at <code class="docutils literal"><span class="pre">admin/people</span></code>, and DKAN comes with a number of pre-configured default roles via the <a class="reference external" href="https://github.com/NuCivic/dkan/tree/7.x-1.x/modules/dkan/dkan_permissions">DKAN Permissions</a> module.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Below you can find examples in PHP for the most common use cases, using session authentication.</p>
+<p>For an example of a fully-functional python-based client to the DKAN REST API, see the <a class="reference external" href="https://github.com/NuCivic/pydkan">pydkan</a> project.</p>
+<div class="section" id="log-in-and-get-the-session-cookie">
+<h3>Log In and get the Session Cookie<a class="headerlink" href="#log-in-and-get-the-session-cookie" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Setup request URL.</span>
+<span class="nv">$request_url</span> <span class="o">=</span> <span class="s1">&#39;http://example.com/api/dataset/user/login&#39;</span><span class="p">;</span>
+
+<span class="c1">// Prepare user data.</span>
+<span class="nv">$user_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;theusername&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;theuserpassword&#39;</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="nv">$user_data</span> <span class="o">=</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$user_data</span><span class="p">);</span>
+
+<span class="c1">// Setup request.</span>
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$request_url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Accept: application/json&#39;</span><span class="p">));</span>
+
+<span class="c1">// Accept JSON response.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Do a regular HTTP POST.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$user_data</span><span class="p">);</span> <span class="c1">// Set POST data.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_FAILONERROR</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+
+<span class="c1">// Execute request and get response.</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="c1">// Process response.</span>
+<span class="nv">$logged_user</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
+
+<span class="c1">// Save cookie session to be used on future requests.</span>
+<span class="nv">$cookie_session</span> <span class="o">=</span> <span class="nv">$logged_user</span><span class="o">-&gt;</span><span class="na">session_name</span> <span class="o">.</span> <span class="s1">&#39;=&#39;</span> <span class="o">.</span> <span class="nv">$logged_user</span><span class="o">-&gt;</span><span class="na">sessid</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-the-csrf-token">
+<h3>Get the CSRF Token<a class="headerlink" href="#get-the-csrf-token" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Setup request URL.</span>
+<span class="nv">$request_url</span> <span class="o">=</span> <span class="s1">&#39;http://example.com/services/session/token&#39;</span><span class="p">;</span>
+
+<span class="c1">// Setup request.</span>
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$request_url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Accept: application/json&#39;</span><span class="p">));</span> <span class="c1">// Accept JSON response.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Do a regular HTTP POST.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIE</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$cookie_session</span><span class="s2">&quot;</span><span class="p">);</span> <span class="c1">// Send the cookie session that we got after login.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_FAILONERROR</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+
+<span class="c1">// Execute request and save CSRF Token.</span>
+<span class="nv">$csrf_token</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-resource">
+<h3>Create a Resource<a class="headerlink" href="#create-a-resource" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Set up request URL.</span>
+<span class="nv">$request_url</span> <span class="o">=</span> <span class="s1">&#39;http://example.com/api/dataset/node&#39;</span><span class="p">;</span>
+
+<span class="c1">// Setup resource data.</span>
+<span class="c1">// A great explanation on how to target each node field can be found on the &#39;Identifying field names&#39; article linked on the &#39;Documentation&#39; section.</span>
+<span class="nv">$resource_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;resource&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Example resource&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;body[und][0][value]&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;The description&#39;</span>
+<span class="p">);</span>
+<span class="nv">$resource_data</span> <span class="o">=</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$resource_data</span><span class="p">);</span>
+
+<span class="c1">// Setup request.</span>
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$request_url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Accept: application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;X-CSRF-Token: &#39;</span> <span class="o">.</span> <span class="nv">$csrf_token</span><span class="p">));</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Do a regular HTTP POST.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$resource_data</span><span class="p">);</span> <span class="c1">// Set POST data.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIE</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$cookie_session</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_FAILONERROR</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+
+<span class="c1">// Execute request and get response.</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="attach-a-file-to-a-resource">
+<h3>Attach a file to a resource<a class="headerlink" href="#attach-a-file-to-a-resource" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Set up request URL.</span>
+<span class="nv">$request_url</span> <span class="o">=</span> <span class="s1">&#39;http://example.com/api/dataset/node/&#39;</span> <span class="o">.</span> <span class="nv">$resource_id</span> <span class="o">.</span> <span class="s1">&#39;/attach_file&#39;</span><span class="p">;</span>
+
+<span class="c1">// Setup file data.</span>
+<span class="nv">$file_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;files[1]&#39;</span> <span class="o">=&gt;</span> <span class="nb">curl_file_create</span><span class="p">(</span><span class="nv">$file</span><span class="p">),</span>
+    <span class="s1">&#39;field_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;field_upload&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;attach&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+<span class="p">);</span>
+
+<span class="c1">// Set up request.</span>
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$request_url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Content-Type: multipart/form-data&#39;</span><span class="p">,</span><span class="s1">&#39;Accept: application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;X-CSRF-Token: &#39;</span> <span class="o">.</span> <span class="nv">$csrf_token</span><span class="p">));</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Do a regular HTTP POST.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$file_data</span><span class="p">);</span> <span class="c1">// Set POST data.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIE</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$cookie_session</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_FAILONERROR</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+
+<span class="c1">// Execute request and get response.</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-dataset">
+<h3>Create a Dataset<a class="headerlink" href="#create-a-dataset" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// Set up request URL.</span>
+<span class="nv">$request_url</span> <span class="o">=</span> <span class="s1">&#39;http://example.com/api/dataset/node&#39;</span><span class="p">;</span>
+
+<span class="c1">// Set up dataset data.</span>
+<span class="c1">// A great explanation on how to target each node field can be found on the &#39;Identifying field names&#39; article linked on the &#39;Documentation&#39; section.</span>
+<span class="nv">$dataset_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;dataset&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Example dataset&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;body[und][0][value]&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;The description&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;field_resources[und][0][target_id]&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Madison Polling Places (5)&#39;</span> <span class="c1">// Resource title plus node id</span>
+    <span class="s1">&#39;field_author[und][0][value]&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Bob Lafollette&#39;</span>
+<span class="p">);</span>
+<span class="nv">$dataset_data</span> <span class="o">=</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$dataset_data</span><span class="p">);</span>
+
+<span class="c1">// Set up request.</span>
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$request_url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Accept: application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;X-CSRF-Token: &#39;</span> <span class="o">.</span> <span class="nv">$csrf_token</span><span class="p">));</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Do a regular HTTP POST.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$dataset_data</span><span class="p">);</span> <span class="c1">// Set POST data.</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIE</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$cookie_session</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_FAILONERROR</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+
+<span class="c1">// Execute request and get response.</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="testing-in-the-terminal">
+<h2>Testing in the terminal<a class="headerlink" href="#testing-in-the-terminal" title="Permalink to this headline">¶</a></h2>
+<p>If you want to quickly test that the functionality is working, you can run the following commands from a terminal.</p>
+<p>Replace the domain, username and password in the commands below to match your development environment, and then replace the token value with the token from the response to the authentication request.</p>
+<div class="section" id="users">
+<h3>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="authentication-login">
+<h4>Authentication (login)<a class="headerlink" href="#authentication-login" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST -i -H <span class="s2">&quot;Content-type: application/json&quot;</span> -H <span class="s2">&quot;Accept: application/json&quot;</span> -c cookies.txt -X POST http://demo.getdkan.com/api/dataset/user/login -d <span class="s1">&#39;{</span>
+<span class="s1">  &quot;username&quot;:&quot;admin&quot;,</span>
+<span class="s1">  &quot;password&quot;:&quot;password&quot;</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+<p>This will return the cookie and the <strong>CSRF token</strong> that we need to reuse for all
+the authenticated user iteration via the API.</p>
+</div>
+</div>
+<div class="section" id="content-datasets-resource">
+<h3>Content (Datasets, resource)<a class="headerlink" href="#content-datasets-resource" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="retrive-dataset">
+<h4>Retrive dataset<a class="headerlink" href="#retrive-dataset" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl http://demo.getdkan.com/api/dataset/node/22.json
+</pre></div>
+</div>
+<p>Example response:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;vid&quot;</span><span class="p">:</span> <span class="s2">&quot;52&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Wisconsin Polling Places&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;log&quot;</span><span class="p">:</span> <span class="s2">&quot;Update to resource &#39;Madison Polling Places&#39;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;promote&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;sticky&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;vuuid&quot;</span><span class="p">:</span> <span class="s2">&quot;30daa43f-aa4a-477a-b011-047ce3d5007e&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;nid&quot;</span><span class="p">:</span> <span class="s2">&quot;22&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;dataset&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;und&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;1360541580&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;changed&quot;</span><span class="p">:</span> <span class="s2">&quot;1477369101&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;tnid&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;translate&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;934400f2-a5dc-4abf-bf16-3f17335888d3&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;revision_timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1477369101&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;revision_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;p&gt;Polling places in the state of Wisconsin.&lt;/p&gt;\n&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;summary&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;safe_value&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;p&gt;Polling places in the state of Wisconsin.&lt;/p&gt;\n&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;safe_summary&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_additional_info&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_author&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Wisconsin Board of Elections&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;safe_value&quot;</span><span class="p">:</span> <span class="s2">&quot;Wisconsin Board of Elections&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_conforms_to&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_contact_email&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;datademo@nucivic.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;safe_value&quot;</span><span class="p">:</span> <span class="s2">&quot;datademo@nucivic.com&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_contact_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Couch, Aaron&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;safe_value&quot;</span><span class="p">:</span> <span class="s2">&quot;Couch, Aaron&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_data_dictionary&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_data_dictionary_type&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_frequency&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_granularity&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_harvest_source_ref&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_is_part_of&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_landing_page&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_language&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_license&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;cc-by&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;safe_value&quot;</span><span class="p">:</span> <span class="s2">&quot;cc-by&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_modified_source_date&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_pod_theme&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_public_access_level&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;public&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_related_content&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_resources&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;target_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_rights&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_spatial&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;wkt&quot;</span><span class="p">:</span> <span class="s2">&quot;POLYGON ((-90.415429 46.568478, -90.229213 46.508231, -90.119674 46.338446, -89.09001 46.135799, -88.662808 45.987922, -88.531362 46.020784, -88.10416 45.922199, -87.989145 45.796229, -87.781021 45.675736, -87.791975 45.500474, -87.885083 45.363551, -87.649574 45.341643, -87.742682 45.199243, -87.589328 45.095181, -87.627666 44.974688, -87.819359 44.95278, -87.983668 44.722749, -88.043914 44.563917, -87.928898 44.536533, -87.775544 44.640595, -87.611236 44.837764, -87.403112 44.914442, -87.238804 45.166381, -87.03068 45.22115, -87.047111 45.089704, -87.189511 44.969211, -87.468835 44.552964, -87.545512 44.322932, -87.540035 44.158624, -87.644097 44.103854, -87.737205 43.8793, -87.704344 43.687607, -87.791975 43.561637, -87.912467 43.249452, -87.885083 43.002989, -87.76459 42.783912, -87.802929 42.493634, -88.788778 42.493634, -90.639984 42.510065, -90.711184 42.636034, -91.067185 42.75105, -91.143862 42.909881, -91.176724 43.134436, -91.056231 43.254929, -91.204109 43.353514, -91.215062 43.501391, -91.269832 43.616407, -91.242447 43.775238, -91.43414 43.994316, -91.592971 44.032654, -91.877772 44.202439, -91.927065 44.333886, -92.233773 44.443425, -92.337835 44.552964, -92.545959 44.569394, -92.808852 44.750133, -92.737652 45.117088, -92.75956 45.286874, -92.644544 45.440228, -92.770513 45.566198, -92.885529 45.577151, -92.869098 45.719552, -92.639067 45.933153, -92.354266 46.015307, -92.29402 46.075553, -92.29402 46.667063, -92.091373 46.749217, -92.014696 46.705401, -91.790141 46.694447, -91.09457 46.864232, -90.837154 46.95734, -90.749522 46.88614, -90.886446 46.754694, -90.55783 46.584908))&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;geo_type&quot;</span><span class="p">:</span> <span class="s2">&quot;polygon&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;lat&quot;</span><span class="p">:</span> <span class="s2">&quot;44.635&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;lon&quot;</span><span class="p">:</span> <span class="s2">&quot;-90.0142&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;left&quot;</span><span class="p">:</span> <span class="s2">&quot;-92.8855&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;top&quot;</span><span class="p">:</span> <span class="s2">&quot;46.9573&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;right&quot;</span><span class="p">:</span> <span class="s2">&quot;-87.0307&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;bottom&quot;</span><span class="p">:</span> <span class="s2">&quot;42.4936&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;srid&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;accuracy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_spatial_geographical_cover&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Wisconsin, United States&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;safe_value&quot;</span><span class="p">:</span> <span class="s2">&quot;Wisconsin, United States&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_tags&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;tid&quot;</span><span class="p">:</span> <span class="s2">&quot;9&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_temporal_coverage&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;og_group_ref&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;target_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;field_topic&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;field_orphan&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;rdf_mapping&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;rdftype&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;sioc:Item&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;foaf:Document&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;predicates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;dc:title&quot;</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;predicates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;dc:date&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dc:created&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;datatype&quot;</span><span class="p">:</span> <span class="s2">&quot;xsd:dateTime&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;callback&quot;</span><span class="p">:</span> <span class="s2">&quot;date_iso8601&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;changed&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;predicates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;dc:modified&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;datatype&quot;</span><span class="p">:</span> <span class="s2">&quot;xsd:dateTime&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;callback&quot;</span><span class="p">:</span> <span class="s2">&quot;date_iso8601&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;predicates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;content:encoded&quot;</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;predicates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;sioc:has_creator&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rel&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;predicates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;foaf:name&quot;</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;comment_count&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;predicates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;sioc:num_replies&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;datatype&quot;</span><span class="p">:</span> <span class="s2">&quot;xsd:integer&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;last_activity&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;predicates&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;sioc:last_activity_date&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;datatype&quot;</span><span class="p">:</span> <span class="s2">&quot;xsd:dateTime&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;callback&quot;</span><span class="p">:</span> <span class="s2">&quot;date_iso8601&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;http://demo.getdkan.com/dataset/wisconsin-polling-places&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;picture&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;b:0;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-new-dataset">
+<h4>Create a new dataset<a class="headerlink" href="#create-a-new-dataset" title="Permalink to this headline">¶</a></h4>
+<p>This will need an authenticated user with appropriate permissions. The headers
+include the user credentials (cookie and CSRF token).</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST -i -H <span class="s2">&quot;Content-type: application/json&quot;</span> -H <span class="s2">&quot;X-CSRF-Token: 8RniaOCwrsK8Mvue0al_C6EMAraTg26jzklDdLLgvns&quot;</span> -b cookies.txt -X POST http://demo.getdkan.com//api/dataset/node -d <span class="s1">&#39;{</span>
+<span class="s1">  &quot;title&quot;:&quot;A node created via DKAN REST API&quot;,</span>
+<span class="s1">  &quot;type&quot;:&quot;dataset&quot;,</span>
+<span class="s1">  &quot;body&quot;: {</span>
+<span class="s1">    &quot;und&quot;: [{&quot;value&quot;: &quot;This should be the description&quot;}]</span>
+<span class="s1">  }</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-dataset-title">
+<h4>Update dataset title<a class="headerlink" href="#update-dataset-title" title="Permalink to this headline">¶</a></h4>
+<p>To update content we use the PUT HTTP method. This will add the word &#8220;UPDATED&#8221; to the title:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X PUT -i -H <span class="s2">&quot;Content-type: application/json&quot;</span> -H <span class="s2">&quot;X-CSRF-Token: 8RniaOCwrsK8Mvue0al_C6EMAraTg26jzklDdLLgvns&quot;</span> -b cookies.txt http://demo.getdkan.com//api/dataset/node/22 -d <span class="s1">&#39;{</span>
+<span class="s1">  &quot;title&quot;:&quot;A node created with services 3.x and REST server - UPDATED&quot;</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-a-dataset-field">
+<h4>Update a dataset field<a class="headerlink" href="#update-a-dataset-field" title="Permalink to this headline">¶</a></h4>
+<p>Titles are a core property for content in Drupal. Updating additional content-type-specific fields requires a slightly more complex data structure. To update a dataset&#8217;s frequency, for instance:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X PUT -i -H <span class="s2">&quot;Content-type: application/json&quot;</span> -H <span class="s2">&quot;X-CSRF-Token: 8RniaOCwrsK8Mvue0al_C6EMAraTg26jzklDdLLgvns&quot;</span> -b cookies.txt http://demo.getdkan.com/api/dataset/node/22 -d <span class="s1">&#39;{</span>
+<span class="s1">  &quot;field_frequency&quot;: {&quot;und&quot;:{&quot;value&quot;: 6}}</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+<p>Because the REST API runs input through the dataset node form for validation, the data structure may differ for different fields. For instance, because it is a &#8220;Select or license&#8221; field, the structure for changing the License field on a dataset to &#8220;cc-nc&#8221; (Creative Commons Non-Commercial) would be:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;field_license&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;und&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;select&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;cc-nc&quot;</span><span class="p">}}}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://www.drupal.org/node/1354202">Services documentation on custom fields</a> for more detailed information.</p>
+</div>
+<div class="section" id="add-new-resource-to-dataset">
+<h4>Add new resource to dataset<a class="headerlink" href="#add-new-resource-to-dataset" title="Permalink to this headline">¶</a></h4>
+<p>This is a two-step process with the API:</p>
+<ol class="arabic simple">
+<li>Create the resource node:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST -i -H <span class="s2">&quot;Content-type: application/json&quot;</span> -H <span class="s2">&quot;X-CSRF-Token: 8RniaOCwrsK8Mvue0al_C6EMAraTg26jzklDdLLgvns&quot;</span> -b cookies.txt -X POST http://demo.getdkan.com/api/dataset/node -d <span class="s1">&#39;{</span>
+<span class="s1">  &quot;title&quot;:&quot;A resource created via the DKAN REST API&quot;,</span>
+<span class="s1">  &quot;type&quot;:&quot;resource&quot;,</span>
+<span class="s1">  &quot;body&quot;: {&quot;und&quot;: [{&quot;value&quot;: &quot;This should be the description for the resource.&quot;}]},</span>
+<span class="s1">  &quot;field_link_api&quot;: {&quot;und&quot;: [{&quot;url&quot;: &quot;http://data.worldbank.org/&quot;}]}</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Attach the newly created resource node to the parent dataset. Use the node ids that match the dataset and resource created by the commands above.</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X PUT -i -H <span class="s2">&quot;Content-type: application/json&quot;</span> -H <span class="s2">&quot;X-CSRF-Token: 8RniaOCwrsK8Mvue0al_C6EMAraTg26jzklDdLLgvns&quot;</span> -b cookies.txt http://demo.getdkan.com/api/dataset/node/43 -d <span class="s1">&#39;{</span>
+<span class="s1">  &quot;field_resources&quot;: {&quot;und&quot;: [{&quot;target_id&quot;: &quot;A resource created via the DKAN REST APIs (45)&quot;}]}</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The provided value (<cite>A resource create via the DKAN REST API (45)</cite>) is the value expected from the dataset entry form, with &#8220;45&#8221; being the resource node id.</p>
+</div>
+</div>
+<div class="section" id="query-for-url-values-of-previous-revision-of-file">
+<h4>Query for url/values of previous revision of file.<a class="headerlink" href="#query-for-url-values-of-previous-revision-of-file" title="Permalink to this headline">¶</a></h4>
+<p>The assumption in this example is that the file is stored remotely and we are looking to get the link as it was set in a previous revision of the resource node.</p>
+<p>Versions/revisions are tracked via Durpal&#8217;s <code class="docutils literal"><span class="pre">vid</span></code> identifier. We can query a specific node revision (for example <cite>vid</cite> 89) using the vid as parameter</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X GET -gi -H <span class="s2">&quot;Content-type: application/json&quot;</span> -H <span class="s2">&quot;X-CSRF-Token: 8RniaOCwrsK8Mvue0al_C6EMAraTg26jzklDdLLgvns&quot;</span> -b cookies.txt <span class="s1">&#39;http://demo.getdkan.com/api/dataset/node.json?parameters[vid]=89&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul class="simple">
+<li>Datasets and other content nodes can only be queried via node id or other entity. UUID support pending.</li>
+<li>Upon attaching a file to a resource via the API, DKAN will immediately import this file to the Datastore if it is a valid CSV. This may not always be the desired behavior; more control over datastore behavior should be available to API clients.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="datastore-api.html" class="btn btn-neutral float-right" title="Datastore API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="API Guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Theme &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="Major Components" href="index.html"/>
+        <link rel="next" title="DKAN Roles and Permissions" href="permissions.html"/>
+        <link rel="prev" title="Search" href="search.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Major Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dataset/index.html">Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastore/index.html">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Theme</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-dkan-theme">Default DKAN Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theme-and-appearance-settings">Theme and Appearance Settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#site-name-and-slogan">Site name and slogan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logo">Logo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shortcut-icon">Shortcut icon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copyright-info">Copyright info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hero-background-image-color">Hero background image/color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#color-scheme">Color scheme</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fonts">Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-subtheme">Creating a new subtheme</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#theming-tools">Theming Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#icon-fonts">Icon Fonts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dkan-flaticon">dkan-flaticon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dkan-topics">dkan-topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Major Components</a> &raquo;</li>
+      
+    <li>Theme</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/components/theme.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="theme">
+<h1>Theme<a class="headerlink" href="#theme" title="Permalink to this headline">¶</a></h1>
+<p>DKAN takes advantage of Drupal’s well-developed and flexible theming system,
+allowing administrators complete graphical control over the entire DKAN site.
+Features such as responsive page templates, accessible design elements, and
+built-in media management provide the latest in design and presentation
+technologies.</p>
+<div class="section" id="default-dkan-theme">
+<h2>Default DKAN Theme<a class="headerlink" href="#default-dkan-theme" title="Permalink to this headline">¶</a></h2>
+<p>In Drupal and DKAN, the collection of page templates, fonts, colors, images,
+and other “look and feel” elements are known as a “theme.” NuBoot Radix is the default theme for DKAN and is a subtheme of <a class="reference external" href="https://www.drupal.org/project/radix">Radix</a> which uses <a class="reference external" href="https://github.com/twbs/bootstrap">bootstrap</a> styles and is compatible with panelized sites. This theme has some basic customization features built in, for many client sites, these configurations will be all that is necessary to meet the client expectations. The configurable items are:</p>
+<ul class="simple">
+<li>Logo (svg logos will display better on retina displays)</li>
+<li>Front page Hero image OR you can set a solid color background for the hero region.</li>
+<li>Favicon.</li>
+<li>Copyright text.</li>
+<li>Color options via the Colorizer screen</li>
+<li>Fonts: use font-your-face to use alternate fonts</li>
+</ul>
+<p>DKAN administrators have the choice of customizing the existing DKAN Theme through theme settings, implementing an entirely new theme, or creating a <a class="reference internal" href="#creating-subtheme"><span class="std std-ref">subtheme of nuboot_radix</span></a>.</p>
+<p>By default, the DKAN Theme is located in: <cite>[SITEROOT]/themes/nuboot_radix</cite></p>
+</div>
+<div class="section" id="theme-and-appearance-settings">
+<h2>Theme and Appearance Settings<a class="headerlink" href="#theme-and-appearance-settings" title="Permalink to this headline">¶</a></h2>
+<p>The DKAN Theme does provide a few simple customizations that administrators can use to change the default appearance of the site from the theme settings screen. If logged in as an administrative user, navigate to Appearance &gt;&gt; Settings</p>
+<div class="section" id="site-name-and-slogan">
+<h3>Site name and slogan<a class="headerlink" href="#site-name-and-slogan" title="Permalink to this headline">¶</a></h3>
+<p>From the settings screen, you can toggle on/off the <strong>site name</strong> and <strong>slogan</strong>, simply check the box next to the elements you want to use.</p>
+<img alt="../_images/Appearance_DKAN.png" src="../_images/Appearance_DKAN.png" />
+</div>
+<div class="section" id="logo">
+<h3>Logo<a class="headerlink" href="#logo" title="Permalink to this headline">¶</a></h3>
+<p>Uncheck the &#8216;Use the default&#8217; checkbox, and upload a new logo file in the logo image settings section.</p>
+<img alt="../_images/Appearance_DKAN_2.png" src="../_images/Appearance_DKAN_2.png" />
+</div>
+<div class="section" id="shortcut-icon">
+<h3>Shortcut icon<a class="headerlink" href="#shortcut-icon" title="Permalink to this headline">¶</a></h3>
+<p>If you would like to use a different favicon image, uncheck the &#8216;Use the default&#8217; checkbox, and upload your own.</p>
+</div>
+<div class="section" id="copyright-info">
+<h3>Copyright info<a class="headerlink" href="#copyright-info" title="Permalink to this headline">¶</a></h3>
+<p>To change the <strong>copyright</strong> information that displays at the bottom of every page, edit the text in the copyright field and save.</p>
+</div>
+<div class="section" id="hero-background-image-color">
+<h3>Hero background image/color<a class="headerlink" href="#hero-background-image-color" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Hero Unit</strong> is the background image that displays on the front page. To use a different photo than the one supplied, click the &#8216;Choose file&#8217; button to upload a new image. This image will expand to cover the full width of the browser so be sure to upload a horizontal/landscape image and not a vertical/portrait image.</p>
+<img alt="../_images/Appearance_DKAN_3.png" src="../_images/Appearance_DKAN_3.png" />
+</div>
+<div class="section" id="color-scheme">
+<h3>Color scheme<a class="headerlink" href="#color-scheme" title="Permalink to this headline">¶</a></h3>
+<p>To use the <strong>colorizer</strong> option, you must use the default theme as the admin theme. Navigate to <cite>[SITEROOT]/admin/appearance</cite> and scroll to the bottom. Confirm that the Admin theme is set to &#8216;Default Theme&#8217;.</p>
+<p>Now navigate to <cite>[SITEROOT]/admin/appearance/colorizer</cite> by clicking on the &#8216;Colorizer&#8217; tab. Here you will see the color scheme options. There are a few default options you can select from the drop down, or you can enter hex values to create a custom color scheme, be sure to click &#8216;Save Configuration&#8217; when finished. Your new colors are saved to a css file in your files directory. If you do not see your changes you may need to clear the colorizer cache by clicking the &#8216;Clear Colorizer Cache&#8217; button. These colors will override all other styles in the theme.</p>
+<img alt="../_images/Appearance_DKAN_4.png" src="../_images/Appearance_DKAN_4.png" />
+</div>
+<div class="section" id="fonts">
+<h3>Fonts<a class="headerlink" href="#fonts" title="Permalink to this headline">¶</a></h3>
+<p>On the Appearance page, you will see a sub-menu item for <strong>&#64;font-your-face</strong>. Navigate to <cite>[SITEROOT]/admin/appearance/fontyourface</cite>.</p>
+<p>By default, the Google fonts api is enabled. If you click on the <strong>Browse all fonts</strong> tab, you will be able to select which google fonts to add to your site. Once you have made your selections, click on the <strong>Enabled fonts</strong> tab to view the font settings screen. Click on the <strong>By CSS selector</strong>, here you can select the css tag and what font should be applied to it using the table. To add fonts to specific css selectors, add them to the open text field at the bottom of the list, select a font from the dropdown next to it and click the <strong>Save applied fonts</strong> button
+For more information on how to use &#64;fontyourface visit the <a class="reference external" href="https://www.drupal.org/project/fontyourface">project page</a>.</p>
+<img alt="Apply fonts" src="../_images/Browse_fonts_DKAN.png" />
+<img alt="Select google fonts" src="../_images/Appearance_DKAN_5.png" />
+</div>
+<div class="section" id="creating-a-new-subtheme">
+<span id="creating-subtheme"></span><h3>Creating a new subtheme<a class="headerlink" href="#creating-a-new-subtheme" title="Permalink to this headline">¶</a></h3>
+<p>To create a Nuboot Radix subtheme, run these commands</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">drush</span> <span class="nx">en</span> <span class="nx">radix</span>
+
+<span class="nx">drush</span> <span class="nx">vset</span> <span class="nx">theme_default</span> <span class="nx">radix</span>
+
+<span class="nx">drush</span> <span class="nx">radix</span> <span class="s2">&quot;MyThemeName&quot;</span> <span class="o">--</span><span class="nx">kit</span><span class="o">=</span><span class="nx">https</span><span class="o">://</span><span class="nx">github</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">NuCivic</span><span class="o">/</span><span class="nx">radix</span><span class="o">-</span><span class="nx">kit</span><span class="o">-</span><span class="nx">nuboot</span><span class="o">/</span><span class="nx">archive</span><span class="o">/</span><span class="nx">master</span><span class="o">.</span><span class="nx">zip</span>
+
+<span class="nx">drush</span> <span class="nx">vset</span> <span class="nx">theme_default</span> <span class="nx">MyThemeName</span>
+
+<span class="nx">drush</span> <span class="nx">dis</span> <span class="nx">radix</span>
+</pre></div>
+</div>
+<p>OR if using <a class="reference external" href="https://dkan-starter.readthedocs.io">Ahoy</a>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">ahoy</span> <span class="nx">dkan</span> <span class="nx">theme</span> <span class="k">new</span><span class="o">-</span><span class="nx">from</span><span class="o">-</span><span class="nx">kit</span> <span class="p">[</span><span class="k">new</span><span class="o">-</span><span class="nx">theme</span><span class="o">-</span><span class="nx">name</span><span class="p">]</span>
+
+<span class="nx">ahoy</span> <span class="nx">dkan</span> <span class="nx">theme</span> <span class="nx">setup</span>
+
+<span class="nx">ahoy</span> <span class="nx">dkan</span> <span class="nx">theme</span> <span class="nx">watch</span>
+</pre></div>
+</div>
+<p>Your new subtheme will be placed in to the /sites/all/themes/ directory, it will contain only the directory structure, add your overrides where appropriate.</p>
+</div>
+</div>
+<div class="section" id="theming-tools">
+<h2>Theming Tools<a class="headerlink" href="#theming-tools" title="Permalink to this headline">¶</a></h2>
+<p>Install Node and npm. You will use <a class="reference external" href="https://www.npmjs.com/package/gulp">gulp</a> for compiling the sass files. To get your local environment set up, follow these steps:</p>
+<ol class="arabic simple">
+<li>Install Node and npm. You can read a guide on how to install node <a class="reference external" href="https://docs.npmjs.com/getting-started/installing-node">here</a></li>
+<li>Install bower: <code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span> <span class="pre">bower</span></code>.</li>
+<li>Go to the root of your theme and run the following commands: <code class="docutils literal"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">setup</span></code>.</li>
+<li>Update browserSyncProxy in config.json</li>
+<li>Edit the files under the scss and js directory, these will be compiled into the assets directory. Run the following command to compile Sass and watch for changes: <code class="docutils literal"><span class="pre">gulp</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="icon-fonts">
+<h2>Icon Fonts<a class="headerlink" href="#icon-fonts" title="Permalink to this headline">¶</a></h2>
+<p>The Nuboot Radix theme ships with two icon fonts:</p>
+<div class="section" id="dkan-flaticon">
+<h3>dkan-flaticon<a class="headerlink" href="#dkan-flaticon" title="Permalink to this headline">¶</a></h3>
+<p>This font is used for file types (csv, pdf, xls, etc) <a class="reference external" href="http://www.flaticon.com/packs/file-formats-icons">designed by Freepik</a></p>
+<p>The font files and the css are inside the Nuboot Radix theme <cite>dkan/themes/nuboot_radix</cite>. If you would like to use your own file type icons you can override the dkan-flaticon css by creating a custom theme. OR, if you would like to use the dkan-flaticon icons but NOT use Nuboot Radix as your base theme, you will need to copy the dkan-flaticon fonts and the dkan-flaticon.css into the theme you are using.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">dkan</span><span class="o">/</span><span class="nx">themes</span><span class="o">/</span><span class="nx">nuboot_radix</span><span class="o">/</span><span class="nx">assets</span><span class="o">/</span><span class="nx">fonts</span><span class="o">/</span><span class="nx">dkan</span><span class="o">-</span><span class="nx">flaticon</span><span class="o">.</span><span class="nx">eot</span>
+<span class="nx">dkan</span><span class="o">/</span><span class="nx">themes</span><span class="o">/</span><span class="nx">nuboot_radix</span><span class="o">/</span><span class="nx">assets</span><span class="o">/</span><span class="nx">fonts</span><span class="o">/</span><span class="nx">dkan</span><span class="o">-</span><span class="nx">flaticon</span><span class="o">.</span><span class="nx">svg</span>
+<span class="nx">dkan</span><span class="o">/</span><span class="nx">themes</span><span class="o">/</span><span class="nx">nuboot_radix</span><span class="o">/</span><span class="nx">assets</span><span class="o">/</span><span class="nx">fonts</span><span class="o">/</span><span class="nx">dkan</span><span class="o">-</span><span class="nx">flaticon</span><span class="o">.</span><span class="nx">ttf</span>
+<span class="nx">dkan</span><span class="o">/</span><span class="nx">themes</span><span class="o">/</span><span class="nx">nuboot_radix</span><span class="o">/</span><span class="nx">assets</span><span class="o">/</span><span class="nx">fonts</span><span class="o">/</span><span class="nx">dkan</span><span class="o">-</span><span class="nx">flaticon</span><span class="o">.</span><span class="nx">woff</span>
+<span class="nx">dkan</span><span class="o">/</span><span class="nx">themes</span><span class="o">/</span><span class="nx">nuboot_radix</span><span class="o">/</span><span class="nx">assets</span><span class="o">/</span><span class="nx">css</span><span class="o">/</span><span class="nx">dkan</span><span class="o">-</span><span class="nx">flaticon</span><span class="o">.</span><span class="nx">css</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dkan-topics">
+<h3>dkan-topics<a class="headerlink" href="#dkan-topics" title="Permalink to this headline">¶</a></h3>
+<p>This font is used for the Content Type and <a class="reference internal" href="topics.html"><span class="doc">Topics</span></a> icons, see <a class="reference external" href="http://www.streamlineicons.com/index.html">Streamline Icons</a></p>
+<p>If you would like to use your own icon font for Topics, use the <span class="xref doc">steps outlined here</span>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="permissions.html" class="btn btn-neutral float-right" title="DKAN Roles and Permissions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="search.html" class="btn btn-neutral" title="Search" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

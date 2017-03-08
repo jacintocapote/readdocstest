@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dataset Preview Features &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../../index.html"/>
+        <link rel="up" title="DKAN Dataset Module and Sub-Modules" href="index.html"/>
+        <link rel="next" title="Groups in DKAN" href="groups.html"/>
+        <link rel="prev" title="Advanced Metadata Features" href="datasetfeatures.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Major Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Datasets</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datasetfeatures.html">Advanced Metadata Features</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Dataset Preview Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#recline-js">Recline.js</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#additional-preview-support">Additional preview support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preview-configuration">Preview Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#external-previews">External Previews</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="groups.html">Groups in DKAN</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../datastore/index.html">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Major Components</a> &raquo;</li>
+      
+          <li><a href="index.html">DKAN Dataset Module and Sub-Modules</a> &raquo;</li>
+      
+    <li>Dataset Preview Features</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/components/dataset/previews.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dataset-preview-features">
+<h1>Dataset Preview Features<a class="headerlink" href="#dataset-preview-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="recline-js">
+<h2>Recline.js<a class="headerlink" href="#recline-js" title="Permalink to this headline">¶</a></h2>
+<p>DKAN, like CKAN, offers an integration with the <a class="reference external" href="http://reclinejs.com">Recline</a> Javascript library. Recline allows site visitors to preview tabular data visually. The preview works for CSV and XLS* files that are uploaded to the DKAN site or hosted remotely and linked to, as well as for data stored in DKAN&#8217;s local SQL-based datastore.</p>
+<div class="section" id="grid-view">
+<h3>Grid View<a class="headerlink" href="#grid-view" title="Permalink to this headline">¶</a></h3>
+<p>All tabular data can be rendered as spreadsheet-style rows and columns:</p>
+<div class="figure">
+<img alt="../../_images/csv-preview.png" src="../../_images/csv-preview.png" />
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>For xls files be sure to fill in the format field to see previews of the data</p>
+<div class="figure">
+<img alt="../../_images/xls-format.png" src="../../_images/xls-format.png" />
+</div>
+</div>
+<div class="section" id="map-view">
+<h3>Map View<a class="headerlink" href="#map-view" title="Permalink to this headline">¶</a></h3>
+<p>Visitors can preview data that contains either coordinates or GeoJSON on a <a class="reference external" href="http://leafletjs.com/">Leaflet.js</a> -based map:</p>
+<div class="figure">
+<img alt="../../_images/map-preview.png" src="../../_images/map-preview.png" />
+</div>
+</div>
+<div class="section" id="graph-view">
+<h3>Graph View<a class="headerlink" href="#graph-view" title="Permalink to this headline">¶</a></h3>
+<p>If enabled, visitors can chose one column of your data as an X-axis, one or more as Y-axis data, and preview your data as a bar, point or line graph.</p>
+<div class="figure">
+<img alt="../../_images/graph-preview.png" src="../../_images/graph-preview.png" />
+</div>
+</div>
+<div class="section" id="file-size-limits">
+<h3>File size limits<a class="headerlink" href="#file-size-limits" title="Permalink to this headline">¶</a></h3>
+<p>Files can only be previewed if they are well formatted or small enough to render in the browser.</p>
+<p>If files are too large to preview within 1 second you will get the following message &#8220;File was too large or unavailable for preview.&#8221;</p>
+<p>Files that are too large to preview in the browser can be previewed by <a class="reference external" href="../datastore/index.html">adding them to the datastore</a>. Once a file is in the datastore the preview is only asking for the first 25 rows of the data. Thus large datasets can be previewed.</p>
+</div>
+</div>
+<div class="section" id="additional-preview-support">
+<h2>Additional preview support<a class="headerlink" href="#additional-preview-support" title="Permalink to this headline">¶</a></h2>
+<p>Support has been added for previewing JSON, geojson, XML, ArcGIS REST, WMS, images, PDF, and ZIP* files.
+<a href="#id3"><span class="problematic" id="id4">*</span></a>DKAN will display a list of contents for ZIP files uploaded as resources on datasets. (Unlike recline visual previews, the zip file preview does not work with remote linked files.)</p>
+<div class="figure">
+<img alt="../../_images/zip-preview.png" src="../../_images/zip-preview.png" />
+</div>
+<div class="figure">
+<img alt="../../_images/xml-preview.png" src="../../_images/xml-preview.png" />
+</div>
+<div class="figure">
+<img alt="../../_images/pdf-preview.png" src="../../_images/pdf-preview.png" />
+</div>
+<div class="figure">
+<img alt="../../_images/json-preview.png" src="../../_images/json-preview.png" />
+</div>
+<div class="figure">
+<img alt="../../_images/geojson-preview.png" src="../../_images/geojson-preview.png" />
+</div>
+<div class="figure">
+<img alt="../../_images/png-preview.png" src="../../_images/png-preview.png" />
+</div>
+<div class="figure">
+<img alt="../../_images/arcgis-preview.png" src="../../_images/arcgis-preview.png" />
+</div>
+<div class="figure">
+<img alt="../../_images/wms-preview.png" src="../../_images/wms-preview.png" />
+</div>
+</div>
+<div class="section" id="preview-configuration">
+<h2>Preview Configuration<a class="headerlink" href="#preview-configuration" title="Permalink to this headline">¶</a></h2>
+<p>By default previews are available for resources with files below 3MB of size. However you can customize this limit in the recline configuration page (/admin/dkan/recline).</p>
+<div class="figure">
+<img alt="../../_images/recline-configuration.png" src="../../_images/recline-configuration.png" />
+</div>
+</div>
+<div class="section" id="external-previews">
+<h2>External Previews<a class="headerlink" href="#external-previews" title="Permalink to this headline">¶</a></h2>
+<p>Starting with version 7.x-1.10, DKAN supports previewing/opening resources in external services that offer simple URL-based integrations. For instance, the CartoDB mapping service offers an <a class="reference external" href="https://cartodb.com/open-in-cartodb">Open in CartoDB service</a>. Enabling this for CSV files will result in a dataset display like this:</p>
+<div class="figure">
+<img alt="../../_images/external-preview.png" src="../../_images/external-preview.png" />
+</div>
+<p>External preview functionality can be enabled and configured in the &#8220;DKAN Dataset Previews&#8221; administration page (/admin/dkan/dataset_preview).</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="groups.html" class="btn btn-neutral float-right" title="Groups in DKAN" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="datasetfeatures.html" class="btn btn-neutral" title="Advanced Metadata Features" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

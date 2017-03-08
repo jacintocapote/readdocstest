@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DKAN Roles and Permissions &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="Major Components" href="index.html"/>
+        <link rel="next" title="Content and Storytelling Tools" href="storytelling/index.html"/>
+        <link rel="prev" title="Theme" href="theme.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Major Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dataset/index.html">Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastore/index.html">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harvest.html">Harvester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme.html">Theme</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Roles and Permissions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-dkan-permissions-module">The DKAN Permissions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drupal-core-roles">Drupal Core Roles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anonymous-user">Anonymous User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#authenticated-user">Authenticated User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#administrator">Administrator</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dkan-core-roles">DKAN Core Roles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#content-creator">Content Creator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editor">Editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#site-manager">Site Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dkan-workflow-roles">DKAN Workflow Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-upgrade-notes">Installation/upgrade notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Major Components</a> &raquo;</li>
+      
+    <li>DKAN Roles and Permissions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/components/permissions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dkan-roles-and-permissions">
+<h1>DKAN Roles and Permissions<a class="headerlink" href="#dkan-roles-and-permissions" title="Permalink to this headline">¶</a></h1>
+<p>Roles categorize types of users. Permissions are assigned to these roles and represent functions the user can perform across the site.</p>
+<p>Below is a list of the roles and general permissions included in the <strong>DKAN Permissions</strong> module. The descriptions should help show what different user types are able to do on the site. Whan adding new users, site managers will assign the appropriate role(s) to match the tasks the user is expected to perform.</p>
+<p>There will also be cases where you need users to have different permissions in the context of a particular <strong>group</strong> (for instance, to be able to modify content belonging to their agency but not other agencies on the same website). Read more about <a class="reference internal" href="dataset/groups.html#group-roles-permissions"><span class="std std-ref">group permissions here</span></a>.</p>
+<div class="section" id="the-dkan-permissions-module">
+<h2>The DKAN Permissions module<a class="headerlink" href="#the-dkan-permissions-module" title="Permalink to this headline">¶</a></h2>
+<p>The DKAN Permissions module provides default roles and permissions for the DKAN distribution. It uses the export method provided by the <a class="reference external" href="https://www.drupal.org/project/features_roles_permissions">Features Roles Permissions</a> module so you can examine the specific roles and permissions provided by reviewing <a class="reference external" href="https://github.com/NuCivic/dkan/blob/7.x-1.x/modules/dkan/dkan_permissions/dkan_permissions.features.roles_permissions.inc">dkan_permissions.features.roles_permissions.inc</a>.</p>
+</div>
+<div class="section" id="drupal-core-roles">
+<h2>Drupal Core Roles<a class="headerlink" href="#drupal-core-roles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="anonymous-user">
+<h3>Anonymous User<a class="headerlink" href="#anonymous-user" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>General site visitors that are <strong>not</strong> logged in.</li>
+<li>Can view and search published content.</li>
+</ul>
+</div>
+<div class="section" id="authenticated-user">
+<h3>Authenticated User<a class="headerlink" href="#authenticated-user" title="Permalink to this headline">¶</a></h3>
+<p>These users have an account on the site, can log in, and have profile information that can be verified (and authenticated). This type has the <strong>lowest</strong> level of permissions.</p>
+<p><strong>Permissions:</strong></p>
+<ul class="simple">
+<li>Can log in.</li>
+<li>Can edit their user profile.</li>
+<li>Can view and search published content.</li>
+</ul>
+</div>
+<div class="section" id="administrator">
+<h3>Administrator<a class="headerlink" href="#administrator" title="Permalink to this headline">¶</a></h3>
+<p>The administrator role holds <strong>every</strong> permission and requires high technical competency. This role has the ability to cause serious damage, so it’s generally reserved for a single web professional. Administrators hold the <strong>highest level</strong> of all roles and permissions.</p>
+<p><strong>Permissions:</strong></p>
+<ul class="simple">
+<li>Enable/disable modules and features.</li>
+<li>Change the appearance of the site with alternate themes.</li>
+<li>Create and edit user roles and permissions.</li>
+<li>Create views, blocks, features, content types.</li>
+<li>Access any UI configuration.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="dkan-core-roles">
+<h2>DKAN Core Roles<a class="headerlink" href="#dkan-core-roles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="content-creator">
+<h3>Content Creator<a class="headerlink" href="#content-creator" title="Permalink to this headline">¶</a></h3>
+<p>Content Creators can add content to the site. This will be someone working in your organization who helps by adding to the data catalogue but is not responsible for anything more. This level of access takes users into the production side of the site, but gives little freedom to move outside of creating and adding certain content types. Limiting this role is critical for avoiding inadvertent damage to site content.</p>
+<p><strong>Permissions:</strong></p>
+<ul class="simple">
+<li>Create dataset, resource, data story, and data dashboard content.</li>
+<li>Create chart visualizations.</li>
+<li>Edit <strong>own</strong> content (can not edit content added by another user).</li>
+<li>View <strong>own</strong> unpublished content and revision history of all published content.</li>
+<li>Add and view files to site library.</li>
+</ul>
+</div>
+<div class="section" id="editor">
+<h3>Editor<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h3>
+<p>This will typically be a person handling the content on a frequent basis. Someone in your organization with expertise on the subject-matter that is expansive as well as in-depth. An editor role is similar to a content creator role because the focus is on content, however, an editor will have the ability to manage and edit content added by others. The editor role does not go further into administrative functions.</p>
+<p><strong>Permissions:</strong></p>
+<ul class="simple">
+<li>Create page, dataset, resource, data story, and data dashboard content.</li>
+<li>Create chart visualizations.</li>
+<li>Edit, delete, and manage versions of content added by other users.</li>
+<li>Add and view files to site library.</li>
+</ul>
+</div>
+<div class="section" id="site-manager">
+<h3>Site Manager<a class="headerlink" href="#site-manager" title="Permalink to this headline">¶</a></h3>
+<p>The highest level for <em>non-technical</em> users. A site manager is mostly concerned with the admin functions of the site. Typically this will fall to someone in a supervisory role. The site manager takes a high-level view of the site, its content, and the users on the site. This person is able to make general configurations to the site and assigns roles to new users but does not deal with the technical configuration of the backend.</p>
+<p><strong>Permissions:</strong></p>
+<ul class="simple">
+<li>Create, edit, delete <strong>all</strong> content types created by <strong>any</strong> user.</li>
+<li>Create, edit and manage <strong>Harvest Source</strong> content.</li>
+<li>Assigns roles to all user levels, but cannot create new roles/perms.</li>
+<li>Create and manage groups.</li>
+<li>Manage site logo, name, slogan, copyright, colors, fonts, main menu, recline config, open data schema mapper, dataset forms and previews.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="dkan-workflow-roles">
+<h2>DKAN Workflow Roles<a class="headerlink" href="#dkan-workflow-roles" title="Permalink to this headline">¶</a></h2>
+<p>If your organizaton needs an editorial workflow for managing content creation and editing, DKAN also includes a feature called DKAN Workflow that adds three more roles to establish a content approval process. <span class="xref std std-ref">Read more about that here</span>.</p>
+</div>
+<div class="section" id="installation-upgrade-notes">
+<h2>Installation/upgrade notes<a class="headerlink" href="#installation-upgrade-notes" title="Permalink to this headline">¶</a></h2>
+<p>On new DKAN installs, the DKAN Permissions module is enabled by default. The older (&#8220;sidewide&#8221;-namespaced) permissions module will still be included in the codebase to support existing sites, but will be disabled by default on new installs. For _existing_ sites, the opposite is true - updating your code will _not_ cause the newer module to be enabled automatically or disable the older permissions module.</p>
+<p>If you have been using the older DKAN Sitewide Roles and Permissions module on an existing site and do upgrade, we do recommend you disable it and enable the new DKAN Permissions module. The newer module has an improved set of roles and permissions designed around what we consider the most general use-cases. However, this will likely mean reviewing all of the user accounts on your site and ensuring that they have the roles that they should.</p>
+<p>You also of course have the option of disabling both modules, setting your own prefered roles and permissions and exporting those to a custom feature.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="storytelling/index.html" class="btn btn-neutral float-right" title="Content and Storytelling Tools" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="theme.html" class="btn btn-neutral" title="Theme" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

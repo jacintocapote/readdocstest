@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DKAN Workflow &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="Major Components" href="index.html"/>
+        <link rel="next" title="DKAN Topics" href="topics.html"/>
+        <link rel="prev" title="DKAN Harvest" href="harvest.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Major Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dataset/index.html">Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastore/index.html">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harvest.html">Harvester</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadata-moderation-states">Metadata Moderation States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#content-moderation-ui">Content Moderation UI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#my-workbench">My Workbench</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#node-edit-page">Node Edit Page</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow-roles">Workflow Roles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#automatic-user-role-assignment">Automatic User Role Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#organic-groups-integration">Organic Groups integration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#extending-dkan-workflow">Extending DKAN Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tweaking-the-email-template">Tweaking the Email template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workbench-modules-docs">Workbench Modules Docs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="topics.html">Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html">Fixtures and Default Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="federal-extras.html">Federal Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme.html">Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions.html">Roles and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storytelling/index.html">Storytelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-data-schema.html">Open Data Schema Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizations.html">Visualizations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Major Components</a> &raquo;</li>
+      
+    <li>DKAN Workflow</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/components/workflow.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dkan-workflow">
+<h1>DKAN Workflow<a class="headerlink" href="#dkan-workflow" title="Permalink to this headline">¶</a></h1>
+<p>DKAN Workflow is a Workflow implementation for <a class="reference external" href="https://github.com/NuCivic/dkan">DKAN</a> based on the <a class="reference external" href="https://www.drupal.org/project/workbench">Workbench</a> family of modules.</p>
+<p>The goal of this component is help various organizations adhere to an editorial
+workflow for metadata publishing by providing:</p>
+<ul class="simple">
+<li>Content state tracking and revisioning</li>
+<li>State oriented management UI</li>
+<li>Access control</li>
+</ul>
+<div class="figure" id="id2">
+<img alt="../_images/dkan_workflow_screenshot.png" src="../_images/dkan_workflow_screenshot.png" />
+<p class="caption"><span class="caption-text">DKAN Workflow main administration interface.</span></p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>The DKAN workflow component comes in the form of three modules:</p>
+<ul class="simple">
+<li>DKAN Workflow</li>
+<li>DKAN Workflow Permissions</li>
+<li>Views Workflow List</li>
+</ul>
+<p>In addition to these core modules, DKAN Workflow depends on multiple Drupal
+contrib modules</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/project/workbench">Workbench</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/workbench_moderation">Workbench Moderation</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/workbench_email">Workbench Email</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/drafty">Drafty</a></li>
+</ul>
+<p>Outside of the direct Workbench add-ons, DKAN Workflow needs additional Drupal
+contrib modules to provide extra functionality (Menu and link badges, etc).</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/project/link_badges">Link Badges</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/menu_badges">Menu Badges</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/better_exposed_filters">Better Exposed Filters</a></li>
+</ul>
+<p>All those dependencies are declared in the <a class="reference external" href="https://github.com/NuCivic/dkan/blob/7.x-1.x/drupal-org.make">drupal-org.make</a> file.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>DKAN workflow is included in the core DKAN install but it&#8217;s not enabled by default. It can be enabled either from the Modules management page or by using drush.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>drush en dkan_workflow -y
+</pre></div>
+</div>
+<p>Enabling DKAN workflow should enable all the dependencies modules and update the
+user roles (more information available in the <a class="reference internal" href="#workflow-roles">Workflow Roles</a>
+section).</p>
+</div>
+<div class="section" id="metadata-moderation-states">
+<h2>Metadata Moderation States<a class="headerlink" href="#metadata-moderation-states" title="Permalink to this headline">¶</a></h2>
+<p>There are three default moderations states available by default in DKAN:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Draft:</th><td class="field-body">This is the starter state that the metadata (be it dataset or resource) is in
+when first created by the &#8220;Workflow Contributor&#8221; ( defined in the <a class="reference internal" href="#workflow-roles">Workflow
+Roles</a> section). The node can be updated and have multiple iteration (or
+revision in the Drupal jargon) without the need to change the state. After the
+author evaluate the content is ready for being reviewed. The node moderation
+state can be set to &#8220;Needs Review&#8221;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Needs Review:</th><td class="field-body">When the content author consider the work to be good enough to be reviewed by
+a Moderator, the node(s) can be set to the <em>Needs Review</em>. This will signal to
+available &#8220;Workflow Moderator&#8221; users that the data is ready to be looked at by
+peers (more information in the <a class="reference internal" href="#workflow-roles">Workflow Roles</a> section).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Published:</th><td class="field-body">When the content is judged being ready for public consumption. The qualified
+moderator (Take a look at the <a class="reference internal" href="#workflow-roles">Workflow Roles</a> section) can set it to the
+<em>Published</em> state. This will make the current revision of the metadata to be
+accessible by all the site visitor and the dataset/resources will be added to
+the search index.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-moderation-ui">
+<h2>Content Moderation UI<a class="headerlink" href="#content-moderation-ui" title="Permalink to this headline">¶</a></h2>
+<p>Controlling the moderation state of the various core content types provided by
+DKAN can be done from various places.</p>
+<div class="section" id="my-workbench">
+<h3>My Workbench<a class="headerlink" href="#my-workbench" title="Permalink to this headline">¶</a></h3>
+<p>The main moderation interface is available from the <em>My Workbench</em> link from the
+navigation bar, or accessible directly via <em>admin/workbench</em>.</p>
+<img alt="../_images/dkan_workflow_main_interface.png" src="../_images/dkan_workflow_main_interface.png" />
+<ol class="arabic">
+<li><p class="first"><strong>Moderation Tabs</strong>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">My content:</th><td class="field-body">This tab is the only tab without the moderation table and provides quick
+links to content creation forms.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">My drafts:</th><td class="field-body">This will display the draft content authored by the logged in user.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Needs review:</th><td class="field-body">This will display the content with the moderation state set to <em>Needs
+Review</em> depending on the Workflow role of the current user (This behavior is
+detailed in the <a class="reference internal" href="#workflow-roles">Workflow Roles</a> section).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Stale drafts:</th><td class="field-body">This moderation tab is equivalent to <strong>My drafts</strong> tabs except that it holds
+all the <em>draft</em> content that was not updated in the last <strong>72 hours</strong>. This
+tab is <strong>only accessible by Workflow Supervisor</strong> (see <a class="reference internal" href="#workflow-roles">Workflow Roles</a>).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Stale reviews:</th><td class="field-body">This moderation tab is equivalent to <strong>Needs review</strong> tabs except that it
+holds all the <em>Needs Review</em> content that was not updated in the last <strong>48
+hours</strong>. This tab is <strong>only accessible by Workflow Supervisor</strong> (see
+<a class="reference internal" href="#workflow-roles">Workflow Roles</a>).</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first"><strong>Content Filters</strong>. Users can filter through the moderated content by <em>Title</em>,
+<em>Type</em> (Dataset, Resource, Data Story, etc), and <em>Groups</em>.</p>
+</li>
+<li><p class="first"><strong>Bulk updates</strong>. Certain operations like publishing or rejection can be
+applied to all or a selected subset of the content available on the
+moderation tab.</p>
+</li>
+<li><p class="first"><strong>Moderated content Table</strong>. The table will list all the moderated content
+relevant to the tab currently selected. Supports displaying dataset without
+resource or with all it&#8217;s resources published (5), moderated dataset with
+moderated child resource (6), and even child moderated resource(s) with
+published parent dataset (7).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="node-edit-page">
+<h3>Node Edit Page<a class="headerlink" href="#node-edit-page" title="Permalink to this headline">¶</a></h3>
+<p>Changing the moderation state for individual nodes (be it a dataset or a
+resource) is available via the node edit form at the bottom of the edit page
+under the <strong>Publishing options</strong> sidebar. Authors and reviewers can change the
+moderation state and add a note about the change via the <strong>Moderation notes</strong>
+text area.</p>
+<img alt="../_images/workflow_node_edit.png" src="../_images/workflow_node_edit.png" />
+</div>
+</div>
+<div class="section" id="workflow-roles">
+<h2>Workflow Roles<a class="headerlink" href="#workflow-roles" title="Permalink to this headline">¶</a></h2>
+<p>DKAN workflow permissions provides 3 Drupal roles:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Workflow Contributor:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">This is the lowest level role desgined with &#8220;Content Creator&#8221; users in mind,
+with access only to the workflow menu and limited set of admininstration
+pages. The only transitions granted for this role is from &#8220;Draft&#8221; to &#8220;Needs
+Review&#8221; and the opposite way from &#8220;Needs Review&#8221; to &#8220;Draft&#8221;. The only tabs
+available for the &#8220;Workflow Contributor&#8221; role are the &#8220;My Draft&#8221; tab and
+&#8220;Needs Review tab&#8221;. Accros all the tabs, a user with this role have access
+only to the content that was authored by him/her.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Workflow Moderator:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">This is a more advanced role desgined for &#8220;Editor&#8221; role. In addition of all
+the capabilities of the &#8220;Workflow Contributor&#8221; role, A &#8220;Workflow Moderator&#8221;
+can move content from &#8220;Needs review&#8221; to &#8220;Published&#8221;. &#8220;Workflow Moderator&#8221;
+users have access to all the content that is associated to the same Groups
+that they belong to (checkout <a class="reference internal" href="#organic-groups-integration">Organic Groups integration</a> for more
+information).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Workflow Supervisor:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">This is the role associated with &#8220;Site Manager&#8221; users. In addition to being
+able to view and act upon all the content available on all the tabs (more
+information available in the <a class="reference internal" href="#organic-groups-integration">Organic Groups integration</a>), this role is the
+only role that have access to the &#8220;Stale Drafts&#8221; and &#8220;Stale Review&#8221; tabs.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="automatic-user-role-assignment">
+<h3>Automatic User Role Assignment<a class="headerlink" href="#automatic-user-role-assignment" title="Permalink to this headline">¶</a></h3>
+<p>Users with only workflow roles won&#8217;t be able to do much in DKAN and need to be
+associated to its equivalent core role. The Roles form on the User edit page
+supports adding the suited core role when only a Workflow role is checked.</p>
+<div class="figure" id="id3">
+<a class="reference internal image-reference" href="../_images/dkan_workflow_autorole.gif"><img alt="../_images/dkan_workflow_autorole.gif" src="../_images/dkan_workflow_autorole.gif" style="width: 394.5px; height: 346.5px;" /></a>
+<p class="caption"><span class="caption-text">Automatic core role assignment with workflow roles.</span></p>
+</div>
+</div>
+<div class="section" id="organic-groups-integration">
+<h3>Organic Groups integration<a class="headerlink" href="#organic-groups-integration" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="content-viewing">
+<h4>Content viewing<a class="headerlink" href="#content-viewing" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="35%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">What a user will see</th>
+<th class="head">My drafts</th>
+<th class="head">Needs review</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Workflow Contributor</td>
+<td><ul class="first last simple">
+<li>Only content that they submitted.</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Can see only content they have submitted.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Workflow Moderator</td>
+<td><ul class="first last simple">
+<li>The content submitted to their
+organic group.</li>
+<li>Their own content.</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>The content submitted to their organic
+group.</li>
+<li>Thier own content.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>Workflow Supervisor</td>
+<td><ul class="first last simple">
+<li>Only content that they submitted.</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>All the &#8220;Needs review&#8221; content.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="emails">
+<h4>Emails<a class="headerlink" href="#emails" title="Permalink to this headline">¶</a></h4>
+<p>For each state transition (for example from <em>Draft</em> to <em>Needs Review</em>, from
+<em>Needs Review</em> to <em>Draft</em>, etc) a set of users with workflow roles will be
+notified by an email notification. The users will be selected following those
+rules:</p>
+<ol class="arabic simple">
+<li>Email original content author.</li>
+<li>Email &#8220;Workflow Moderators&#8221; that are members of a group that the content have
+been associated to.</li>
+<li>Email all &#8220;Workflow Supervisors&#8221;.</li>
+</ol>
+<p>Emails will have the context triggering the notification with links to the
+updated content.</p>
+</div>
+</div>
+</div>
+<div class="section" id="extending-dkan-workflow">
+<h2>Extending DKAN Workflow<a class="headerlink" href="#extending-dkan-workflow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tweaking-the-email-template">
+<h3>Tweaking the Email template<a class="headerlink" href="#tweaking-the-email-template" title="Permalink to this headline">¶</a></h3>
+<p>Changing the email template being sent when a moderation operation is applied
+can be done via the <em>admin/config/workbench/email</em> configuration page. For more
+in-depth documentation please Review the <a class="reference internal" href="#workbench-modules-docs">Workbench Modules Docs</a>.</p>
+</div>
+<div class="section" id="workbench-modules-docs">
+<h3>Workbench Modules Docs<a class="headerlink" href="#workbench-modules-docs" title="Permalink to this headline">¶</a></h3>
+<p>For more advanced edge case writing custom code may be needed. For more
+information please refer to the workflow modules documentation.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/documentation/modules/workbench">Workbench documentation in drupal.org</a>.</li>
+<li><a class="reference external" href="https://www.drupal.org/documentation/modules/workbench_moderation">Workbench Moderation documentation in drupal.org</a>.</li>
+<li><a class="reference external" href="https://www.drupal.org/node/2253081">Workbench Email documentation in drupal.org</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="topics.html" class="btn btn-neutral float-right" title="DKAN Topics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="harvest.html" class="btn btn-neutral" title="DKAN Harvest" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

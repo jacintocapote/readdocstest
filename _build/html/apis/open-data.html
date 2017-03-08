@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Open Data APIs &mdash; DKAN 1.13 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="DKAN 1.13 documentation" href="../index.html"/>
+        <link rel="up" title="API Guide" href="index.html"/>
+        <link rel="next" title="Releases" href="../releases/index.html"/>
+        <link rel="prev" title="CKAN Dataset API" href="ckan-dataset.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DKAN
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">DKAN Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">Major Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Extending and Customizing DKAN</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rest-api.html">Dataset REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastore-api.html">Datastore API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ckan-dataset.html">CKAN Dataset API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Open Data APIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-open-data">Project Open Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dcat-ap">DCAT-AP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#field-comparison">Field Comparison</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#catalog">Catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataset">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resource-distribution">Resource / Distribution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DKAN</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">API Guide</a> &raquo;</li>
+      
+    <li>Open Data APIs</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/apis/open-data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="open-data-apis">
+<h1>Open Data APIs<a class="headerlink" href="#open-data-apis" title="Permalink to this headline">¶</a></h1>
+<p>In addition to the Drupal and CKAN-based APIs supplied with DKAN, two major open data standards are supported. Both are supplied by and configurable through the <a class="reference external" href="/components/open-data-schema">Open Data Schema Map</a> module.</p>
+<div class="section" id="project-open-data">
+<h2>Project Open Data<a class="headerlink" href="#project-open-data" title="Permalink to this headline">¶</a></h2>
+<p>DKAN provides full support and mapping for U.S. <a class="reference external" href="https://project-open-data.cio.gov/v1.1/schema/">Project Open Data</a>, in both its federal and non-federal variants, with a data.json endpoint. The optional <cite>Open Data Federal Extras</cite> module is needed for full federal POD compliance. See a demo <a class="reference external" href="http://demo.getdkan.com/data.json">here</a>.</p>
+</div>
+<div class="section" id="dcat-ap">
+<h2>DCAT-AP<a class="headerlink" href="#dcat-ap" title="Permalink to this headline">¶</a></h2>
+<p>DKAN also provides endpoints and configurable field mappings for <a class="reference external" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/description">DCAT-AP</a>, the application profile for data portals in Europe, developed by the European Commission. DCAT-AP is of course based on the <a class="reference external" href="https://www.w3.org/TR/vocab-dcat/">Data Catalog Vocabulary (DCAT)</a>, but provides stricter definitions of catalogs, datasets, distributions and other objects. Through <a class="reference external" href="/components/open-data-schema">Open Data Schema Map</a>, DKAN provides both a catalog endpoint (see <a class="reference external" href="http://demo.getdkan.com/catalog.xml">demo</a>) and individual RDF endoints for each dataset (see by going to any dataset on <a class="reference external" href="http://demo.getdkan.com/">http://demo.getdkan.com/</a> and clicking the &#8220;RDF&#8221; link on the lefthand sidebar).</p>
+</div>
+<div class="section" id="field-comparison">
+<span id="id3"></span><h2>Field Comparison<a class="headerlink" href="#field-comparison" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="catalog">
+<h3>Catalog<a class="headerlink" href="#catalog" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="dataset">
+<h3>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">DKAN Field/Property</th>
+<th class="head">DCAT-AP property</th>
+<th class="head">POD property</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>title</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_title)|[title](http://project-open-data.github.io/schema/#title">dct:title</a></td>
+<td>title</td>
+</tr>
+<tr class="row-odd"><td>body</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_description">dct:description</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#description">description</a></td>
+</tr>
+<tr class="row-even"><td>field_tags</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_keyword">dcat:keyword</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#keyword">keyword</a></td>
+</tr>
+<tr class="row-odd"><td>field_license</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#license">license</a></td>
+</tr>
+<tr class="row-even"><td>field_author</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>field_spatial_geographical_area</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>field_spatial_geographical_cover</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_spatial">dct:spatial</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#spatial">spatial</a></td>
+</tr>
+<tr class="row-odd"><td>field_frequency</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_frequency">dct:accrualPeriodicity</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#accrualPeriodicity">accrualPeriodicity</a></td>
+</tr>
+<tr class="row-even"><td>og_group_ref</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_publisher">dct:publisher</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#publisher">publisher</a></td>
+</tr>
+<tr class="row-odd"><td>field_temporal_coverage</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_temporal">dct:temporal</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#temporal">temporal</a></td>
+</tr>
+<tr class="row-even"><td>field_granularity</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>field_data_dictionary</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#dataDictionary">dataDictionary</a></td>
+</tr>
+<tr class="row-even"><td>field_contact_name</td>
+<td>dcat:contactPoint.vcard:fn</td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#contactPoint">contactPoint</a></td>
+</tr>
+<tr class="row-odd"><td>field_contact_email</td>
+<td>dcat:contactPoint.vcard:hasEmail</td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#mbox">mbox</a></td>
+</tr>
+<tr class="row-even"><td>field_public_access_level</td>
+<td><a class="reference external" href="http://udfr.org/docs/onto/dct_accessRights.html">dct:accessRights</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#accessLevel">accessLevel</a></td>
+</tr>
+<tr class="row-odd"><td>field_additional_info</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>field_resources</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_distribution">dcat:distribution</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#distribution">distribution</a></td>
+</tr>
+<tr class="row-odd"><td>field_related_content</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#references">references</a></td>
+</tr>
+<tr class="row-even"><td>uuid</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_identifier">dct:identifier</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#identifier">identifier</a></td>
+</tr>
+<tr class="row-odd"><td>modified_date</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_modified_date">dct:modified</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#modified">modified</a></td>
+</tr>
+<tr class="row-even"><td>release_date</td>
+<td><a class="reference external" href="http://www.w3.org/TR/vocab-dcat/#Property:dataset_release_date">dct:issued</a></td>
+<td><a class="reference external" href="http://project-open-data.github.io/schema/#issued">issued</a></td>
+</tr>
+</tbody>
+</table>
+<p>The following properties are provided by the Open Data Federal Extras module and have no equivilant in DCAT. They are only relevant to U.S. federal agencies.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">DKAN Field/Property</th>
+<th class="head">POD property</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>field_odfe_bureau_code</td>
+<td><a class="reference external" href="https://project-open-data.cio.gov/v1.1/schema/#bureauCode">bureauCode</a></td>
+</tr>
+<tr class="row-odd"><td>field_odfe_data_quality</td>
+<td><a class="reference external" href="https://project-open-data.cio.gov/v1.1/schema/#dataQuality">dataQuality</a></td>
+</tr>
+<tr class="row-even"><td>field_odfe_investment_uii</td>
+<td><a class="reference external" href="https://project-open-data.cio.gov/v1.1/schema/#primaryITInvestmentUII">primaryITInvestmentUII</a></td>
+</tr>
+<tr class="row-odd"><td>field_odfe_program_code</td>
+<td><a class="reference external" href="https://project-open-data.cio.gov/v1.1/schema/#programCode">programCode</a></td>
+</tr>
+<tr class="row-even"><td>field_odfe_system_of_records</td>
+<td><a class="reference external" href="https://project-open-data.cio.gov/v1.1/schema/#systemOfRecords">systemOfRecords</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="resource-distribution">
+<h3>Resource / Distribution<a class="headerlink" href="#resource-distribution" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">DKAN Field/Property</th>
+<th class="head">DCAT-AP property</th>
+<th class="head">POD property</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td>dcat:accessURL</td>
+<td>accessURL</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>dct:conformsTo</td>
+<td>conformsTo</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>describedBy</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>describedByType</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>body</td>
+<td>dct:description</td>
+<td>description</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>field_link_remote_file || field_upload</td>
+<td>dcat:downloadURL</td>
+<td>downloadURL</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>field_format</td>
+<td>&nbsp;</td>
+<td>format</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>field_upload:mime</td>
+<td>dcat:mediaType</td>
+<td>mediaType</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>title</td>
+<td>dct:title</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../releases/index.html" class="btn btn-neutral float-right" title="Releases" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ckan-dataset.html" class="btn btn-neutral" title="CKAN Dataset API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
